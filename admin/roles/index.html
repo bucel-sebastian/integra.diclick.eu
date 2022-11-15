@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/flash.css">
+</head>
+
+
+
+<body>
+
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="notification-corner">
+        
+    </div>
+    <div id="page-body">
+        <div id="menu-wrap" class="menu-inactive">
+            <div id="menu-container">
+                <nav id="navigation">
+                    <ul id="navigation-ul">
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/"><i class="fa-solid fa-house-chimney"></i>&nbsp;Home</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/media-plan/"><i class="fa-solid fa-photo-film"></i>&nbsp;Media plan</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/tasks/"><i class="fa-solid fa-list-check"></i>&nbsp;Tasks</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-people-arrows-left-right"></i>&nbsp;CRM</a>
+                            
+                            <ul id="crm-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/"><i class="fa-solid fa-list-ul"></i>&nbsp;To do</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/proforme/"><i class="fa-solid fa-receipt"></i>&nbsp;Proforms</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/invoices/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;Invoices</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/xml-to-pdf/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;XML to PDF</a>
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a>
+                            
+                            <ul id="settings-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/admins/"><i class="fa-solid fa-user-gear"></i>&nbsp;Admins</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/roles"><i class="fa-solid fa-star"></i>&nbsp;Roles</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/account-settings/"><i class="fa-solid fa-sliders"></i>&nbsp;Account settings</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="page-wrap" class="page-wrap-inactive-menu">
+            <div id="page-container">
+                <div class="crm-info-box-header">
+                    <h1>Roles</h1>
+
+                    <a class="crm-long-btn" style="background-color: #6baa41;text-decoration: none;" id="add-role-btn" href="/admin/roles/new-role/">
+                        <span>Rol nou&nbsp;</span><i class="fa-solid fa-plus"></i>
+                    </a>
+                </div>
+                
+                
+
+                <table class="client-file-table">
+                    <thead>
+                        <tr>
+                            <th>Rol</th>
+                            <th>Departament</th>
+                            <th>Permisiuni</th>
+                            <th>Operatiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="roles-table-content">
+                       
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        
+        <div hidden data-roletype="roles" id="page-role-type"></div>
+        <div id="loading-screen">
+
+            <img src="/resources/img/di-logo.svg" id="di-logo-loading" alt="">
+            <span>Loading</span>
+        </div>
+
+</body>
+
+
+<script src="../admin-js/logout.js"></script>
+<script src="../admin-js/session.js"></script>
+<script src="roles.js"></script>
+<script src="/admin/admin-js/role-check.js"> </script>
+
+<script src="../admin-js/menu.js"></script>
+
+
+</html>

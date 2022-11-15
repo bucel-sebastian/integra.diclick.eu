@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="resources/css/flash.css">
+    
+</head>
+
+<body>
+
+    <div id="notification-corner">
+        
+    </div>
+
+    <div id="login-page-wrap">
+        <div id="login-container">
+            <div id="login-box">
+                <div id='login-header'>
+                    <img src="/resources/img/logo.svg" style='width:60%' alt="">
+                    
+                </div>
+                <div id="login-content">
+
+
+                    <div id="login-carousel">
+                        <div id="login-section">
+                            <div style="display:block;text-align:center;">
+                                <h3 style="font-size:150%">Autentificare</h3>
+                                <p>Introdu datele de autentificare pentru a accesa panoul clientului.</p>
+                            </div>
+                           
+                            <div class="form-container">
+                        
+                                <form action="" method="POST" id="login-form">
+                                    <div id="form-content">
+                                        <div class="input-container">
+                                            <input type="text" name="username" id="login-username" placeholder="Nume de utilizator" required>
+                                        </div>
+                                        <div class="input-container">
+                                            <input type="password" name="password" id="login-password" placeholder="Parola" required>
+                                        </div>
+                                        <div class="btn-container">
+                                            <button type="submit" class="form-button-long" name="submit" id="login-btn-submit"><i class="fas fa-sign-in-alt"></i>&nbsp;Autentifică-te </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div id="forget-pass-btn-box">
+                                <div onclick="showForgotPass()" class='form-button-long' style="width:max-content;margin:0 auto;">
+                                    <i class="fas fa-lock-open"></i>&nbsp;Ai uitat parola? 
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div id="forgot-pass-section">
+                            <div style="display:block;text-align:center;">
+                                <h3 style="font-size:150%">Ai uitat parola?</h3>
+                                <p>Introdu adresa de e-mail iar noi o să-ți trimitem codul de securitate pentru schimbarea parolei</p>
+                            </div>
+                            <div id="form-container-forget">
+                                <form action="" method="POST" id="forgot-passowrd-form">
+                                    <div id="form-content">
+                                        <div class="input-container">
+                                            <input type="email" name="email" id="forgot-pass-email" placeholder="Adresa de e-mail" required>
+                                        </div>
+                                        
+                                        <div class="btn-container">
+                                            <button type="submit" name="submit" id="forgot-pass-btn-submit"><i class="fas fa-envelope"></i>&nbsp;Trimite </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id="back-login-btn-box">
+                                <div onclick="showLogin()" class='form-button-long' style="width:max-content;margin:0 auto;">
+                                    <i class="fas fa-sign-in-alt"></i>&nbsp;Autentificare
+                                </div>
+                            </div>
+                        </div>
+                        <div id="change-pass-section">
+                            <div style="display:block;text-align:center;">
+                                <h3 style="font-size:150%">Resetează parola</h3>
+                                <p>Ți-am trimis pe e-mail un cod de verificare. Cu ajutorul acestuia îți vei putea reseta parola.
+                                </p>
+                            </div>
+                            <div id="form-container-change">
+                                
+                    
+                                <form action="" method="POST" id="change-passowrd-form">
+                                    <div id="form-content">
+                                        <div class="input-container">
+                                            <input type="text" name="cod-verificare" id="change-pass-cod-verificare" placeholder="Codul de verificare" required>
+                                        </div>
+
+                                        <div class="input-container">
+                                            <input type="password" name="parola" id="change-pass-parola" placeholder="Parola" required>
+                                        </div>
+
+                                        <div class="input-container">
+                                            <input type="password" name="re-parola" id="change-pass-re-parola" placeholder="Reintrodu parola" required>
+                                        </div>
+                                        
+                                        <div class="btn-container">
+                                            <button type="submit" class="form-button-long" name="submit" id="change-pass-btn-submit"><i class="fa-solid fa-lock"></i>&nbsp;Schimbă parola </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <br>
+
+                            <div id="back-login-btn-box">
+                                <div onclick="showLogin()" class='form-button-long' style="width:max-content;margin:0 auto;">
+                                    <i class="fas fa-sign-in-alt"></i>&nbsp;Autentificare
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+            </div>
+            <!-- <div id="login-left">
+                <div id="login-slider">
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-logo">
+                                <img src="resources/img/diclick-logo.svg" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h2>
+                                    Always bringing quality and the results that generate PROFIT!
+                                </h2><br>
+                                <p>Best quality marketing campaigns regardless of the chosen channels! Best results with the lowest budget! We deliver relevant content and smart campaigns that bring traffic and always convert! We focus on practicality and efficiency in order to check all sales goals!</p>
+                            </div>
+                            <div class="slide-button">
+                                <a class='form-button-long' href="https://diclick.eu/">Learn more!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-logo">
+                                <img src="resources/img/diagency-logo.svg" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h2>
+                                    In a world where everybody is creative and original, we believe in CREATIVITY with a purpose!
+                                </h2><br>
+                                <p>We find creative solutions for growing your brand awareness and loyalty! We always put in, our best efforts in bringing your brand in the spotlight using digital efficiency, social media engagement, branded communication, and partner incentivization!<br>
+                                    With DI AGENCY your brand is safe and always on the right track with the best marketing certified professionals out there! And remember: with the right team you are guaranteed to get every time the right results!
+                                    <br>
+                                    We take great pride in our work and the beautiful collaboration worldwide famous brands that secured our spot as a prime marketing agency! Creativity and strong content topped with powerful messages are the keys that won our European recognition! We delivered also great revenue for our Romanian-based clients through online ads campaigns, that lead their brand to great heights and immense recognition!
+                                    <br>                      
+                                    We love our clients because they gave us the chance to create and innovate and the projects that emerged are invariable: engaging, impactful and simply just awesome!                                
+                                     </p>
+                            </div>
+                            <div class="slide-button">
+                                <a class='form-button-long' href="https://diagency.eu/">Learn more!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-logo">
+                                <img src="resources/img/promoapp-logo.svg" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h2>
+                                    Engage, Convert more SHOPPERS with the latest and greatest!
+                                </h2><br>
+                                <p>PROMOAPP platform is the best key solving for every promotional need that your company may have.
+
+                                    If you need a flexible platform for your creative ideas that offers solutions and is easily implemented,
+                                    
+                                    you came to the right place!</p>
+                            </div>
+                            <div class="slide-button">
+                                <a id='promoapp-button' class='form-button-long' href="https://www.promoapp.io/">Learn more!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="login-bullets">
+                    <div class="slider-bullet" onclick="setSlide(0)"></div>
+                    <div class="slider-bullet" onclick="setSlide(1)"></div>
+                    <div class="slider-bullet" onclick="setSlide(2)"></div>
+                </div>
+            </div> -->
+            <!-- <div id='login-center'></div> -->
+            <!-- <div id="login-right">
+                <div id="login-right-left">
+                    <div class='login-header'>
+                        <img src="/resources/img/logo.svg" style='width:60%' alt="">
+                        <h3>Autentificare</h3>
+                        <p>Introdu datele de autentificare pentru a accesa panoul clientului.</p>
+                    </div>
+                    <div id="form-container">
+                        
+                        <form action="" method="POST" id="login-form">
+                            <div id="form-content">
+                                <div class="input-container">
+                                    <input type="text" name="username" id="login-username" placeholder="Nume de utilizator" required>
+                                </div>
+                                <div class="input-container">
+                                    <input type="password" name="password" id="login-password" placeholder="Parola" required>
+                                </div>
+                                <div class="btn-container">
+                                    <button type="submit" name="submit" id="login-btn-submit">Autentifică-te <i class="fas fa-sign-in-alt"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="forget-pass-btn-box">
+                        <div onclick="showForgotPass()" class='form-button-long'>
+                            Ai uitat parola? <i class="fas fa-lock-open"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="login-right-right">
+                    <div id='noacc-error'>
+                        <p>No accounts associated with this email address were found!</p>
+                    </div>
+                    <div id='fail-error'>
+
+                    </div>
+                    <div class='login-header'>
+                        <h3>Ai uitat parola?</h3>
+                        <p>Introdu adresa de e-mail iar noi o să-ți trimitem codul de securitate pentru schimbarea parolei</p>
+                    </div>
+                    <div id="form-container-forget">
+                        
+                        <div id="success-send">
+                            <p>We send you an email with your login details.</p>
+                        </div>
+                        <form action="" method="POST" id="forgot-passowrd-form">
+                            <div id="form-content">
+                                <div class="input-container">
+                                    <input type="email" name="email" id="forgot-pass-email" placeholder="Adresa de e-mail" required>
+                                </div>
+                                
+                                <div class="btn-container">
+                                    <button type="submit" name="submit" id="forgot-pass-btn-submit">Trimite <i class="fas fa-envelope"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <div onclick="showLogin()" class='form-button-long'>
+                            Login <i class="fas fa-lock-open"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div> -->
+        </div>
+    </div>
+
+
+    
+
+</body>
+
+<!-- <script src="resources/js/slider.js"></script> -->
+<!-- <script src="/resources/js/session.js"></script> -->
+<script src="/admin/login/login.js"></script>
+
+</html>

@@ -1,0 +1,102 @@
+@media only screen and (max-width: 1400px) {
+  /* line 6, ../Websites/test-server/resources/scss/queries.scss */
+  .preview-img {
+    max-height: 300px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  /* line 19, ../Websites/test-server/resources/scss/queries.scss */
+  html {
+    font-size: 16px;
+  }
+  /* line 24, ../Websites/test-server/resources/scss/queries.scss */
+  #login-container {
+    height: 100vh;
+    flex-direction: column-reverse;
+  }
+  /* line 28, ../Websites/test-server/resources/scss/queries.scss */
+  #login-center {
+    width: 80%;
+    height: 1px;
+  }
+  /* line 32, ../Websites/test-server/resources/scss/queries.scss */
+  #login-right, #login-left {
+    width: 100%;
+  }
+  /* line 35, ../Websites/test-server/resources/scss/queries.scss */
+  #login-right {
+    height: 70%;
+    padding: 0;
+  }
+  /* line 40, ../Websites/test-server/resources/scss/queries.scss */
+  #header-wrap {
+    padding: 0 20px;
+  }
+  /* line 43, ../Websites/test-server/resources/scss/queries.scss */
+  .page-wrap-active-menu {
+    padding-left: 0;
+  }
+  /* line 46, ../Websites/test-server/resources/scss/queries.scss */
+  #page-container {
+    margin: 5px 1px;
+    padding: 20px 5px;
+  }
+  /* line 50, ../Websites/test-server/resources/scss/queries.scss */
+  #calendar-controls {
+    flex-direction: column;
+  }
+  /* line 53, ../Websites/test-server/resources/scss/queries.scss */
+  #profile-container {
+    flex-direction: column;
+  }
+  /* line 56, ../Websites/test-server/resources/scss/queries.scss */
+  #proile-right table {
+    width: 100%;
+  }
+  /* line 59, ../Websites/test-server/resources/scss/queries.scss */
+  .edit-profile-form-sec {
+    width: 100%;
+  }
+  /* line 62, ../Websites/test-server/resources/scss/queries.scss */
+  #edit-profile-form {
+    flex-direction: column;
+  }
+  /* line 65, ../Websites/test-server/resources/scss/queries.scss */
+  #calendar-btns2 {
+    flex-direction: column;
+  }
+  /* line 68, ../Websites/test-server/resources/scss/queries.scss */
+  #projectSelector-client {
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  /* line 72, ../Websites/test-server/resources/scss/queries.scss */
+  #new-project-button-client {
+    border-radius: 5px;
+    margin: 0 0 5px;
+  }
+  /* line 76, ../Websites/test-server/resources/scss/queries.scss */
+  #new-task-button-client {
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+  /* line 80, ../Websites/test-server/resources/scss/queries.scss */
+  #new-schedule-button-client {
+    margin-bottom: 5px;
+  }
+  /* line 83, ../Websites/test-server/resources/scss/queries.scss */
+  #calendar-legend {
+    margin-bottom: 5px;
+  }
+  /* line 86, ../Websites/test-server/resources/scss/queries.scss */
+  .task-container hr, .task-container-complete hr {
+    width: 150px;
+  }
+  /* line 89, ../Websites/test-server/resources/scss/queries.scss */
+  .task-center {
+    font-size: 50px;
+  }
+}
+
+/*# sourceMappingURL=queries.css.map */

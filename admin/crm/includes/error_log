@@ -1,0 +1,33 @@
+[06-Sep-2022 09:43:15 UTC] PHP Warning:  require_once(dompdf/autoload.inc.php): failed to open stream: No such file or directory in /home3/instore1/diclick.eu/includes/roas-export.php on line 3
+[06-Sep-2022 09:43:15 UTC] PHP Fatal error:  require_once(): Failed opening required 'dompdf/autoload.inc.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home3/instore1/diclick.eu/includes/roas-export.php on line 3
+[06-Sep-2022 09:43:16 UTC] PHP Warning:  require_once(dompdf/autoload.inc.php): failed to open stream: No such file or directory in /home3/instore1/diclick.eu/includes/roas-export.php on line 3
+[06-Sep-2022 09:43:16 UTC] PHP Fatal error:  require_once(): Failed opening required 'dompdf/autoload.inc.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home3/instore1/diclick.eu/includes/roas-export.php on line 3
+[06-Sep-2022 09:44:06 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf' not found in /home3/instore1/diclick.eu/includes/roas-export.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/instore1/diclick.eu/includes/roas-export.php on line 10
+[06-Sep-2022 09:44:14 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf' not found in /home3/instore1/diclick.eu/includes/roas-export.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/instore1/diclick.eu/includes/roas-export.php on line 10
+[06-Sep-2022 09:46:57 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf' not found in /home3/instore1/diclick.eu/includes/roas-export.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/instore1/diclick.eu/includes/roas-export.php on line 10
+[06-Sep-2022 09:47:15 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf' not found in /home3/instore1/diclick.eu/includes/roas-export.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/instore1/diclick.eu/includes/roas-export.php on line 10
+[06-Sep-2022 09:47:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Dompdf' not found in /home3/instore1/diclick.eu/includes/roas-export.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/instore1/diclick.eu/includes/roas-export.php on line 10
+[27-Sep-2022 07:58:29 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 7.4.0". You are running 7.3.33. in /home/diclicke/integra.diclick.eu/includes/vendor/composer/platform_check.php on line 24
+[27-Sep-2022 08:00:56 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 7.4.0". You are running 7.3.33. in /home/diclicke/integra.diclick.eu/includes/vendor/composer/platform_check.php on line 24
+[27-Sep-2022 08:01:13 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 7.4.0". You are running 7.3.33. in /home/diclicke/integra.diclick.eu/includes/vendor/composer/platform_check.php on line 24
+[27-Sep-2022 11:02:53 Europe/Bucharest] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php:14
+Stack trace:
+#0 /home/diclicke/integra.diclick.eu/admin/crm/includes/proforma-get-client.php(3): include()
+#1 {main}
+  thrown in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php on line 14
+[30-Sep-2022 10:42:29 Europe/Bucharest] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/diclicke/integra.diclick.eu/admin/crm/includes/proforma-edit-generator.php on line 74

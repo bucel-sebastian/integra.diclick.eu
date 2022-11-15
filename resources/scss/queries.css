@@ -1,0 +1,94 @@
+@media only screen and (max-width: 1400px) {
+  .preview-img {
+    max-height: 300px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  html {
+    font-size: 16px;
+  }
+  #login-container {
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  #login-center {
+    width: 80%;
+    height: 1px;
+  }
+  #login-right, #login-left {
+    width: 100%;
+  }
+  #login-right {
+    height: 70%;
+    padding: 0;
+  }
+  #header-wrap {
+    padding: 0 20px;
+  }
+  .page-wrap-active-menu {
+    padding-left: 0;
+  }
+  #page-container {
+    margin: 5px 1px;
+    padding: 20px 5px;
+  }
+  #calendar-controls {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #profile-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #proile-right table {
+    width: 100%;
+  }
+  .edit-profile-form-sec {
+    width: 100%;
+  }
+  #edit-profile-form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #calendar-btns2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #projectSelector-client {
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  #new-project-button-client {
+    border-radius: 5px;
+    margin: 0 0 5px;
+  }
+  #new-task-button-client {
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+  #new-schedule-button-client {
+    margin-bottom: 5px;
+  }
+  #calendar-legend {
+    margin-bottom: 5px;
+  }
+  .task-container hr, .task-container-complete hr {
+    width: 150px;
+  }
+  .task-center {
+    font-size: 50px;
+  }
+}
+/*# sourceMappingURL=queries.css.map */

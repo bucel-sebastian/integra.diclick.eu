@@ -1,0 +1,101 @@
+;Jméno;Název kliniky;Adresa kliniky;M?sto;email;telefon;web;odpov??;podepsaná smlouva (signed statement)
+1;MVDr. Jana Chund?láková;Veterina Sk?ivánek, s.r.o.;SNP 2389/4, Ústí nad Labem-centrum, 400 11;Ústí nad Labem;veterina.skrivanek@gmail.com;733,735,552;www.veterinaskrivanek.cz;YES - call;
+2;MVDr. Josef Krzystek;Veterinární klinika Krnov;Ježnická 34 794 01 Krnov – Pod Bezru?ovým vrchem;Krnov;krzystek@veterina-krnov.cz;720,555,443;www.veterina-krnov.cz;YES - call;
+3;MVDr. Lucie Záhumenská;VETERINA-MOST;Žatecká 2438/211, 434 01 Most;Most;veterina-most@email.cz;773,997,695;veterina-most.eu;YES - call;YES
+4;MVDr. Petr Fischer;Veterinární ambulace Fischer - Kaplice;Linecká 357, 382 41 Kaplice;Kaplice;veterina.kaplice@seznam.cz;731,115,974;www.veterina-fischer.cz;YES - call;YES
+5;MVDr. Radek Jorda;Veterinární klinika Mikulov;Majakovského 4, 692 01 Mikulov;Mikulov;veterina.mikulov@seznam.cz;519,511,895;www.veterinamikulov.cz;YES - email;YES
+6;MVDr. Daniela Králová;VETERINÁRNÍ ORDINACE 3 V 1;Dostihová 273, 159 00 Velká Chuchle;Praha 5;daniela.kralova@veterina3v1.cz;257,941,093;www.veterina3v1.cz;YES - email;YES
+7;MVDr. Blanka T?snarová;Veterinární ordinace pro malá zví?ata;Dobrovského 1125, 413 01 Roudnice nad Labem;Roudnice nad Labem;info@vetroudnice.cz;603,586,209;www.vetroudnice.cz;YES - email;YES
+8;MVDr. Tomáš Jaroš;Veterinární ordinace;5. kv?tna 102, 382 73 Vyšší Brod;Vyšší Brod;t.jaros@email.cz;605,855,977;www.veterina-jaros.com;YES - call;YES
+9;MVDr. Ond?ej Hošek;Veterina Rokycany;D?lost?elc? 1370, Rokycany 337 01;Rokycany;info@veterinarokycany.cz;737,212,141;www.veterinarokycany.cz;YES - call;YES
+10;MVDr. Jan Ková?;VETERINÁRNÍ ORDINACE KOVÁ?OVI;Mosty u Jablunkova 58, 739 98, Mosty u Jablunkova;Jablunkov;veterinajablunkov@seznam.cz;773,520,600;www.veterinajablunkov.cz;YES - email;YES
+11;MVDr. Alice Franková;Veterinární ambulance pro malá zví?ata;Francouzská 2457, 272 01 Kladno;Kladno;frankova.alice@seznam.cz;312,688,633;www.veterinakladno.cz;YES - email;YES
+12;MVDr. Miloš Havelka;Veterina VeMaP s.r.o.;Turecká 8, 266 01 Malé P?ílepy;Malé P?ílepy;kontakt@vemap.cz;739,563,202;www.vemap.cz;YES - email;YES
+13;MVDr. Nora Vo?íšková;HanáVET;Kostelecká 363/39, 796 01 Prost?jov;Prost?jov;info@hanavet.cz;739,822,441;info@hanavet.cz;YES - email;YES
+14;MVDr. Lukáš Maška;VETERINA ROSICE s.r.o.;Na Mýt? 1323, 665 01 Rosice u Brna;Rosice u Brna;axa@axa-vetklinika.cz;728,009,613;www.axa-vetklinika.cz;YES - email;YES
+15;MVDr. Bed?ich Ku?ítka;Veterinární služba MVDr. Ku?ítka;Bezkov 43, 669 02 Bezkov;Bezkov;bedrich@kuritka.cz;515,236,367;www.kuritka.cz;YES - call;YES
+16;MVDr. Jana Máslíková;ProVet - Veterinární ordinace;Obecní dv?r 79, Kolín III, 280 02 Kolín;Kolín;provet@email.cz;607,520,458;;YES - email;YES
+17;MVDr. Eva Jíchová;ZNOVET s.r.o.;P?ím?tická 1934/25, 669 02 Znojmo;Znojmo;znovet@seznam.cz;515,225,316;www.znovet.cz;YES - email;YES
+18;MVDr. Romana Pr?chová;Veterina u kostela s.r.o.;Novohradská 120m 370 08 ?eské Bud?jovice;?eské Bud?jovice;info@veterinaukostela.cz;721,001,234;www.veterinaukostela.cz;YES - email;YES
+19;MVDr. Radka Zemánková;Veterinární ordinace Vetmedical;Sušilova 185/6, 784 01 Litovel;Litovel;felcanvet@seznam.cz;730,150,523;www.veterinalitovel.cz;YES - email;YES
+20;MVDr. Ji?í Šturala;Veterina Smetanova;Smetanova 1303, 755 01 Vsetín;Vsetín;veterinasmetanova@gmail.com;774,626,662;www.veterinasmetanova.cz;YES - email;YES
+21;MVDr. Karel Sladovník;Veterina v Zátiší;V Zátiší 1571, 547 01 Náchod;Náchod;doktor@veterinavzatisi.cz;493,814,782;veterinavzatisi.cz;YES - call;YES
+22;MVDr. Rudolf Mac;Veterinární klinika, MVDr. Rudolf Mac;Prost?ední 417, 765 02 Otrokovice;Otrokovice;rudolf.mac@seznam.cz;777,133,832;www.rudolfmac.cz;YES - email;YES
+23;MVDr. Miroslava Cinková;Veterinární ordinace Podho?í - Zlín;L. Váchy 517, 760 01 Zlín;Zlín;veterinapodhori@seznam.cz;724,751,990;www.veterinapodhori.cz;YES - email;YES
+24;MVDr. Milena Alexová;Veterinární léka?ka;Jevišovice 334, 671 53, Jevišovice;Jevišovice;veterinaalexova@gmail.com;775,147,661;www.veterina-alexova.webnode.cz;YES - email;YES
+25;MVDr. Zuzana Škarková;IC-VET Hranice;?echova 183, Hranice, 753 01;Hranice;veterinahranice@seznam.cz;773,881,710;www.veterinahranice-cz.vasestranky.cz;YES - email;YES
+26;MVDr. Vít?zslav Motl;Veterinární klinika Pr?honice;V Zahradách 354, 252 43 Pr?honice;Pr?honice;veterinapruhonice@gmail.com;605,264,460;www.veterinapruhonice.cz;YES - call;YES
+27;MVDr. Daniel Petrák;Veterinární Klinika Helion ;Pod Holom??í 3116/2, Ústí nad Labem-centrum, 400 01 ;Ústí nad Labem;info@veterinahelion.cz;472,717,935;www.veterinahelion.cz;YES - email;YES
+28;MVDr. Marek Kubát;VETERINÁRNÍ KLINIKA  Well-vet;Na Vrškách 1599, 252 10 Mníšek pod Brdy;Mníšek pod Brdy;info@veterinarmnisek.cz;325,533,743;www.veterinarmnisek.cz;YES - call;YES
+29;MVDr. Jana Pelikánová;Veterinární ambulance;B. N?mcové 35, 789 85 Mohelnice;Mohelnice;"	j.pelikanova@seznam.cz";737,459,190;www.pelikanvet.cz;YES - email;YES
+30;MVDr. Veronika Do?kalová;Veterina Nymburk;Jasmínová 2145, 288 02 Nymburk;Nymburk;niky.vet@gmail.com;607,805,484;www.veterina-nymburk.cz;YES - email;YES
+31;MVDr. Martin Marx;Veterinární klinika Sokolníky;Trousilova 1064/4, 182 00 Praha 8-Kobylisy;Praha 8;vet.sokolniky@seznam.cz;736,535,652;www.veterinar-praha8.cz;YES - call;YES
+32;MVDr. Tomáš Klícha;VETERINÁRNÍ ORDINACE ZBUZANY;Zbuzany 555, 516 01 Rychnov nad Kn?žnou;Rychnov nad Kn?žnou;info@veterinarychnov.cz;730,825,965;www.veterinarychnov.cz;YES - call;YES
+33;MVDr. Zuzana Mravíková;Veterinární ordinace Blackvet;Erbenova 383, 537 01 Chrudim;Chrudim;mvdr.mravikova@gmail.com;737,409,124;blackvet.websnadno.cz;YES - email;YES
+34;MVDr. Ji?í Šim?nek;Veterinární ordinace U Sv. Jakuba;Palackého 724, 29501 Mnichovo Hradišt?;Mnichovo Hradišt?;juraseksimunek@seznam.cz;602,822,491;www.vet-simunek.cz;YES - call;YES
+35;MVDr. Jana Van Geetová;Veterina Semily;Brodská 106, 513 01 Semily;Semily;info@veterinasemily.cz;606,656,631;www.veterinasemily.cz;YES - email;YES
+36;MVDr. Martin Fedrsel;Veterinární ordinace pro malá zví?ata, Svitavy;Pod V?ží 3, 568 02 Svitavy;Svitavy;martin.fedrsel@seznam.cz;461,530,413;www.veterina.comehere.cz;YES - call;YES
+37;MVDr. Silvie Hov?žáková;Veterinární klinika;K Hájenkám 334, Slavi?ín, 763 21;Slavi?ín;hovezakova.silva@seznam.cz;604500208;;YES;YES
+38;MVDr. Zuzana Studená;Veterinární ordinace Milevsko;?s.legií 256, Milevsko 399 01;Milevsko;veterinamilevsko@gmail.com;723,722,272;www.mil-vet.cz;YES - email;YES
+39;MVDr. Radomír HYNAR ;Veterinární klinika MVDr. Radomíra Hynara s.r.o.;P?emyslovc? 76/24a, 747 07, Opava-Jakta?;Opava;veterinarninemocnice@email.cz;553,662,467;www.veterinarninemocnice.cz;YES - call;YES
+40;MVDr. Veronika Kušteková;MiaVet s.r.o.;Kutnohorská 129, 109 00 Praha-Dolní M?cholupy;Praha 10;info@miavet.cz;725,017,584;www.miavet.cz;YES - call;YES
+41;MVDr. Ji?í Pelikán;Veterinární ambulance;Dvo?akova 5, 789 01 Zab?eh;Záb?eh;"	pelikanvet@post.cz";602,722,928;www.pelikanvet.cz;YES - call;YES
+42;MVDr. Žulkevi?ová Langerová Erika;Veterinární klinika Salvus;Mírové nám?stí 87, Bakov nad Jizerou 294 01;Bakov nad Jizerou;info@salvusmb.cz;326,781,748;www.salvusmb.cz;YES - email;
+43;MVDr. Barbora Škarková;VETERINA TYCHO;Husovo nám?stí 18/28, Benátky nad Jizerou 294 71;Benátky nad Jizerou;veterinatycho@gmail.com;799,537,509;www.veterinatycho.cz;YES - email;
+44;MVDr. Jitka Pfeifrová;Veterinární klinika Animed;Blatnická 9, Brno – Vinohrady, 628 00;Brno;info@animed.cz;734,421,272;www.animed.cz;YES - email;
+45;MVDr. Daniela Neumanová;Veterinární ordinace Lesná;Okružní 783/39, 638 00 Brno-sever-Lesná;Brno;info@veterina-lesna.cz;545,212,915;www.veterina-lesna.cz;YES - email;
+46;MVDr. Jana Králová;Veterinární ordinace Brno Malom??ice;Ob?anská 394, 614 00 Brno-Malom??ice a Ob?any;Brno;veterina.malomerice@seznam.cz;545,235,738;www.veterinamalomerice.cz;YES - email;
+47;MVDr. Pavlína Pánková Vá?ová;Veterina ?áslav;Zahradní 1363, 286 01 ?áslav;?áslav;pavlin.vanova@seznam.cz;327,315,598;www.veterinacaslav.cz;YES - call;
+48;MVDr. Nikola ?urišová;Veterinární ordinace Envet;Pivovarská 3405, 470 01 ?eská Lípa;?eská Lípa;ordinace@envet.cz;704,362,226;www.envet.cz;YES - call;
+49;MVDr. Ji?í Kamiš;Aurum Vet s.r.o. - veterinární klinika;Karolíny Sv?tlé 540/6, 370 04 ?eské Bud?jovice;?eské Bud?jovice;aurumvet@gmail.com;602,706,711;www.aurumvet.cz;YES - call;
+50;MVDr. STANISLAV CIENCIALA;Veterinární klinika CTVET;Frýdecká 1876, 737 01 ?eský T?šín;?eský T?šín;recepce@ctvet.cz;558,736,474;www.ctvet.cz;YES - call;
+51;MVDr. Lenka ?erná;Veterina Doulní Kouknice.cz;Jiráskova 333/60 Dolní Kounice, 664 64 Dolní Kounice;Dolní Kounice;mvdrcerna@centrum.cz;603,236,972;www.veterinadolnikounice.cz;YES - call;
+52;MVDr. JANA ŽWAKOVÁ;Veterinární klinika Veticea;Na Výšin? 1002, Dolní Lutyn?, 73553;Dolní Lutyn?;info@veticea.cz;596,530,155;www.veticea.cz;YES - call;
+53;MVDr. Karel Štros;Veterinární klinika ŠtrosVet;Hradecká 290, 534 01 Holice;Holice;osetrovna@stros-vet.com;733,127,341;www.stros-vet.com;YES - email;
+54;MVDr. Zden?k Potocký;Anivet s.r.o.;Humpolecká 234, 580 01 Havlí?k?v Brod;Humpolec;zdenek.potocky@centrum.cz;731,533,348;www.anivet.cz;YES - email;
+55;MVDr. Iva Šírová;Veterina Choce?;Bj. Krawce 1088, 565 01 Choce?, okres Ústí nad Orlicí;Choce?;sirovaiva@seznam.cz;776,116,151;www.veterinachocen.cz;YES - call;
+56;MVDr. Marek Šupica;Veterinární klinika;Palackého nám.7, 66491 Ivan?ice;Ivan?ice;veterinaivancice@seznam.cz;605,750,719;www.veterinaivancice.cz;YES - call;
+57;Bc. Klára Podzimková, DiS.;Veterinární klinika v Jí?ín?;Barákova 584, 506 01 Ji?ín;Jí?ín;klinika@jicinvet.cz;602,466,536;www.jicinvet.cz;YES - email;
+58;MVDr. David Švestka;Hadvet.cz;Vladislava Van?ury 919, 56169 Králíky;Klálíky;svestkadavid@gmail.com;605,840,449;www.hadvet.webnode.cz;YES - email;
+59;MVDr. Petra Rysová;K-Vet ordinace s.r.o.;U Tvrze 359, Kn?žmost, 294 02;Kn?žmost;info@k-vet.cz;739,769,766;www.k-vet.cz;YES - email;
+60;MVDr. Marek Šindler;PrimaVet;Obvodová 3607, 767 01 Krom??íž;Krom??íž;primavet@centrum.cz;573,342,755;www.primavet.cz;YES - call;
+61;MVDr. Barbora  ?melíková;Veterinární ordinace Kyjov;Jiráskova 334, 697 01 Kyjov;Kyjov;veterinakyjov@gmail.com;723,815,256;www.veterina-kyjov.cz;YES - call;
+62;MVDr. Jaroslav Pešek;Veterinární ordinace;Mírová 891, 561 51 Letohrad v budov? Golempressu;Letohrad;jaroslavpesek.vet@seznam.cz;737,776,319;www.veterina-letohrad.cz;YES - call;
+63;MVDr. Ji?í Vomá?ka;Veterinární klinika LIVE VET s.r.o.;Zelená 1, 412 01, Litom??ice;Litom??íce;live@veterina-live.cz;739,052,321;www.veterina-live.cz;YES - call;
+64;MVDr. Lenka a Ji?í Polá?kovi;JL VET s.r.o.;Tyršova 234, 570 01 Litomyšl;Litomyšl;veterina-litomysl@seznam.cz;739,650,115;www.veterina-litomysl.cz;YES - call;
+65;MVDr. Eva Jír?;Veterinární klinika Lomnice nad Popelkou;5. kv?tna 846, 512 51, Lomnice nad Popelkou;Lomnice nad Popelkou;ordinace@samohylova.com;739,019,510;www.veterinalomnice.cz;YES - email;
+66;MVDr. Martina Zahradníková;Veterinární ordinace u Výstavišt?;Šafa?íkova 1474/1, 289 22 Lysá nad Labem;Lysá nad Labem;martina.zahradnikova@seznam.cz;605,204,890;www.veterinalysanadlabem.cz;YES - email;
+67;MVDr. Mariana Trnková;Veterinární klinika Salvus;Mládežnická 1340, 293 01 Mladá Boleslav;Mladá Boleslav;mari.trnkova@gmail.com;326,731,757;www.salvusmb.cz;YES - email;
+68;MVDr. Tereza Procházková;Veterinární ordinace U Alíka;Tiskárenská 1274, Moravský Krumlov, 672 01;Moravský Krumlov;infoualika@seznam.cz;604,523,876;www.veterinaualika.cz;YES - call;
+69;MVDr. Tomáš Najmon;Veterinární ordinace – Neratovice;Havlí?kova 108,  277 11 Neratovice;Neratovice;tomas.najmon@tiscali.cz;606,523,719;veterina-neratovice.cz;YES - call;
+70;Bc. Klára Podzimková, DiS.;Veterinární klinika Nová Paka;Dukelské nám. 35, 509 01 Nová Paka - pozor, jiná kor.adr.;Nová Paka;klinika@jicinvet.cz;725,946,511;www.jicinvet.cz;YES - email;
+71;MVDr. Hana Cholmatová;Veterinární ordinace NOVAVET;Moravská 890, 509 01 Nová Paka;Nová Paka;novavet@seznam.cz;775,164,416;www.novavet.cz;YES - email;
+72;MVDr. Pavel Kocanda ;Veterinární klinika ATEvet;Ž?árská 87, 59231 Nové M?sto na Morav?;Nové M?sto na Morav?;veterina@atevet.cz;560,000,482;www.atevet.cz;YES - email;
+73;MVDr. Anna Janíková;Veterinární ordinace Nový Jí?ín;Štefánikova 1, Nový Ji?ín, 741 01;Nový Jí?ín;ordinace@veterina-nj.cz;731,215,268;www.veterina-nj.cz;YES - call;
+74;MVDr. JITKA TESA?ÍKOVÁ;Veterinární ambulance  ;Jungmannova 193/1, 779 00 Olomouc-Hodolany;Olomouc;tesarikova.jitka@seznam.cz;724,444,306;;YES - call;
+75;MVDr. František Špru?ek;Veterinární Klinika Špru?ek s.r.o.;Brn?nská 82, 779 00 Olomouc;Olomouc;veterina.brnenska@seznam.cz;728,308,803;www.vetklinik.cz;YES - email;
+76;MVDr. Pavel N?me?ek;VETERINÁRNÍ KLINIKA ŠTROSSOVKA S.R.O.;ŠTROSSOVA 239, 530 03 PARDUBICE;Pardubice;veterinapardubice@email.cz;724,066,863;www.veterina-pardubice.cz;YES - call;
+77;MVDr. Jan Náhlík;Veterinární klinika Bohemia;Nádražní 2282, 39701 Písek;Písek;info@veterinabohemia.cz;792,220,290;www.veterinabohemia.cz;YES - call;
+78;MVDr. Leoš Grejcar;Medicus Veterinarius S.r.o.;Kardinála Berana 967, 301 00 Plze? 3;Plze?;med.vet@volny.cz;602,108,827;www.medvet.cz;YES - email;
+79;MVDr. Martin Ko?ínek;Veterinární ordinace Plze? Slovany;Jugoslávská 32, 326 00 Plze? 2 Slovany;Plze?;veterinakorinek@seznam.cz;377,446,668;www.veterina-plzenslovany.cz;YES - email;
+80;MVDr. Petr Coufal;Veterinární klinika Pod?brady;Prokopova 438/23, Pod?brady III, 290 01 Pod?brady;Pod?brady;info@veterina-podebrady.cz;325,626,058;www.veterina-podebrady.cz;YES - email;
+81;MVDr. Marta Kvas?ovská;Pemiumvet s.r.o.;Ji?ínská 1787/47 — Žižkov, Praha 3, 130 00;Praha 3;marta@premiumvet.cz ;777,469,530;www.premiumvet.cz;YES - email;
+82;MVDr. Lonský Zbyn?k ;Veterinární ošet?ovna - Praha;Po?átecká 1013/5, 140 00 Praha 4-Michle;Praha 4;dr.zbynek@tiscali.cz;775,303,713;www.zbyneklonsky.com;YES - email;
+83;MVDr. Jana Lukešová;Veterina Smíchov;Na Skalce 991, 150 00 Praha 5-Smíchov;Praha 5;info@veterina-smichov.cz;602,355,496;www.veterina-smichov.cz;YES - email;
+84;MVDr. Minárik Richard;Veterinární klinika na H?rce;B?hounkova 2530, 158 00 Praha 13;Praha 5;vets4pets@seznam.cz;251,614,378;www.vets4pets.cz;YES - email;
+85;MVDr. Marta Kvas?ovská;Pemiumvet s.r.o.;M. Horákové 846, 170 00 Praha 7-Bubene?;Praha 7;koudelkova.marta@gmail.com;777469530;www.premiumvet.cz;YES - email;
+86;MVDr. Petr Hrabák;Veterinární Ordinace;Menšíkova 1156, 383 01 Prachatice;Prachatice;ordinace@mvdrhrabak.cz;388,317,544;www.mvdrhrabak.cz;YES - email;
+87;MVDr. Josef Pospíšilík;Veterinární klinika P?erov;Riedlova 9, P?erov, 750 02;P?erov;Josef.pospisilik@seznam.cz;777,662,061;www.veterinaprerov.cz;YES - call;
+88;MVDr. Tereza Lázni?ková ;Veterinární ordinace TerVet ;Dvo?ákova 486, 252 30 ?evnice;?evnice;tereza.laznickova@email.cz;607,106,741;www.tervet.cz;YES - call;
+89;MVDr. Kate?ina Fialová Lipnerová;Veterinární ordinace Canife;Na Závrtku 503, 285 06 Sázava;Sázava;vocanife@gmail.com;731,456,182;www.vocanife.cz;YES - call;
+90;MVDr. Klára Skali?ková ?iháková;Ordinace Jezvinka;Štíle?ek-Jizvinka 077, 264 01 Sedl?any;Sedl?any;veterinajezvinka@gmail.com;732,423,915;www.veterinajezvinka.cz;YES - call;
+91;MVDr. Petr Gargel;Veterinární klinika Sokolov;Tovární 1062, 356 01 Sokolov;Sokolov;gargelvet@gmail.com;352,601,240;www.veterinasokolov.cz;YES - email;
+92;MVDr. Martina Škrabalová;Veterinární ordinace Šternberk;Nádražní ulice 1617/1, 785 01 Šternberk;Šterberk;info@veterina-sternberk.cz;775,175,272;www.veterina-sternberk.cz;YES - email;
+93;Bc. Kristýna Ho?ejšová;Veterinární klinika Karakal;Petrohradská 2909, 390 03 Tábor;Tábor;veterina.karakal@seznam.cz;381,251,254;www.vetkarakal.cz;YES - call;
+94;MVDr. Libor Kacr;Trutnov - Vet s.r.o.;Polská 81, 541 01 Trutnov;Trutnov;trutnov-vet@seznam.cz;736,180,186;www.trutnov-vet.cz;YES - call;
+95;;Li-Vet s.r.o.;Pod Valy 1765, 688 01 Uherský Brod;Uherský Brod;info@li-vet.cz;739,462,823;www.li-vet.cz;YES - call;
+96;MVDr. Pavel Šindelá?;Veterinární ordinace Vamberk;Janá?kova 475, Vamberk, 51754;Vamberk;pavel.sind@post.cz;739,726,597;www.veterinavamberk.cz;YES - email;
+97;MVDr. Kamila K?upalová;Veterinární ordinace Hoš?álková;Smetanova 1131, 755 01 Vsetín;Vsetín;veterina.ratibor@seznam.cz;608,426,637;www.veterina.radmi.cz;YES - call;
+98;MVDr. Václav Vozák;VETERINÁRNÍ KLINIKA ZBIROW;Bezru?ova 357, 338 08 Zbiroh;Zbiroh;info@veterinavozak.com;602,432,180;www.veterinavozak.com;YES - call;
+99;MVDr. Melanie Moš?ková;VETERINÁRNÍ KLINIKA MEDIPET ZLÍN;Brou?kova 5395, 760 01 Zlín;Zlín;medipet@post.cz;602,716,839;www.medipet.cz;YES - call;
+100;MVDr. Petr Johanides;Veterinární klinika MVDr. Petr Johanides;Dvo?ákova 2289, 591 01 Ž?ár nad Sázavou;Ž?ár nad Sázavou;p.johanides@raz-dva.cz;603,282,266;www.veterinajohanides.cz;YES - call;

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+<body>
+
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <img src="" id="logo-svg">
+            </div>
+            <div id="user-container">
+                <div id='user-box'>
+                    <a href="/user/profile/"><div id='user-profile-img-container' ><img id='user-profile-img' src="/resources/img/placeholder.png" alt=""></div><span id="user-name"></span></a>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="page-body">
+    <div id="menu-wrap" class="menu-inactive">
+        <div id="menu-container">
+            <nav id="navigation">
+                <ul id="navigation-ul">
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/"><div><i class="fas fa-home"></i> Home</div></a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/profile/"><div><i class="fas fa-user-circle"></i> Profile</div></a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/reports/"><div><i class="fas fa-chart-pie"></i> Reports</div></a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/updates/"><div><i class="fas fa-file-upload"></i> Updates</div></a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/media-plan/"><div><i class="far fa-calendar"></i> Media plan</div></a>
+                    </li>
+                    <hr>
+                    <!-- <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/tasks/"><div><i class="fas fa-tasks"></i> Tasks</div></a>
+                    </li>
+                    <hr> -->
+                    <!-- <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/support/"><div><i class="far fa-question-circle"></i> Support</div></a>
+                    </li> -->
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="page-wrap" class="page-wrap-inactive-menu">
+        <div id="page-container">
+
+            <h2>Tasks</h2>
+            <div id="calendar-controls">
+                <div id="calendar-btns2">
+                
+                    <select id="projectSelector-client">
+                    
+                    </select>
+
+                    <div onclick="newProject()" id="new-project-button-client">
+                        <i class="fas fa-project-diagram"></i> <span> New project</span>
+                    </div>
+
+                    <!-- <div onclick="editProject()" id="edit-project-button-client">
+                        <i class="fas fa-edit"></i></i><span> Edit project</span>
+                    </div> -->
+                    
+                    <div onclick="newTask()" id="new-task-button-client">
+                        <i class="fas fa-plus"></i><span> New task</span>
+                    </div>
+                    
+                </div>
+                
+          
+            </div>
+            
+            <div id='view-task-content'>
+
+                
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-new-project" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class="btns-box"><i onclick="resetNewProject()" class="fas fa-sync-alt"></i><i onclick='closeNewProject()' class='fas fa-times'></i></div>
+                <form id="new-project-form" method="post" enctype="multipart/form-data">
+                    
+                    
+                    <div class="input-container">
+                        <label>Title</label>
+                        <input type="text" id="new-project-title" name="title">
+                    </div>
+                    
+                    <div class='input-container'>
+                        <label>Project type</label>
+                        <select name="type" id="type-selector">
+                            <option value="0" id="type0">Custom</option>
+                            <option value="1" id="type1">Campanie cu premii</option>
+                            <option value="2" id="type2">Website development</option>
+                            <option value="3" id="type3">Materiale comunicare</option>
+                            <option value="4" id="type4">Activare BTL</option>
+                            <option value="5" id="type5">Campanie de performance marketing</option>
+                            <option value="6" id="type6">Activare on-line</option>
+                            <option value="7" id="type7">Platforma on-line</option>
+                        </select>
+                    </div>
+
+                    <div class="input-container">
+                        <label>Description</label>
+                        <textarea name="text" id="new-project-text"></textarea>
+                    </div>
+
+
+                    <button class="form-button" type='submit'>send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="modal-edit-project" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class="btns-box-rigth"><i onclick='closeEditProject()' class='fas fa-times'></i></div>
+                <form id="edit-project-form" method="post" enctype="multipart/form-data">
+                    
+                    <input type="text" name='projectId' id="edit-project-projectId" readonly hidden>
+                    <input type="text" name='clientId' id="edit-project-clientId" readonly hidden>
+                    <div class="input-container">
+                        <label>Title</label>
+                        <input type="text" id="edit-project-title" name="title">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label>Description</label>
+                        <textarea name="text" id="edit-project-text"></textarea>
+                    </div>
+                    <div class="input-container">
+                        <label>Project status</label>
+                        <input type="text" name="status" id="edit-project-status"></input>
+                    </div>
+
+                    <div class="input-container">
+                        <label>End date</label>
+                        <div class="container-flex">
+                            <input type="date" id="edit-project-date" name="enddate">
+                        </div>
+                    </div>
+
+
+                    <button class="form-button" type='submit'>send</button>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div id="modal-new-task" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class="btns-box"><i onclick="resetNewTask()" class="fas fa-sync-alt"></i><i onclick='closeNewTask()' class='fas fa-times'></i></div>
+                <form id="new-task-form" method="post" enctype="multipart/form-data">
+                    
+                    <input type="text" name='projectId' id="new-task-projectId" readonly hidden>
+                    <div class="input-container">
+                        <label>Title</label>
+                        <input type="text" id="new-task-title" name="title">
+                    </div>
+                    <div class='input-container'>
+                        <label>Select icon</label>
+                        <div id="input-platforms">
+                            <div class="input-icon-box">
+                                <input type="radio" name="icon" value='<i class="fas fa-project-diagram"></i>'>
+                                <label>
+                                    <i class="fas fa-project-diagram"></i>Project
+                                </label>
+                                
+                            </div>
+                            <div class="input-icon-box">
+                                <input type="radio" name="icon" value='<i class="fas fa-paint-brush"></i>'>
+                                <label>
+                                    <i class="fas fa-paint-brush"></i>Design
+                                </label>
+                                
+                            </div>
+                            <div class="input-icon-box">
+                                <input type="radio" name="icon" value='<i class="fas fa-code"></i>'>
+                                <label>
+                                    <i class="fas fa-code"></i>Code
+                                </label>
+                                
+                            </div>
+                            <div class="input-icon-box">
+                                <input type="radio" name="icon" value='<i class="fas fa-trophy"></i>'>
+                                <label>
+                                    <i class="fas fa-trophy"></i>Winners
+                                </label>
+                                
+                            </div>
+                            <div class="input-icon-box">
+                                <input type="radio" name="icon" value='<i class="fas fa-chart-pie"></i>'>
+                                <label>
+                                    <i class="fas fa-chart-pie"></i>Reports
+                                </label>
+                                
+                            </div>
+                            <div class="input-icon-box">
+                                <input type="radio" name="icon" value='<i class="fas fa-users"></i>'>
+                                <label>
+                                    <i class="fas fa-users"></i>Human resources
+                                </label>
+                                
+                            </div>
+                            <div class="input-icon-box">
+                                <input type="radio" name="icon" value='<i class="fas fa-share-alt"></i>'>
+                                <label>
+                                    <i class="fas fa-share-alt"></i>Social Media
+                                </label>
+                                
+                            </div>
+                            <div class="input-icon-box">
+                                <input type="radio" name="icon" value='<i class="fas fa-dollar-sign"></i>'>
+                                <label>
+                                    <i class="fas fa-dollar-sign"></i>Buget
+                                </label>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="input-container">
+                        <label>Description</label>
+                        <textarea name="text" id="new-task-text"></textarea>
+                    </div>
+
+                    <div class="input-container">
+                        <label>End date</label>
+                        <div class="container-flex">
+                            <input type="date" id="new-task-date" name="enddate">
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <label>File</label>
+                        <input type="file" name='files' id="new-file" multiple>
+                    </div>
+
+
+                    <button class="form-button" type='submit'>Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="modal-edit-task" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class="btns-box-rigth"><i onclick='closeEditTask()' class='fas fa-times'></i></div>
+                <form id="edit-task-form" method="post" enctype="multipart/form-data">
+                    
+                    <input type="text" name='taskId' id="edit-task-id" readonly hidden>
+                    <input type="text" name='projectId' id="edit-task-projectId" readonly hidden>
+                    <div class="input-container">
+                        <label>Title</label>
+                        <input type="text" id="edit-task-title" name="title">
+                    </div>
+                    <div class='input-container'>
+                        <label>Select icon</label>
+                        <div id="input-platforms">
+                            <div class="input-platform-box">
+                                <input type="radio" id='edit-task-icon-1' name="icon" value='<i class="fas fa-project-diagram"></i>'>
+                                <label>
+                                    <i class="fas fa-project-diagram"></i>Project
+                                </label>
+                            </div>
+                            <div class="input-platform-box">
+                                <input type="radio" id='edit-task-icon-2' name="icon" value='<i class="fas fa-paint-brush"></i>'>
+                                <label>
+                                    <i class="fas fa-paint-brush"></i>Design
+                                </label>
+                            </div>
+                            <div class="input-platform-box">
+                                <input type="radio" id='edit-task-icon-3' name="icon" value='<i class="fas fa-code"></i>'>
+                                <label>
+                                    <i class="fas fa-code"></i>Code
+                                </label>
+                            </div>
+                            <div class="input-platform-box">
+                                <input type="radio" id='edit-task-icon-4' name="icon" value='<i class="fas fa-trophy"></i>'>
+                                <label>
+                                    <i class="fas fa-trophy"></i>Winners
+                                </label>
+                            </div>
+                            <div class="input-platform-box">
+                                <input type="radio" id='edit-task-icon-5' name="icon" value='<i class="fas fa-chart-pie"></i>'>
+                                <label>
+                                    <i class="fas fa-chart-pie"></i>Reports
+                                </label>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <div class="input-container">
+                        <label>Description</label>
+                        <textarea name="text" id="edit-task-text"></textarea>
+                    </div>
+
+                    <div class="input-container">
+                        <label>End date</label>
+                        <div class="container-flex">
+                            <input type="date" id="edit-task-date" name="enddate">
+                        </div>
+                    </div>
+
+
+                    <button class="form-button" type='submit'>Send</button>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="modal-comments-task" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class="btns-box-rigth"><i onclick='closeComments()' class='fas fa-times'></i></div>
+                <div id="comments-container">
+
+                </div>
+                <form id="new-comment-form" method="post" enctype="multipart/form-data">
+                    
+                    <input type="text" name='taskId' id="new-comment-task-id" readonly hidden>
+                    <input type="text" name='projectId' id="new-comment-task-projectId" readonly hidden>
+                    
+                    <div class="input-container">
+                        <label>Text</label>
+                        <textarea name="text" id="new-comment-task-text" required></textarea>
+                    </div>
+                    <button class="form-button" type='submit'>Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-popup">
+        <div id="success-popup-container">
+            <div class="popup-icon green"><i class="fas fa-check"></i></div>
+            <div>
+                <div>
+                    <h4>Success!</h4>
+                </div>
+                <div>
+                    <p></p>
+                </div>
+            </div>
+            <div><i onclick="closePopup()" class="cursor-pointer fas fa-times"></i></div>
+        </div>
+
+    </div>
+
+    <div id="fail-popup">
+        <div id="fail-popup-container">
+            <div class="popup-icon red"><i class="fas fa-times"></i></div>
+            <div>
+                <div>
+                    <h4>Fail!</h4>
+                </div>
+                <div>
+                    <p id="error"></p>
+                </div>
+            </div>
+            <div><i onclick="closePopup()" class="cursor-pointer fas fa-times"></i></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+
+</script>
+
+
+<script src="../user-js/logout.js"></script>
+<script src="../user-js/session.js"></script>
+<script src="../user-js/set-logo-svg.js"></script>
+
+<script src="../user-js/get-tasks.js"></script>
+
+<script src="../user-js/menu.js"></script>
+
+
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/flash.css">
+</head>
+
+
+
+<body>
+    
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="notification-corner">
+        
+    </div>
+    <div id="page-body">
+        <div id="menu-wrap" class="menu-inactive">
+            <div id="menu-container">
+                <nav id="navigation">
+                    <ul id="navigation-ul">
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/"><i class="fa-solid fa-house-chimney"></i>&nbsp;Home</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/media-plan/"><i class="fa-solid fa-photo-film"></i>&nbsp;Media plan</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/tasks/"><i class="fa-solid fa-list-check"></i>&nbsp;Tasks</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-people-arrows-left-right"></i>&nbsp;CRM</a>
+                            
+                            <ul id="crm-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/"><i class="fa-solid fa-list-ul"></i>&nbsp;To do</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/proforme/"><i class="fa-solid fa-receipt"></i>&nbsp;Proforms</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/invoices/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;Invoices</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/xml-to-pdf/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;XML to PDF</a>
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a>
+                            
+                            <ul id="settings-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/admins/"><i class="fa-solid fa-user-gear"></i>&nbsp;Admins</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/roles"><i class="fa-solid fa-star"></i>&nbsp;Roles</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/account-settings/"><i class="fa-solid fa-sliders"></i>&nbsp;Account settings</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    <!-- <div id="cutie">
+        <div class="form-box">
+            <div class="form-container">
+                <form action=""class="form">
+                    <div class="input-container">
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="input-container">
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="input-container">
+                        <input type="text" name="" id="">
+                    </div>
+                    <button>da</button>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+        <div id="page-wrap" class="page-wrap-inactive-menu">
+            <div id="page-container">
+
+                <div class="crm-info-box-header">
+                    <h1>Clients</h1>
+
+                    <div class="crm-long-btn" style="background-color: #6baa41;text-decoration: none;" onclick="openNewClient()" id="add-client-btn" href="/admin/roles/new-role/">
+                        <span>Client nou&nbsp;</span><i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div style="display:flex;align-items: center;">
+                    <i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <input type="text" oninput="filterTable();" placeholder="Nume" id="name-filter-search">
+                    </div>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <input type="text"  id="company-filter-search" oninput="filterTable();" placeholder="Companie">
+                    </div>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <select onchange="filterTable()" id="status-filter-search">
+                            <option value="all" selected>Toti</option>
+                            <option value="1">Client</option>
+                            <option value="2">Prospect</option>
+                            <option value="3">Cold lead</option>
+                            <option value="4">Hot lead</option>
+                            <option value="0">Closed</option>
+                        </select>
+                    </div>
+                    
+                    
+                </div>
+                <table id="client-table" class="client-file-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nume</th>
+                            <th>Companie</th>
+                            <!-- <th>Email</th>
+                            <th>Telefon</th> -->
+                            <th>Actiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="client-table-body">
+                        <!-- <tr>
+                            <td>"+i+"</td>
+                            <td>"+response[i].name+"</td>
+                            <td>"+response[i].company+"</td>
+                            <td><a href='mailto: "+response[i].email+"'>"+response[i].email+"</a></td>
+                            <td><a href='tel: "+response[i].telefon+"'>"+response[i].telefon+"</a>
+                            </td>
+                            <td>
+                                <div class='crm-action-box-btns'>
+                                    <a class='crm-btn' style='background-color: #3daad6;' href='/admin/crm/clients/client/?id="+response[i].id+"' title='Fisa client'>
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                    <a class='crm-btn' style='background-color: #8a1b7a;' href='/admin/media-plan/?client="+response[i].id+"' title='Media plan'>
+                                        <i class="fa-solid fa-photo-film"></i>
+                                    </a>
+                                    <a class='crm-btn' style='background-color: #969fb9;' href='/admin/crm/proforme/?id="+response[i].id+"' title='Proforme'>
+                                        <i class="fa-solid fa-receipt"></i>
+                                    </a>
+                                    <a class='crm-btn' style='background-color: #3daad6;' href='/admin/crm/invoices/?id="+response[i].id+"' title='Facturi'>
+                                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                                    </a>
+                                    <a class='crm-btn' style='background-color: #dea336;' href='/admin/crm/clients/client/modifica/?id="response[i].id"' title='Modifica client'>
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                    <div class='crm-btn' style='background-color: #d94e47;' onclick='' title='Sterge client'>
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </div>
+                                </div>
+                                
+                            </td>
+                        </tr> -->
+                    </tbody>
+
+                </table>
+
+            </div>
+            
+
+        </div>
+
+        <div id="modal-view-all" class="modal">
+            <div class="form-box">
+                <div class="form-container">
+                    <div class="btns-box-rigth">
+                        <i onclick="closeViewAllModal()" class=" fas fa-times"></i>
+                    </div>
+                    <div id="view-all-table-container">
+                        <table id="view-all-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Content
+                                    </th>
+                                    <th>
+                                        Edit
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="view-all-table-body">
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-new-update" class="modal">
+            <div class="form-box">
+                <div class="form-container">
+                    <div class="btns-box-rigth">
+                        <i onclick="closeNewUpdateModal()" class="fas fa-times"></i>
+                    </div>
+                    <form id="new-update-form" method="post" enctype="multipart/form-data">
+                        
+                        <h3>New update</h3><br><br>
+                        <div class="input-container">
+                            <input type="file" name="files" id="files" multiple>
+                        </div>
+                        <input type="text" name="unicId" hidden readonly id="unicId-field">
+                        <div class="input-container">
+                            <textarea name="update-description" id="update-description"></textarea>
+                        </div>
+        
+                        
+                        <button type="submit" name="submit" class="form-button">Send</button>
+                        <div id="file-list"> </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-edit-update" class="modal">
+            <div class="form-box">
+                <div class="form-container">
+                    <div class="btns-box-rigth">
+                        <i onclick="closeEditUpd()" class="fas fa-times"></i>
+                    </div>
+                    <form action="" method="post" id="edit-update-form" enctype="multipart/form-data">
+                        <input type="text" name='updateId' id='update-id' readonly hidden>
+                        <input type="text" name='clientId' id='edit-client-id' readonly hidden>
+                        <div class="input-container">
+                            <textarea name="edit-update-description" id="edit-update-description" cols="30" rows="10"></textarea>
+                            
+                        </div>
+                        <div id="edit-update-files">
+
+                        </div>
+                        <div class="input-container">
+                            <input type="file" id="edit-add-file" name="edit-add-file" multiple>
+                        </div>
+                        
+                        <button type="submit" name="submit" class="form-button">Send</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="modal-new-client" class="modal">
+            <div class="form-box">
+                <div class="form-container">
+                    <div class="btns-box-rigth">
+                        <i onclick="closeNewClient()" class="fas fa-times"></i>
+                    </div>
+                    <h2 style="text-align: center;">Adăugare client nou</h2>
+                    <form action="" method="POST" id="create-client-account-form">
+
+                        <div id="form-content">
+                            <!-- <div class="input-container">
+                                <div id="asign-admin-box">
+                                    
+                                </div>
+                                
+                            </div> -->
+                            <div class="form-row-wrap">
+                                
+                                <div class="input-container">
+                                    <select name="client-at" id="client-at-selector" required>
+                                        <option value="" disabled selected>Client la</option>
+                                        <option>diclick</option>
+                                        <option>diagency</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row-wrap">
+
+                                <div class="input-container">
+                                    <select name="client-client-service-admin" id="client-client-service-admin">
+                                        <option value="" disabled selected>Rensponsabil client service</option>
+                                    </select>
+
+                                </div>
+                                <div class="input-container">
+                                    <select name="client-sales-admin" id="client-sales-admin">
+                                        <option value="" disabled selected>Responsabil sales</option>
+                                    </select>
+                                    
+                                </div>
+                                <div class="input-container">
+                                    <select name="client-performance-admin" id="client-performance-admin">
+                                        <option value="" disabled selected>Responsabil performance marketing</option>
+                                    </select>
+                                    
+                                </div>
+
+
+                            </div>
+                            <div class="form-row-wrap">
+                                <div class="input-container">
+                                    <input type="text" name="client-name" id="new-account-client-name"
+                                        placeholder="Denumire brand" title="Denumirea brand-ului (intern)" required>
+                                </div>
+                                <div class="input-container">
+                                    <!-- <input type="text" name="client-function" id="new-account-client-function"
+                                        placeholder="Client function"> -->
+
+                                    <select name="client-status" id="new-account-client-status" placeholder="Status" required>
+                                        <option value="" disabled selected>Status</option>
+                                        <option value="2">Prospect</option>
+                                        <option value="3">Cold lead</option>
+                                        <option value="4">Hot lead</option>
+                                        <option value="1">Client</option>
+                                    </select>
+                                </div>
+                                <div class="input-container">
+                                    <input type="text" name="client-company" id="new-account-client-company"
+                                        placeholder="Denumire firmă" required>
+                                </div>
+                                <div class="input-container">
+                                    <input type="text" name="client-cod-fiscal" id="new-account-client-cod-fiscal"
+                                        placeholder="Cod fiscal" >
+                                </div>
+                                <div class="input-container">
+                                    <input type="text" name="client-nr-reg-comert" id="new-account-client-nr-reg-comert"
+                                        placeholder="Nr. reg. comerț" >
+                                </div>
+                                <div class="input-container">
+                                    <input type="text" name="client-billing-adress" id="new-account-client-billing-adress"
+                                        placeholder="Adresa de facturare" >
+                                </div>
+                                <div class="input-container">
+                                    <input type="text" name="client-billing-locality" id="new-account-client-billing-locality"
+                                        placeholder="Localitatea de facturare">
+                                </div>
+                                <div class="input-container">
+                                    <input type="text" name="client-billing-county" id="new-account-client-billing-county"
+                                        placeholder="Județ de facturare" >
+                                </div>
+                                
+                                <div class="input-container">
+                                    <input type="text" name="client-billing-country" id="new-account-client-billing-country"
+                                        placeholder="Țara de facturare" required>
+                                </div>
+                            
+                                <div class="input-container">
+                                    <select name="client-category" id="new-account-client-category" placeholder="Categorie" required>
+                                        <option value="" disabled selected>Categorie</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        
+                                    </select>
+                                </div>
+                                <div class="input-container">
+                                    <select name="client-language" id="new-account-client-language" required>
+                                        <option value="" disabled selected>Limbă</option>
+                                        <option value='1'>Română</option>
+                                        <option value='2'>English</option>
+                                    </select>
+                                </div>
+                                <div class="input-container">
+                                    <input type="text" name="client-source" id="new-account-client-source"
+                                        placeholder="Sursa" >
+                                </div>
+                            </div>
+                            <div class="form-row-wrap">
+                                <div class="input-container">
+                                    <input type="url" name="client-source-url" id="new-account-client-source-url"
+                                        placeholder="URL sursa" >
+                                </div>
+                            </div>
+                            
+
+                            <div style="width: 90%;border-top:2px solid #1a1a1a;border-bottom: 2px solid #1a1a1a;padding: 5px 0;">
+                                <div class="crm-info-box-header">
+                                    <h3>Persoane de contact</h3>
+                                    <div>
+                                        <button type="button" class="crm-long-btn green-btn" onclick="addNewContactPerson()"><i class="fa-solid fa-plus"></i>&nbsp;Adaugă</button>
+                                    </div>
+                                </div>
+                                <div id="new-client-contact-person">
+                                                                      
+                                    <!--<div style="display: flex;">
+                                        <h4>Persoana de contact '+index+'</h4> <i onclick="deleteContactPerson(\'person'+personId+'\')"
+                                            class="fa-solid fa-trash-can"></i>
+                                    </div>
+                                    <div class="form-row-wrap">
+                                         <div class="input-container">
+                                        <input type="text" name="person-id" value="person'+personId+'" hidden>    
+                                        <label>Nume</label> <input type="text" name="person-nume-'+personId+'" id="new-person-nume"
+                                                placeholder="Introdu nume"> </div>
+                                        <div class="input-container"> <label>Prenume</label> <input type="text" name="person-prenume-'+personId+'"
+                                                id="new-person-prenume" placeholder="Introdu prenume"> </div>
+                                        <div class="input-container"> <label>Functie</label> <input type="text" name="person-functie-'+personId+'"
+                                                id="new-person-functie" placeholder="Introdu functie"> </div>
+                                    </div>
+                                    </div>
+                                    <div class="form-row-wrap">
+                                        <div class="input-container"> <label>Email</label> <input type="email" name="person-email-'+personId+'" id="new-person-email"
+                                                placeholder="Introdu email"> </div>
+                                        <div class="input-container"> <label>Telefon</label> <input type="text" name="person-telefon-'+personId+'"
+                                                id="new-person-telefon" placeholder="Introdu telefon"> </div>
+                                        <div class="input-container">
+                                            <div> <input type="checkbox" style="width: max-content;" name="new-person-decident-'+personId+'" id="new-person-decident">
+                                                <label for="new-person-decident">Este decident?</label> </div>
+                                        </div>
+                                     -->
+                                </div>
+                            </div>
+
+                            <div style="width: 90%;border-bottom: 2px solid #1a1a1a;padding: 5px 0;">
+                                <div class="crm-info-box-header">
+                                    <h3>Adrese de email</h3>
+                                    <div>
+                                        <button type="button" class="crm-long-btn green-btn" onclick="addNewEmailAdress()"><i class="fa-solid fa-plus"></i>&nbsp;Adaugă</button>
+                                    </div>
+                                </div>
+                                <div id="new-client-email-adress">
+                                    <!-- <div style="display: flex;"> <h4>Email '+index+'</h4> <i onclick="deleteEmailAdress(\'email'+emailId+'\')" class="fa-solid fa-trash-can"></i> </div>
+                                    <input type="text" name="email-id[]" hidden value="'+emailId+'">
+                                    <div class="form-row-wrap">
+                                        <div class="input-container">
+                                            <label>Adresa de email</label>
+                                            <input type="email" name="new-email-'+emailId+'" id="new-email" placeholder="Introdu adresa de email" required>
+                                            
+                                        </div>
+                                        <div class="input-container">
+                                            <div>
+                                                <input type="checkbox" name="new-billing-email-'+emailId+'" id="new-billing-email" placeholder="Mail de facturare" style="width: max-content;">
+                                                <label for="">Mail de facutare</label>
+                                                
+                                            </div>
+                                            
+                                        </div>
+
+                                    </div> -->
+                                    
+                                        
+                                </div>
+                            </div>
+
+                               
+                            <!-- <div class="form-row-wrap">
+                                <div class="input-container">
+                                    <input type="email" name="client-email" id="new-account-client-email"
+                                        placeholder="Client email" required>
+                                </div>
+                                <div class="input-container">
+                                    <input type="text" name="client-phone" id="new-account-client-phone"
+                                        placeholder="Client phone number" required>
+                                </div>
+                                <div class="input-container">
+                                    <input type="text" name="client-username" id="new-account-client-username"
+                                        placeholder="Username" required>
+                                </div>
+                                <div class="input-container">
+                                    <input type="text" name="client-password" id="new-account-client-password"
+                                        placeholder="Password" required>
+                                </div>
+                            </div>
+                                                    -->
+                            <!-- <div>
+                                <div class="form-button-long" onclick="generatePassword(1)">Generate password</div>
+                            </div> -->
+
+                            <!-- <div class="input-container">
+                                <input type="text" name="client-gds" id="new-account-client-gds"
+                                    placeholder="Google Data Studio Report Link">
+                            </div>
+                            <div class="input-container">
+                                <input type="text" name="client-fbds" id="new-account-client-fbds"
+                                    placeholder="Facebook Report Link">
+                            </div> -->
+                            <div class="btn-container">
+                                <button class="form-button" type="submit" name="submit" id="new-client-account-btn-submit">Adaugă</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div id="loading-screen">
+
+            <img src="/resources/img/di-logo.svg" id="di-logo-loading" alt="">
+            <span>Loading</span>
+        </div>
+
+
+</body>
+
+
+
+<script src="../admin-js/logout.js"></script>
+<script src="../admin-js/session.js"></script>
+<script src="../admin-js/get-clients.js"></script>
+
+<script src="../admin-js/menu.js"></script>
+
+
+</html>

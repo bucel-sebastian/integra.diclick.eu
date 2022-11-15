@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "flexbox.css",
+	"sources": [
+		"../scss/flexbox.scss"
+	],
+	"sourcesContent": [
+		"\r\n\r\n.row{\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.col{\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.space-between-center{\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    align-content: center;\r\n}"
+	],
+	"names": [],
+	"mappings": ";AAEA,AAAA,IAAI,CAAA;EACA,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;CACtB;;;AAED,AAAA,IAAI,CAAA;EACA,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CACzB;;;AAED,AAAA,qBAAqB,CAAA;EACjB,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;EACnB,aAAa,EAAE,MAAM;CACxB"
+}

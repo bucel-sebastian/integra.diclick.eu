@@ -1,0 +1,3155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <!-- CSS StylSheets -->
+     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+     <link rel="stylesheet" type="text/css" href="/resources/css/buttons.css">
+     <link rel="stylesheet" type="text/css" href="/resources/css/flexbox.css">
+     <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+     <link href="/resources/assets/fontawesome/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+    
+
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="notification-corner">
+        
+    </div>
+    <div id="page-body">
+        <div id="menu-wrap" class="menu-inactive">
+            <div id="menu-container">
+                <nav id="navigation">
+                    <ul id="navigation-ul">
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/"><i class="fa-solid fa-house-chimney"></i>&nbsp;Home</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/media-plan/"><i class="fa-solid fa-photo-film"></i>&nbsp;Media plan</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/tasks/"><i class="fa-solid fa-list-check"></i>&nbsp;Tasks</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-people-arrows-left-right"></i>&nbsp;CRM</a>
+                            
+                            <ul id="crm-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/"><i class="fa-solid fa-list-ul"></i>&nbsp;To do</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/proforme/"><i class="fa-solid fa-receipt"></i>&nbsp;Proforms</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/invoices/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;Invoices</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/xml-to-pdf/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;XML to PDF</a>
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a>
+                            
+                            <ul id="settings-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/admins/"><i class="fa-solid fa-user-gear"></i>&nbsp;Admins</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/roles"><i class="fa-solid fa-star"></i>&nbsp;Roles</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/account-settings/"><i class="fa-solid fa-sliders"></i>&nbsp;Account settings</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="page-wrap" class="page-wrap-inactive-menu">
+            <div id="page-container">
+                <div class="crm-info-box-header">
+                    <h1>CRM - Fișa clientului</h1>
+                    <div class="crm-action-box-btns" >
+                        <a href="" id="client-new-proform-link" style="text-decoration: none;">
+                            <div class="crm-long-btn" style="background-color:#6baa41">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;Emite proforma noua
+                            </div>
+                        </a>
+                        <a href="" id="client-proforms-link" style="text-decoration: none;">
+                            <div class="crm-long-btn" style="background-color:#8a1b7a">
+                                <i class="fas fa-eye"></i>&nbsp;Proforme
+                            </div>
+                        </a>
+                        <a href="" id="client-invoices-link" style="text-decoration: none;">
+                            <div class="crm-long-btn" style="background-color:#3daad6">
+                                <i class="fas fa-eye"></i>&nbsp;Facturi
+                            </div>
+                        </a>
+                        <a href="" id="crm-edit-btn" style="text-decoration: none;">
+                            <div class="crm-long-btn"  style="background-color: #dea336;">
+                                <i class="fa-solid fa-pen-to-square"></i>&nbsp;Modifica
+                            </div>
+                        </a>
+                        <div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id='crm-client-file'>
+                    <div class="crm-info-box-header" style="cursor: initial;">
+                        <div style="width:50%">
+                            <h2 id="crm-client-file-client-name"></h2>
+                            <table class="client-file-table">
+                                <tbody>
+                                    <tr class="client-file-left-tr">
+                                        <td id="crm-client-file-service-admin"></td>
+                                        <td id="crm-client-file-sales-admin"></td>
+                                        <td id="crm-client-file-performance-admin"></td>
+                                    </tr>
+                                    <tr class="client-file-left-tr">
+                                        
+                                        <td id="crm-client-file-status"></td>
+                                        
+                                        <td id="crm-client-file-categorie"></td>
+                                        
+                                        
+                                    </tr>
+                                    <tr class="client-file-left-tr">
+                                        <td>Firma</td>
+                                        <td id="crm-client-file-firma"></td>
+                                    </tr>
+                                    <tr class="client-file-left-tr">
+                                        <td>Cod Fiscal</td>
+                                        <td id="crm-client-file-cod-fiscal"></td>
+                                    </tr>
+                                    <tr class="client-file-left-tr">
+                                        <td>Nr. Reg. Comert</td>
+                                        <td id="crm-client-file-nr-reg-com"></td>
+                                    </tr>
+                                    <tr class="client-file-left-tr">
+                                        <td>Sursa</td>
+                                        <td id="crm-client-file-sursa"></td>
+                                    </tr>
+                                    <tr class="client-file-left-tr">
+                                        <td>Adresa de facturare</td>
+                                        <td id="crm-client-file-adresa-fact"></td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            
+                            <!-- <span id="crm-client-file-status"></span> -->
+                            <!-- <span id="crm-client-file-categorie"></span> -->
+                            <!-- <span id="crm-client-file-admin"></span> -->
+
+                            <!-- <p ></p> -->
+                            <!-- <p id="crm-client-file-cod-fiscal"></p> -->
+                            <!-- <p></p> -->
+                            <!-- <p></p>
+                            <p></p>
+                            <p>Telefon - <a></a></p> -->
+                        </div>
+                        <div style="width:50%;display: flex;justify-content: flex-end;">
+                            <img src="" id="crm-client-file-logo" alt="Logo" style="max-height: 150px;">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientContracts()">
+                            <h2><i class="fa-solid fa-file-contract"></i> Contract</h2>
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-contracts" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openNewContract()" id="new-contract-btn" class="long-rectang-btn green-btn">
+                                    <i class="fa-solid fa-plus"></i>&nbsp;Adauga contract
+                                </div>
+                                <div onclick="event.stopPropagation();openEditContract()" id="edit-contract-btn"  class="long-rectang-btn yellow-btn">
+                                    <i class="fa-solid fa-file-pen"></i>&nbsp;Modifica contract
+                                </div>
+                                <div onclick="event.stopPropagation();openViewContracts()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="client-contracts-acordion" style="overflow:hidden;transition:0.3s ease;">   
+                            <div id="crm-client-file-contracts">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientAnexe()">
+                            <h2><i class="fa-solid fa-file-contract"></i> Anexe</h2>
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-anexe" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openViewAnexe()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="client-anexe-acordion" style="overflow:hidden;transition:0.3s ease;">   
+                            <div id="crm-client-file-anexe">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientEmails()">
+                            <h2><i class="fas fa-at"></i> Adrese de Email</h2>
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-emails" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openEditEmails()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="client-emails-acordion" style="overflow:hidden;transition:0.3s ease;">
+                            <table class="client-file-table">
+                                <thead>
+                                    <tr>
+                                        <th>Email</th>
+                                        <th>Email de facturare</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody id="crm-client-file-emails">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientWebsites()">
+                            <h2><i class="fas fa-globe-americas"></i> Website-uri</h2> 
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-websites" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openEditWebsites()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="client-websites-acordion" style="overflow:hidden;transition:0.3s ease;">
+                            <table class="client-file-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nume</th>
+                                        <th>URL</th>
+                                        <th>Tip</th>
+                                        <th>Domeniu</th>
+                                        <th>URL admin</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody id="crm-client-file-websites">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientPersons()">
+                            <h2><i class="fas fa-users"></i> Persoane de contact</h2>
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-persons" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openEditPers()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="client-persons-acordion" style="overflow:hidden;transition:0.3s ease;">
+                            <table class="client-file-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nume</th>
+                                        <th>Functie</th>
+                                        <th>Este decident</th>
+                                        <th>Tip de persoana</th>
+                                        <th>Email</th>
+                                        <th>Telefon</th>
+                                        
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody id="crm-client-file-pers">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="crm-info-box">
+
+                        <div>
+                            <div class="crm-info-box-header" onclick="toggleClientActions()">
+                                <h2><i class="fa-solid fa-list-check"></i> Actiuni</h2>
+                                <div class="crm-action-box-btns">
+                                    <div id="acordion-arrow-actions" style="transition: 0.3s ease;margin:0 10px">
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                    <div onclick="event.stopPropagation();newAction()" class="crm-long-btn" style="background-color:#6baa41">
+                                        <i class="fa-solid fa-plus"></i>&nbsp;Actiune noua
+                                    </div>
+                                    <a id="view-all-actions-link" href="" style="text-decoration:none" onclick="event.stopPropagation();">
+                                        <div class="crm-long-btn" style="background-color:#3daad6">
+                                            <i class="fas fa-eye"></i>&nbsp;Vezi toate
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            
+
+                            <div id="client-actions-acordion" style="overflow:hidden;transition:0.3s ease;">
+                                
+                                
+                                <table class="client-file-table" id="action-table">
+
+                                    <thead>
+                                        <tr>
+                                            <th>data</th>
+                                            <th>timp</th>
+                                            <th>Actiune</th>
+                                            <th>Rezultat</th>
+                                            <th>Observatii rezultat</th>
+                                            <th>status</th>
+                                            <th>Documente atasate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="action-table-body">
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+
+
+                    <!-- Conturi Social media -->
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientSmAccounts()">
+                            <h2><i class="fa-solid fa-hashtag"></i> Conturi de social media</h2>
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-sm-accounts" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openSmAccounts()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="client-sm-accounts-acordion" style="overflow:hidden;transition:0.3s ease;">
+                            <table class="client-file-table">
+                                <thead>
+                                    <tr>
+                                        <th>Retea</th>
+                                        <th>Nume</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody id="crm-client-file-sm-accounts">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <!-- Obiective -->
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientObjectives()">
+                            <h2><i class="fa-solid fa-flag"></i> Obiective</h2>
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-objectives" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openObjectives()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="client-objectives-acordion" style="overflow:hidden;transition:0.3s ease;">
+                            <table class="client-file-table">
+                                <thead>
+                                    <tr>
+                                        <th>Obiective generale</th>
+                                        <th>Obiective pe perioada</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody id="crm-client-file-objectives">
+                                    <tr>
+                                        <td id="crm-client-file-objectives-left"style='vertical-align: top;'>
+
+                                        </td>
+                                        <td id="crm-client-file-objectives-right">
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <!-- Setari -->
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientSettings()">
+                            <h2><i class="fa-solid fa-sliders"></i> Setari</h2>
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-settings" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openSettings()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="client-settings-acordion" style="overflow:hidden;transition:0.3s ease;">
+                            <table class="client-file-table">
+                                <thead>
+                                    <tr>
+                                        <th>Retea</th>
+                                        <th>Tip setare</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody id="crm-client-file-settings">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Media plan -->
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientMediaplan()">
+                            <h2><i class="fa-solid fa-photo-film"></i> Media plan</h2>
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-mediaplan" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openMediaplan()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div id="client-mediaplan-acordion" style="overflow:hidden;transition:0.3s ease;display: flex;flex-direction: row;flex-wrap: no-wrap;justify-content: space-between;">
+                            <div style="width:49%;margin-top:10px">
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0">
+                                    <div onclick="toggleMediaplanMonthAcordion(0)" class="crm-info-box-header">
+                                        <h3>Ianuarie</h3>
+                                    </div>
+                                    <div id="client-mediaplan-acordion-ian">
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-0">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0">
+                                    <div onclick="toggleMediaplanMonthAcordion(2)" class="crm-info-box-header">
+                                        <h3>Martie</h3>
+                                    </div>
+                                    <div id="client-mediaplan-acordion-mar">
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-2">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0" >
+                                    <div onclick="toggleMediaplanMonthAcordion(4)" class="crm-info-box-header">
+                                        <h3>Mai</h3>
+                                    </div>
+                                    <div id="client-mediaplan-acordion-mai">
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-4">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0">
+                                    <div onclick="toggleMediaplanMonthAcordion(6)" class="crm-info-box-header">
+                                        <h3>Iulie</h3>
+    
+                                    </div>
+                                    <div id="client-mediaplan-acordion-iul">
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-6">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0">
+                                    <div onclick="toggleMediaplanMonthAcordion(8)" class="crm-info-box-header">
+                                        <h3>Septembrie</h3>
+                                    </div>
+                                    <div id="client-mediaplan-acordion-sep">
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-8">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0">
+                                    <div onclick="toggleMediaplanMonthAcordion(10)" class="crm-info-box-header">
+                                        <h3>Noiembrie</h3>
+                                    </div>
+                                    <div id="client-mediaplan-acordion-nov">
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-10">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width:49%;margin-top:10px">
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0">
+                                    <div onclick="toggleMediaplanMonthAcordion(1)" class="crm-info-box-header">
+                                        <h3>Februarie</h3>
+                                    </div>
+                                    <div id="client-mediaplan-acordion-feb">
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-1">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0">
+                                    <div onclick="toggleMediaplanMonthAcordion(3)" class="crm-info-box-header">
+                                        <h3>Aprilie</h3>
+                                    </div>
+                                    <div id="client-mediaplan-acordion-apr">
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-3">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0">
+                                    <div onclick="toggleMediaplanMonthAcordion(5)" class="crm-info-box-header">
+                                        <h3>Iunie</h3>
+                                    </div>
+                                    <div id="client-mediaplan-acordion-iun">
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-5">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0">
+                                    <div onclick="toggleMediaplanMonthAcordion(7)" class="crm-info-box-header">
+                                        <h3>August</h3>
+                                    </div>
+                                    <div id="client-mediaplan-acordion-aug">
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-7">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0">
+                                    <div onclick="toggleMediaplanMonthAcordion(9)" class="crm-info-box-header">
+                                        <h3>Octombrie</h3>
+                                    </div>
+                                    <div id="client-mediaplan-acordion-oct" >
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-9">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:15px 0">
+                                    <div onclick="toggleMediaplanMonthAcordion(11)" class="crm-info-box-header">
+                                        <h3>Decembrie</h3>
+                                    </div>
+                                    <div  id="client-mediaplan-acordion-dec">
+                                        <table class="client-file-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Retea</th>
+                                                    <th>Tip content</th>
+                                                    <th>Frecventa</th>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody id="crm-client-file-mediaplan-11">
+            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <!-- <table class="client-file-table">
+                                <thead>
+                                    <tr>
+                                        <th>Retea</th>
+                                        <th>Tip content</th>
+                                        <th>Frecventa</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody id="crm-client-file-mediaplan">
+
+                                </tbody>
+                            </table> -->
+                        </div>
+                    </div>
+
+
+
+                    <!-- Buget -->
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientBuget()">
+                            <h2><i class="fa-solid fa-dollar-sign"></i> Buget</h2>
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-buget" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openBuget()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="client-buget-acordion" style="overflow:hidden;transition:0.3s ease;">
+                            <table class="client-file-table">
+                                <thead>
+                                    <tr>
+                                        <th>Retea</th>
+                                        <th>Buget pe zi</th>
+                                        <th>Buget total pe perioada</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody id="crm-client-file-buget">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Creatie -->
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientCreatie()">
+                            <h2><i class="fa-solid fa-paintbrush"></i> Creatie</h2>
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-creatie" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openCreatie()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="client-creatie-acordion" style="overflow:hidden;transition:0.3s ease;">
+                            <table class="client-file-table">
+                                <thead>
+                                    <tr>
+                                        <th>Perioada</th>
+                                        <th>Pachet</th>
+                                        <th>Produse</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody id="crm-client-file-creatie">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+
+                    <!-- ACCOUNTS-->
+                    <div class="crm-info-box">
+                        <div class="crm-info-box-header" onclick="toggleClientUserAccounts()">
+                            <h2><i class="fa-solid fa-user"></i> Conturi de utilizator</h2>
+                            <div class="crm-action-box-btns">
+                                <div id="acordion-arrow-users" style="transition: 0.3s ease;margin:0 10px">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div onclick="event.stopPropagation();openUserAccounts()" class="crm-btn" style="background-color: #3daad6;">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="client-users-acordion" style="overflow:hidden;transition:0.3s ease;">
+                            <table class="client-file-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nume</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Ultima autentificare</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="crm-client-file-users">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <footer style="height: 20px; background-color: #444; color:#fff;">
+        <p style='text-align: center;'>Copyright Social Marketing Platform S.R.L.</p>
+    </footer>
+
+    <div>
+
+    </div>
+
+
+
+
+    <div id="modal-anexe" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div onclick="newAnexa()" class="crm-long-btn" style="background-color:#6baa41">
+                        <i class="fas fa-plus"></i>
+                        Anexa noua
+                    </div>
+                    <i onclick='closeViewAnexa()' class='fas fa-times'></i>
+                </div>
+                <div id='view-user-anexe'>
+                    <div>
+                        <table class="client-file-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Perioada start</th>
+                                    <th>Perioada sfarsit</th>
+                                    <th>Actiuni</th>                   
+                                </tr>
+                            </thead>
+                            <tbody id="crm-anexe">
+                                <!-- <tr>
+                                    <td>"+response[i].perioadaStart+"</td>
+                                    <td>"+response[i].perioadaSfarsit+"</td>
+                                    <td>
+                                        <div class='crm-action-box-btns'>
+                                            <button class='small-rectang-btn blue-btn' onclick='viewFullContract(\""+response[i].unicId+"\")'>
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button class='small-rectang-btn blue-btn' onclick='editContract(\""+response[i].unicId+"\")'>
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </button>  
+                                            <button class='small-rectang-btn blue-btn' onclick='deleteContract(\""+response[i].unicId+"\")'>
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </button>                                          
+                                        </div>
+                                    </td>
+                                
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-new-anexa" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                        
+                    </div>
+                    <i onclick="closeNewAnexa();" class='fas fa-times'></i>
+                </div>
+                <div id='view-new-anexa'>
+                    <div>
+                       <form action="" method="POST" id="crm-new-anexa">
+                        <div class="input-container">
+                            <label>Perioada de start</label>
+                            <input type="date" name="perioada-start" id="new-anexa-start" required>
+                            
+                        </div>
+                        <div class="input-container">
+                            <label>Perioada de sfarsit</label>
+                            <input type="date" name="perioada-sfarsit" id="new-anexa-sfarsit" required>
+                        </div>
+                        <!-- <div class="input-container">
+                            <label>Tipul de contract</label>
+                            <div class="row" style="justify-content: space-evenly;">
+                                <div>
+                                    <input type="radio" name="new-contract-tip" id="new-contract-tip-cadru" value="1" style="width: max-content;" required>
+                                    <label for="new-contract-tip-cadru">Cadru</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="new-contract-tip" id="new-contract-tip-anexa" value="2" style="width: max-content;" required>
+                                    <label for="new-contract-tip-anexa">Anexa</label>
+                                </div>
+                            </div>
+                            
+                        </div> -->
+                        <div class="input-container">
+                            <label>Ataseaza contractul (PDF)</label>
+                            <input type="file" name="fisier" id="new-anexa-file" required accept="application/pdf">
+                        </div>
+                        <div class="input-container">
+                            <label>Observatii</label>
+                            <textarea name="observatii" id="new-anexa-observatii"></textarea>
+                        </div>
+                        <button class="form-button" type="submit">Adauga</button>
+                       </form> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="modal-new-contract" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                        
+                    </div>
+                    <i onclick="closeNewContract();" class='fas fa-times'></i>
+                </div>
+                <div id='view-new-contract'>
+                    <div>
+                       <form action="" method="POST" id="crm-new-contract">
+                        <div class="input-container">
+                            <label>Perioada de start</label>
+                            <input type="date" name="perioada-start" id="new-contract-start" required>
+                            
+                        </div>
+                        <div class="input-container">
+                            <label>Contractul este semnat?</label>
+                            <div class="row" style="justify-content: space-evenly;">
+                                <div>
+                                    <input type="radio" name="new-contract-tip" id="new-contract-tip-cadru" value="1" style="width: max-content;" required>
+                                    <label for="new-contract-tip-cadru">Da</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="new-contract-tip" id="new-contract-tip-anexa" value="0" style="width: max-content;" required>
+                                    <label for="new-contract-tip-anexa">Nu</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="input-container">
+                            <label>Ataseaza contractul (PDF)</label>
+                            <input type="file" name="fisier" id="new-contract-file" required accept="application/pdf">
+                        </div>
+                        <div class="input-container">
+                            <label>Observatii</label>
+                            <textarea name="observatii" id="new-contract-observatii"></textarea>
+                        </div>
+                        <button class="form-button" type="submit">Adauga</button>
+                       </form> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modal-edit-contract" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                        
+                    </div>
+                    <i onclick="closeEditContract();" class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-contract'>
+                    <div>
+                       <form action="" method="POST" id="crm-edit-contract">
+                        <div class="input-container">
+                            <label>Perioada de start</label>
+                            <input type="date" name="perioada-start" id="edit-contract-start" required>
+                            
+                        </div>
+                        <div class="input-container">
+                            <label>Contractul este semnat?</label>
+                            <div class="row" style="justify-content: space-evenly;">
+                                <div>
+                                    <input type="radio" name="edit-contract-tip" id="edit-contract-tip-cadru" value="1" style="width: max-content;" required>
+                                    <label for="edit-contract-tip-cadru">Da</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="edit-contract-tip" id="edit-contract-tip-anexa" value="0" style="width: max-content;" required>
+                                    <label for="edit-contract-tip-anexa">Nu</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="input-container">
+                            <label>Ataseaza contractul (PDF)</label>
+                            <input type="file" name="fisier" id="edit-contract-file" required accept="application/pdf">
+                        </div>
+                        <div class="input-container">
+                            <label>Observatii</label>
+                            <textarea name="observatii" id="edit-contract-observatii"></textarea>
+                        </div>
+                        <button class="form-button" type="submit">Modifică</button>
+                       </form> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="modal-user-accounts" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div onclick="newUserAccount()" class="crm-long-btn" style="background-color:#6baa41">
+                        <i class="fas fa-plus"></i>
+                        Utilizator nou
+                    </div>
+                    <i onclick='closeUserAccounts()' class='fas fa-times'></i>
+                </div>
+                <div id='view-user-accounts-content'>
+                    <div>
+                        <table class="client-file-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Nume</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Parola</th>
+                                    <th>Ultima autentificare</th>
+                                    <th>Actiuni</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="crm-user-accounts">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-new-user-account" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeNewUserAccount()' class='fas fa-times'></i>
+                </div>
+                <div id='view-new-user-account'>
+                    <form action="" id="new-user-account-form">
+                        <div class="input-container">
+                            <label for="">Nume</label>
+                            <input type="text" name="nume" id="new-user-account-name" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="">Nume de utilizator</label>
+                            <input type="text" name="username" id="new-user-account-username" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="">Email</label>
+                            <input type="email" name="email" id="new-user-account-email" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="">Telefon</label>
+                            <input type="tel" name="telefon" id="new-user-account-telefon" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="">Functie</label>
+                            <input type="text" name="functie" id="new-user-account-functie" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="">Parola</label>
+                            <input type="text" name="password" id="new-user-account-password" required>
+                        </div>
+
+                        <button class="form-button" type="submit">Adauga</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="modal-edit-email-adresses" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div onclick="newEmailAdress()" class="crm-long-btn" style="background-color:#6baa41">
+                        <i class="fas fa-plus"></i>
+                        Adresa de email noua
+                    </div>
+                    <i onclick='closeEditEmailAdresses()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-email-adresses-content'>
+                    <div>
+                        <table class="client-file-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Email de facturare</th>
+                                    <th>Actiuni</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="crm-email-adresses">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-new-email-adress" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                        
+                    </div>
+                    <i onclick='closeNewEmailAdress()' class='fas fa-times'></i>
+                </div>
+                <div id='view-new-email-adress-content'>
+                    <div>
+                       <form action="" method="POST" id="crm-new-email-form">
+                        <div class="input-container">
+                            <label>Adresa de email</label>
+                            <input type="email" name="new-email" id="new-email" placeholder="New Email Adress">
+                            
+                        </div>
+                        <div class="input-container">
+                            <div>
+                                <label for="">Mail de facutare</label>
+                                <input type="checkbox" name="new-billing-email" id="new-billing-email" placeholder="Mail de facturare">
+                            </div>
+                            
+                        </div>
+                        <button class="form-button" type="submit">Add</button>
+                       </form> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit-email-adress" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                        
+                    </div>
+                    <i onclick='closeEditEmailAdress()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-email-adress-content'>
+                    <div>
+                       <form action="" method="POST" id="crm-edit-email-form">
+                        <input type="text" name="edit-id" id="edit-email-id" required hidden>
+                        <input type="text" name="edit-clientId" id="edit-email-clientId" required hidden>
+                        <div class="input-container">
+                            <label>Adresa de email</label>
+                            <input type="email" name="edit-email" id="edit-email" placeholder="Email Adress">
+                            
+                        </div>
+                        <div class="input-container">
+                            <div>
+                                <label for="">Mail de facutare</label>
+                                <input type="checkbox" name="edit-billing-email" id="edit-billing-email" placeholder="Mail de facturare">
+                            </div>
+                            
+                        </div>
+                        <button class="form-button" type="submit">Add</button>
+                       </form> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit-websites" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div onclick="newWebsite()" class="crm-long-btn" style="background-color:#6baa41">
+                        <i class="fas fa-plus"></i>
+                        Website nou
+                    </div>
+                    <i onclick='closeEditWebsites()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-websites-content'>
+                    <div >
+                        <table class="client-file-table">
+                            <thead>
+                                <tr>
+                                    <th>Nume</th>
+                                    <th>URL</th>
+                                    <th>Tip</th>
+                                    <th>Domeniu</th>
+                                    <th>URL admin</th>
+                                    <th>Admin username</th>
+                                    <th>Admin password</th>
+                                    <th>Actiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crm-websites">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-new-website" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                        
+                    </div>
+                    <i onclick='closeNewWebsite()' class='fas fa-times'></i>
+                </div>
+                <div id='view-new-website-content'>
+                    <div id="crm-websites">
+                        <form action="" method="POST" id="new-website-form">
+
+                            <input type="text" name="website-clientId" id="new-website-clientId" required hidden>
+                        <div class="input-container">
+                            <label for="">Nume website</label>
+                            <input type="text" placeholder="Introdu nume website" name="website-name" id="new-website-name" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="">URL website</label>
+                            <input type="url" placeholder="Introdu url website" name="website-url" id="new-website-url" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="">Tip website</label>
+                            <select name="website-tip" id="new-website-tip" required >
+                                <option value="1">1</option>
+
+                            </select>
+                        </div>
+                        <div class="input-container">
+                            <label for="">Domeniu</label>
+                            <select name="website-domeniu" id="new-website-domeniu" required>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-container">
+                            <label for="">URL admin website</label>
+                            <input type="url" placeholder="Introdu url admin website" name="website-url-admin" id="new-website-url-admin">
+                        </div>
+                        <div class="input-container">
+                            <label for="">Admin website username</label>
+                            <input type="text" placeholder="Introdu admin website username" name="website-admin-username" id="new-website-admin-username">
+                        </div>
+                        <div class="input-container">
+                            <label for="">Admin website password</label>
+                            <input type="text" placeholder="Introdu admin website password" name="website-admin-password" id="new-website-admin-password">
+                        </div>
+                        <button type="submit" class="form-button">Add</button>
+
+
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-view-website" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                        <div id="edit-website-btn" class="crm-btn" style="background-color: #dea336">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div id="delete-website-btn" class="crm-btn" style="background-color: #d94e47">
+                            <i class="fas fa-trash-alt"></i>
+                        </div>
+                    </div>
+                    
+                    <i onclick='closeViewWebsite()' class='fas fa-times'></i>
+                </div>
+                <div id='view-website-content'>
+                    <h3 id="view-website-name"></h3>
+                    <a href="" id="view-website-url"></a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="modal-edit-website" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                        
+                    </div>
+                    <i onclick='closeEditWebsite()' class='fas fa-times'></i>
+                </div>
+                <div id='edit-website-content'>
+                    <form action="" method="POST" id="edit-website-form">
+                        <input type="text" name="website-id" id="edit-website-id" required hidden>
+                        <input type="text" name="website-clientId" id="edit-website-clientId" required hidden>
+                        <div class="input-container">
+                            <label for="">Nume website</label>
+                            <input type="text" placeholder="Introdu nume website" name="website-name" id="edit-website-name" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="">URL website</label>
+                            <input type="url" placeholder="Introdu url website" name="website-url" id="edit-website-url" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="">Tip website</label>
+                            <select name="website-tip" id="edit-website-tip" required >
+                                <option value="1">1</option>
+
+                            </select>
+                        </div>
+                        <div class="input-container">
+                            <label for="">Domeniu</label>
+                            <select name="website-domeniu" id="edit-website-domeniu" required>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-container">
+                            <label for="">URL admin website</label>
+                            <input type="url" placeholder="Introdu url admin website" name="website-url-admin" id="edit-website-url-admin">
+                        </div>
+                        <div class="input-container">
+                            <label for="">Admin website username</label>
+                            <input type="text" placeholder="Introdu admin website username" name="website-admin-username" id="edit-website-admin-username">
+                        </div>
+                        <div class="input-container">
+                            <label for="">Admin website password</label>
+                            <input type="text" placeholder="Introdu admin website password" name="website-admin-password" id="edit-website-admin-password">
+                        </div>
+                        <button type="submit" class="form-button">Edit</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="modal-edit-persons" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div onclick="newPerson()" class="crm-long-btn" style="background-color:#6baa41">
+                        <i class="fas fa-plus"></i>
+                        Persoana de contact noua
+                    </div>
+                    <i onclick='closeEditPersons()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-persons-content'>
+                    
+                    <div>
+                        <table class="client-file-table">
+                            <thead>
+                                <tr>
+                                    <th>Nume</th>
+                                    <th>Functie</th>
+                                    <th>Este decident</th>
+                                    <th>Tip de persoana</th>
+                                    <th>Email</th>
+                                    <th>Telefon</th>
+                                    <th>Actiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crm-persons">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-new-person" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeNewPerson()' class='fas fa-times'></i>
+                </div>
+                <div id='view-new-person-content'>
+                    <div>
+                       <form action="" method="POST" id="crm-new-person-form">
+                            <input type="text" name="person-clientId" id="new-person-clientId" required hidden>
+                            <div class="input-container">
+                                <label>Nume</label>
+                                <input type="text" name="person-nume" id="new-person-nume" placeholder="Introdu nume">
+                            </div>
+                            <div class="input-container">
+                                <label>Prenume</label>
+                                <input type="text" name="person-prenume" id="new-person-prenume" placeholder="Introdu prenume">
+                            </div>
+                            <div class="input-container">
+                                <label>Functie</label>
+                                <input type="text" name="person-functie" id="new-person-functie" placeholder="Introdu functie">
+                            </div>
+                            <div class="input-container">
+                                <div>
+                                    <input type="checkbox" style="width: max-content;" name="new-person-decident" id="new-person-decident">
+                                    <label for="new-person-decident">Este decident?</label>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <label>Tip de persoana</label>
+                                <div id="personality-selector-box" style="display:block;position:relative;">
+                                    <div id="personality-selector" style="cursor:pointer" onclick="openChangePersonality()">
+                                        Tip de personalitate
+                                    </div>
+                                    <div id="personality-selector-container" style="display:none;max-height: 250px;overflow-y: auto; padding: 5px;">
+                                        <div>
+                                            <input type="text" id="search-personality-input" class="search-input-text" oninput="searchPersonality(event)">
+                                        </div>
+                                        <div id="personality-list">
+                                            <div data-client-id="client6258171225887" class="client-selector-value" onclick="setPersonality('client6258171225887','Test2')">Test2</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <label>Email</label>
+                                <input type="email" name="person-email" id="new-person-email" placeholder="Introdu email">
+                            </div>
+                            <div class="input-container">
+                                <label>Telefon</label>
+                                <input type="text" name="person-telefon" id="new-person-telefon" placeholder="Introdu telefon">
+                            </div>
+                            <button class="form-button" type="submit">Add</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit-person" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeEditPerson()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-person-content'>
+                    <div>
+                       <form action="" method="POST" id="crm-edit-person-form">
+                            <input type="text" name="person-clientId" id="edit-person-clientId" required hidden>
+                            <input type="text" name="person-id" id="edit-person-id" required hidden>
+                            <div class="input-container">
+                                <label>Nume</label>
+                                <input type="text" name="person-nume" id="edit-person-nume" placeholder="Introdu nume">
+                            </div>
+                            <div class="input-container">
+                                <label>Prenume</label>
+                                <input type="text" name="person-prenume" id="edit-person-prenume" placeholder="Introdu prenume">
+                            </div>
+                            <div class="input-container">
+                                <label>Functie</label>
+                                <input type="text" name="person-functie" id="edit-person-functie" placeholder="Introdu functie">
+                            </div>
+                            <div class="input-container">
+                                <div>
+                                    <input type="checkbox" style="width: max-content;" name="edit-person-decident" id="edit-person-decident">
+                                    <label for="edit-person-decident">Este decident?</label>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <label>Email</label>
+                                <input type="email" name="person-email" id="edit-person-email" placeholder="Introdu email">
+                            </div>
+                            <div class="input-container">
+                                <label>Telefon</label>
+                                <input type="text" name="person-telefon" id="edit-person-telefon" placeholder="Introdu telefon">
+                            </div>
+                            
+                            <button class="form-button" type="submit">Edit</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+   
+
+
+    <div id="modal-new-action" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeNewAction()' class='fas fa-times'></i>
+                </div>
+                <div id='new-action-content'>
+                    <div>
+                       <form action="" method="POST" id="crm-new-action-form">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <input type="text" name="action-clientId" id="new-action-clientId" required hidden>
+                                    <div class="input-container">
+                                        <label>Actiune</label>
+                                        <textarea name="new-actiune" id="new-actiune"></textarea required>
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Rezultat</label>
+                                        <select name="new-rezultat" id="new-rezultat" required>
+                                            <option disabled selected>Rezultat</option>            
+                                            <option value="1">A raspuns la telefon</option>                        
+                                            <option value="2">Nu a raspuns la telefon</option>
+                                            <option value="3">Mailul a fost trimis cu succes</option>                        
+                                        </select>
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Observatii</label>
+                                        <textarea name="new-observatie" id="new-observatie"></textarea>
+        
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Atasamente</label>
+                                        <input type="file" name="new-ataasmente" id="new-ataasmente" multiple>
+        
+                                    </div>
+        
+                                    <div class="input-container">
+                                        <label>Adaugi o actiune viitoare?</label>
+                                        <div>
+                                            <label>Da</label>
+                                            <input type="radio" name="future-action" value="1" id="future-action-yes" class="future-action-radio">
+        
+                                            <label>Nu</label>
+                                            <input type="radio" name="future-action" value="0" id="future-action-no" class="future-action-radio" checked>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-col" id="future-action-inputs" style="display:none;">
+                                    <div class="input-container">
+                                        <label>Tip actiune</label>
+                                        <select name="future-action-tip" id="future-action-tip">
+                                            <option value="" disabled selected>Tip actiune</option>
+                                            <option value="1">Apel telefonic</option>
+                                            <option value="2">Mesaj SMS</option>
+                                            <option value="3">Mesaj WhatsApp</option>
+                                            <option value="4">Email - follow up</option>
+                                            <option value="5">Email - reminder</option>
+                                            <option value="6">Email - oferta</option>
+                                            <option value="6">Email - contract</option>
+                                            <option value="6">Email - proforma</option>
+                                            <option value="6">Email - proforma, contract</option>
+                                            <option value="6">Email - raport</option>
+                                            <option value="6">Email - cerere informatii</option>
+                                            <option value="6">Email - raspuns</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Data la care trebuie efectuata</label>
+                                        <input type="date" name="future-action-date" id="future-action-date">
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Ora la care trebuie efectuata</label>
+                                        <input type="time" name="future-action-time" id="future-action-time">
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Alte observatii</label>
+                                        <textarea name="future-action-observatii" id="future-action-observatii"></textarea>
+                                    </div>
+
+                                    <div id="future-action-phone-input" style="display:none">
+                                        <div class="input-container">
+                                            <label>Telefon</label>
+                                            <input type="text" name="future-action-telefon" id="future-action-telefon">
+                                        </div>
+                                        
+                                    </div>
+                                    <div id="future-action-email-input" style="display:none">
+                                        <div class="input-container">
+                                            <label>Email</label>
+                                            <select name="future-action-email" id="future-action-email">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            
+
+                            
+                            <button class="form-button" type="submit">Add</button>
+                       </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="modal-conturi-sm" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div onclick="newSmAccount()" class="crm-long-btn" style="background-color:#6baa41">
+                        <i class="fas fa-plus"></i>
+                        Cont nou
+                    </div>
+                    <i onclick='closeConturiSm()' class='fas fa-times'></i>
+                </div>
+                <div id='view-conturi-sm'>
+                    
+                    <div>
+                        <table class="client-file-table">
+                            <thead>
+                                <tr>
+                                    <th>Retea</th>
+                                    <th>Nume</th>
+                                    <th>Link</th>
+                                    <th>Username</th>
+                                    <th>Password</th>
+                                    <th>Comentarii</th>
+                                    <th>Actiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crm-conturi-sm">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-add-sm-account" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeNewSmAccount()' class='fas fa-times'></i>
+                </div>
+                <div id='view-add-sm-account'>
+                    <div>
+                       <form action="" method="POST" id="crm-add-sm-account">
+                            <!-- <input type="text" name="sm-account-clientId" id="add-sm-account-clientId" required hidden> -->
+                        
+                                <div class="input-container">
+                                    <label>Retea</label>
+                                    <select name="add-sm-account-retea" id="add-sm-account-retea">
+                                        <option valie="" disabled selected>Retea</option>
+                                        <option value='facebook'>Facebook</option>
+                                        <option value='instagram'>Instagram</option>
+                                        <option value='pinterest'>Pinterest</option>
+                                        <option value='twitter'>Twitter</option>
+                                        <option value='linkedin'>Linkedin</option>
+                                        <option value='tiktok'>TikTok</option>
+                                        <option value='snapchat'>Snapchat</option>
+                                        <option value='youtube'>Youtube</option>
+                                    </select>
+                                </div>
+    
+                                <div class="input-container">
+                                    <label for="">Nume pagina</label>
+                                    <input type="text" name="add-sm-account-nume" id="add-sm-account-nume">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Link pagina</label>
+                                    <input type="url" name="add-sm-account-link" id="add-sm-account-link">
+                                </div>
+                            
+                                <div class="input-container">
+                                    <div>
+                                        <input type="checkbox" name="add-sm-account-personal" id="add-sm-account-personal" style="width:auto">
+                                        <label for="add-sm-account-personal">Cont personal</label>
+                                    </div>
+                                    
+    
+                                </div>
+                            
+                                <div class="input-container">
+                                    <label for="">Nume de utilizator</label>
+                                    <input type="text" name="add-sm-account-username" id="add-sm-account-username">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Parola</label>
+                                    <input type="password" name="add-sm-account-password" id="add-sm-account-password">
+                                </div>
+                            
+                                
+                                <div class="input-container">
+                                    <label for="add-sm-account-comm">Comentarii</label>
+                                    <textarea name="add-sm-account-comm" id="add-sm-account-comm" ></textarea>
+                                </div>
+                            
+
+                            <button class="form-button" style="margin-left:auto;margin-right:auto;display:block" type="submit">Adauga</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit-sm-account" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeEditSmAccount()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-sm-account'>
+                    <div>
+                       <form action="" method="POST" id="crm-edit-sm-account">
+                            <input type="text" name="sm-account-clientId" id="edit-sm-account-clientId" required hidden>
+                            <input type="text" name="sm-account-id" id="edit-sm-account-id" required hidden>
+                            
+                                <div class="input-container">
+                                    <label>Retea</label>
+                                    <select name="edit-sm-account-retea" id="edit-sm-account-retea">
+                                        <option valie="" disabled selected>Retea</option>
+                                        <option value='facebook'>Facebook</option>
+                                        <option value='instagram'>Instagram</option>
+                                        <option value='pinterest'>Pinterest</option>
+                                        <option value='twitter'>Twitter</option>
+                                        <option value='linkedin'>Linkedin</option>
+                                        <option value='tiktok'>TikTok</option>
+                                        <option value='snapchat'>Snapchat</option>
+                                        <option value='youtube'>Youtube</option>
+                                    </select>
+                                </div>
+    
+                                <div class="input-container">
+                                    <label for="">Nume pagina</label>
+                                    <input type="text" name="edit-sm-account-nume" id="edit-sm-account-nume">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Link pagina</label>
+                                    <input type="url" name="edit-sm-account-link" id="edit-sm-account-link">
+                                </div>
+                            
+                                <div class="input-container">
+                                    <div>
+                                        <input type="checkbox" name="edit-sm-account-personal" id="edit-sm-account-personal" style="width:auto">
+                                        <label for="edit-sm-account-personal">Cont personal</label>
+                                    </div>
+                                    
+    
+                                </div>
+                            
+                                <div class="input-container">
+                                    <label for="">Nume de utilizator</label>
+                                    <input type="text" name="edit-sm-account-username" id="edit-sm-account-username">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Parola</label>
+                                    <input type="password" name="edit-sm-account-password" id="edit-sm-account-password">
+                                </div>
+                            
+                                
+                                <div class="input-container">
+                                    <label for="edit-sm-account-comm">Comentarii</label>
+                                    <textarea name="edit-sm-account-comm" id="edit-sm-account-comm"></textarea>
+                                </div>
+                            
+
+                            <button class="form-button" style="margin-left:auto;margin-right:auto;display:block" type="submit">Edit</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+   
+
+
+
+
+
+    <div id="modal-objectives" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div class="crm-action-box-btns">
+                        <div onclick="newObjective()" class="crm-long-btn" style="background-color:#6baa41">
+                            <i class="fas fa-plus"></i>
+                            Obiective noi
+                        </div>
+                        <div onclick="editGeneralObjectives()" class="crm-long-btn" style="background-color:#dea336">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            Modifica obiective generale
+                        </div>
+                    </div>
+                    
+                    <i onclick='closeObjectives()' class='fas fa-times'></i>
+                </div>
+                <div id='view-objectives'>
+                    
+                    <div>
+                        
+                        <h2>Obiective generale</h2>
+                        <table class="client-file-table">
+                            <thead>
+                                <tr>
+                                    <th>Tip obiectiv</th>
+                                    <th>Obiectiv</th>
+                                    <th>Comentarii</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crm-general-objectives">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+
+                        <h2>Obiective pe perioade</h2>
+
+                        <table class="client-file-table">
+                            <thead>
+                                <tr>
+                                    <th>Perioada</th>
+                                    <th>Tip Obiectiv</th>
+                                    <th>Obiectiv</th>
+                                    <th>Comentarii</th>
+                                    <th>Actiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crm-period-objectives">
+                                <tr>
+                                    <td rowspan="5">"+response[i].perStart+" - "+response[i].perSfarsit+"</td>
+                                    <td>Client</td>
+                                    <td>"+response[i].clientObj+"</td>
+                                    <td rowspan="5">"+response[i].comentarii+"</td>
+                                    <td rowspan="5">
+                                        <div>
+                                            <div class='crm-btn' style='background-color:#dea336' onclick='editObjective(\""+response[i].id+"\",\""+response[i].unicId+"\")'>
+                                                <i class='fa-solid fa-pen-to-square'></i>
+                                            </div>
+                                            <div class='crm-btn' style='background-color:#d94e47' onclick='deleteObjective(\""+response[i].id+"\",\""+response[i].unicId+"\")'>
+                                                <i class='fa-solid fa-trash-can'></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Social media</td>
+                                    <td>"+response[i].socialObj+"</td>
+                                </tr>
+                                <tr>
+                                    <td>Performance</td>
+                                    <td>"+response[i].performanceObj+"</td>
+                                </tr>
+                                <tr>
+                                    <td>Marketing</td>
+                                    <td>"+response[i].marketingObj+"</td>
+                                </tr>
+                                <tr>
+                                    <td>Dezvoltare online</td>
+                                    <td>"+response[i].dezvoltareOnlineObj+"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-add-objective" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeNewObjective()' class='fas fa-times'></i>
+                </div>
+                <div id='view-add-objective'>
+                    <div>
+                       <form action="" method="POST" id="crm-add-objective">
+                            <!-- <input type="text" name="sm-account-clientId" id="add-sm-account-clientId" required hidden> -->
+                        
+                            <div class="form-row-wrap">
+                                <div class="input-container">
+                                    <label for="">Data de incepere</label>
+                                    <input type="date" name="add-objective-start-date" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row-wrap">
+                                <div class="input-container" style="margin:0 10px">
+                                    <label for="">Obiectiv social media</label>
+                                    <textarea name="add-objective-socialmedia" id=""></textarea>
+                                </div>
+                            </div>
+                            <div class="form-row-wrap">
+                                <div class="input-container" style="margin:0 10px">
+                                    <label for="">Obiectiv performance</label>
+                                    <textarea name="add-objective-performance" id=""></textarea>
+                                </div>
+                                <div class="input-container" style="margin:0 10px">
+                                    <label for="">Obiectiv marketing</label>
+                                    <textarea name="add-objective-marketing" id=""></textarea>
+                                </div>
+                            </div>
+                            <div class="form-row-wrap">
+                                <div class="input-container" style="margin:0 10px">
+                                    <label for="">Obiectiv dezvoltare online</label>
+                                    <textarea name="add-objective-dezvoltare-online" id=""></textarea>
+                                </div>
+                                <div class="input-container" style="margin:0 10px">
+                                    <label for="">Comentarii</label>
+                                    <textarea name="add-objective-comm" id=""></textarea>
+                                </div>
+                            </div>
+
+
+                            
+
+                            <button class="form-button" style="margin-left:auto;margin-right:auto;display:block" type="submit">Adauga</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit-general-objective" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeEditGeneralObjective()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-general-objective'>
+                    <div>
+                       <form action="" method="POST" id="crm-edit-general-objective">
+                            <input type="text" name="objective-clientId" id="edit-general-objective-clientId" required hidden>
+                            
+                            <div class="form-row-wrap">
+                                <div class="input-container" style="margin:0 10px">
+                                    <label for="">Obiectiv client</label>
+                                    <textarea name="edit-objective-client" id="edit-objective-client"></textarea>
+                                </div>
+                                <div class="input-container" style="margin:0 10px">
+                                    <label for="">Obiectiv social media</label>
+                                    <textarea name="edit-objective-socialmedia" id="edit-objective-socialmedia"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-row-wrap">
+                                <div class="input-container" style="margin:0 10px">
+                                    <label for="">Obiectiv performance</label>
+                                    <textarea name="edit-objective-performance" id="edit-objective-performance"></textarea>
+                                </div>
+                                <div class="input-container" style="margin:0 10px">
+                                    <label for="">Obiectiv marketing</label>
+                                    <textarea name="edit-objective-marketing" id="edit-objective-marketing"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row-wrap">
+                                <div class="input-container" style="margin:0 10px">
+                                    <label for="">Obiectiv dezvoltare online</label>
+                                    <textarea name="edit-objective-dezvoltare-online" id="edit-objective-dezvoltare-online"></textarea>
+                                </div>
+                                
+                                <div class="input-container" style="margin:0 10px">
+                                    <label for="">Comentarii</label>
+                                    <textarea name="edit-objective-comm" id="edit-objective-comm"></textarea>
+                                </div>
+                            </div>
+                            
+                            
+
+                            <button class="form-button" style="margin-left:auto;margin-right:auto;display:block" type="submit">Salveaza</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="modal-edit-objective" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeEditObjective()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-objective'>
+                    <div>
+                       <form action="" method="POST" id="crm-edit-objective">
+                            <input type="text" name="objective-clientId" id="edit-objective-clientId" required hidden>
+                            <input type="text" name="objective-id" id="edit-objective-id" required hidden>
+                            
+                            <div class="form-row-wrap">
+                                <div class="input-container" style='margin:0 10px'>
+                                    <label for="">Data de incepere</label>
+                                    <input type="date" name="edit-objective-start-date" required id="edit-objective-start-date">
+                                </div>
+                                <div class="input-container"  style='margin:0 10px'>
+                                    <label for="">Data de sfarsit</label>
+                                    <input type="date" name="edit-objective-end-date" required id="edit-objective-end-date">
+                                </div>
+                            </div>
+                            <div class="form-row-wrap">
+                                <div class="input-container"  style='margin:10px 10px 0'>
+                                    <label for="">Obiectiv client</label>
+                                    <textarea name="edit-objective-client-per" id="edit-objective-client-per"></textarea>
+                                </div>
+                                <div class="input-container"  style='margin:10px 10px 0'>
+                                    <label for="">Obiectiv social media</label>
+                                    <textarea name="edit-objective-socialmedia-per" id="edit-objective-socialmedia-per"></textarea>
+                                </div>
+                            </div>
+                            
+
+                            <div class="form-row-wrap">
+                                <div class="input-container"  style='margin:0 10px'>
+                                    <label for="">Obiectiv performance</label>
+                                    <textarea name="edit-objective-performance-per" id="edit-objective-performance-per"></textarea>
+                                </div>
+                                <div class="input-container"  style='margin:0 10px'>
+                                    <label for="">Obiectiv marketing</label>
+                                    <textarea name="edit-objective-marketing-per" id="edit-objective-marketing-per"></textarea>
+                                </div>
+                            </div>
+                            
+
+                            <div class="form-row-wrap">
+                                <div class="input-container"  style='margin:0 auto'>
+                                    <label for="">Obiectiv dezvoltare online</label>
+                                    <textarea name="edit-objective-dezvoltare-online-per" id="edit-objective-dezvoltare-online-per"></textarea>
+                                </div>
+                                <div class="input-container"  style='margin:0 auto'>
+                                    <label for="">Comentarii</label>
+                                    <textarea name="edit-objective-comm-per" id="edit-objective-comm-per"></textarea>
+                                </div>
+                            </div>
+                            
+                            
+
+                            <button class="form-button" style="margin-left:auto;margin-right:auto;display:block" type="submit">Salveaza</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+   
+    
+    <div id="modal-settings" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    
+                   <div onclick="newSettings()" class="crm-long-btn" style="background-color:#6baa41">
+                       <i class="fas fa-plus"></i>
+                       Setare noua
+                   </div>
+                     
+                    
+                    <i onclick='closeSettings()' class='fas fa-times'></i>
+                </div>
+                <div id='view-settings'>
+                    
+                    
+
+                    <div>
+
+                        <table class="client-file-table">
+                            <thead>
+                                <tr>
+                                    <th>Retea</th>
+                                    <th>Tip setare</th>
+                                    <th>Cod</th>
+                                    <th>Comentarii</th>
+                                    <th>Actiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crm-settings">
+                                <tr>
+                                    <td>"+settingRetea+"</td>
+                                    <td>"+response[i].tip+"</td>
+                                    <td>"+response[i].cod+"</td>
+                                    <td>"+response[i].comentarii+"</td>
+                                    <td>
+                                        <div class="crm-action-box-btns">
+                                            <div onclick='editSetting(\""+response[i].id+"\",\""+response[i].clientId+"\")' class='crm-btn' style='background-color:#dea336'>
+                                                <i class='fa-solid fa-pen-to-square'></i>
+                                            </div>
+                                            <div  onclick='deleteSetting(\""+response[i].id+"\",\""+response[i].clientId+"\")' class='crm-btn' style='background-color:#d94e47'>
+                                                <i class='fa-solid fa-trash-can'></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-add-settings" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeNewSettings()' class='fas fa-times'></i>
+                </div>
+                <div id='view-add-objective'>
+                    <div>
+                       <form action="" method="POST" id="crm-add-settings">
+                            <!-- <input type="text" name="sm-account-clientId" id="add-sm-account-clientId" required hidden> -->
+                        
+                            <div class="input-container">
+                                <label for="">Tip setare</label>
+                                <select name="add-setting-tip" id="add-setting-tip" required>
+                                    <option value="" disabled selected>Tip setare</option>
+                                        <option value='1'>Cod tracking</option>
+                                        <option value='2'>Cont social media</option>
+                                        <option value='3'>Ads account</option>
+                                        <option value='4'>Catalog</option>
+                                        <option value='5'>Commerce account</option> 
+                                </select>
+                            </div>
+
+                            <div class="input-container">
+                                <label for="">Retea</label>
+                                <select name="add-setting-retea" id="add-setting-retea" required>
+                                    <option valie="" disabled selected>Retea</option>
+                                        <option value='facebook'>Facebook</option>
+                                        <option value='facebook-bussines'>Facebook Business Manager</option>
+                                        <option value='instagram'>Instagram</option>
+                                        <option value='google'>Google</option>
+                                        
+                                        <option value='pinterest'>Pinterest</option>
+                                        <option value='twitter'>Twitter</option>
+                                        <option value='linkedin'>Linkedin</option>
+                                        <option value='tiktok'>TikTok</option>
+                                        <option value='snapchat'>Snapchat</option>
+                                        <option value='youtube'>Youtube</option>
+                                        <option value='reddit'>Reddit</option>
+                                        
+                                </select>
+                            </div>
+                            <div id="setting-google-platforms" style="display: none;">
+                                <div class="input-container">
+                                    <label for="">Google platform</label>
+                                    <select name="add-setting-sub-retea" id="add-setting-sub-retea" >
+                                        <option valie="" disabled selected>Platform</option>
+                                            
+                                            <option value='google ads'>Google Ads</option>
+                                            <option value='google optimise'>Google Optimise</option>
+                                            <option value='google tag manager'>Google Tag Manager</option>
+                                            <option value='google analytics'>Google Analytics</option>
+                                            <option value='google merchant'>Google Merchant</option>
+                                            <option value='google marketing platform'>Google Marketing platform</option>
+                                            
+                                            
+                                    </select>
+                                </div>
+                            </div>
+                            
+
+                            <div class="input-container">
+                                <label for="">Ownership</label>
+                                <select name="add-settings-owner" id="add-settings-owner">
+                                    <option value="" disabled selected>None</option>
+                                    <option value="1">diclick</option>
+                                    <option value="2">Client</option>
+                                    <option value="3">Client - nou</option>
+                                    <option value="4">diclick - nou</option>
+                                </select>
+
+                            </div>
+                            <div id="settings-new-code" style="display:none">
+                                <div class="input-container">
+                                    <label for="">ID</label>
+                                    <input type="text" name="add-settings-id">
+                                </div>
+                            </div>
+                            <div id="settings-new-account" style="display:none">
+                                <div class="input-container">
+                                    <label for="">ID</label>
+                                    <input type="text" name="add-settings-id-acc">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Nume pagina</label>
+                                    <input type="text" name="add-setting-acc-name">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Link pagina</label>
+                                    <input type="text" name="add-setting-acc-link">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Nume de utilizator</label>
+                                    <input type="text" name="add-setting-acc-username">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Parola</label>
+                                    <input type="text" name="add-setting-acc-password">
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="input-container">
+                                <label for="">Existent</label>
+                                
+                                <div class="form-row-wrap">
+                                    <div>
+                                        <input type="radio" name="add-setting-exists" id="add-setting-exists-yes" style="width:max-content" required> 
+                                        <label for="add-setting-exists-yes">Da</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="add-setting-exists" id="add-setting-exists-no" style="width:max-content" required> 
+                                        <label for="add-setting-exists-no">Nu</label>
+                                    </div>
+                                </div>
+                                
+                            </div> -->
+
+
+
+
+                            <div class="input-container">
+                                <label for="">Comentarii</label>
+                                <textarea name="add-setting-comm" id="add-setting-comm"></textarea>
+                            </div>
+
+                            
+
+                            <button class="form-button" style="margin-left:auto;margin-right:auto;display:block" type="submit">Adauga</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit-settings" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeEditSetting()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-setting'>
+                    <div>
+                       <form action="" method="POST" id="crm-edit-setting">
+                            <input type="text" name="setting-clientId" id="edit-setting-clientId" required hidden>
+                            <input type="text" name="setting-id" id="edit-setting-id" required hidden>
+                            
+                            <div class="input-container">
+                                <label for="">Tip setare</label>
+                                <select name="edit-setting-tip" id="edit-setting-tip" required>
+                                    <option value="" disabled selected>Tip setare</option>
+                                        <option value='1'>Cod tracking</option>
+                                        <option value='2'>Cont social media</option>
+                                        <option value='3'>Ads account</option>
+                                        <option value='4'>Catalog</option>
+                                        <option value='5'>Commerce account</option> 
+                                </select>
+                            </div>
+
+                            <div class="input-container">
+                                <label for="">Retea</label>
+                                <select name="edit-setting-retea" id="edit-setting-retea" required>
+                                    <option valie="" disabled selected>Retea</option>
+                                        <option value='facebook'>Facebook</option>
+                                        <option value='facebook-bussines'>Facebook Business Manager</option>
+                                        <option value='instagram'>Instagram</option>
+                                        <option value='google'>Google</option>
+                                        
+                                        <option value='pinterest'>Pinterest</option>
+                                        <option value='twitter'>Twitter</option>
+                                        <option value='linkedin'>Linkedin</option>
+                                        <option value='tiktok'>TikTok</option>
+                                        <option value='snapchat'>Snapchat</option>
+                                        <option value='youtube'>Youtube</option>
+                                        <option value='reddit'>Reddit</option>
+                                        
+                                </select>
+                            </div>
+                            <div id="edit-setting-google-platforms" style="display: none;">
+                                <div class="input-container">
+                                    <label for="">Google platform</label>
+                                    <select name="edit-setting-sub-retea" id="edit-setting-sub-retea" >
+                                        <option valie="" disabled selected>Platform</option>
+                                            
+                                            <option value='google ads'>Google Ads</option>
+                                            <option value='google optimise'>Google Optimise</option>
+                                            <option value='google tag manager'>Google Tag Manager</option>
+                                            <option value='google analytics'>Google Analytics</option>
+                                            <option value='google merchant'>Google Merchant</option>
+                                            <option value='google marketing platform'>Google Marketing platform</option>
+                                            
+                                            
+                                    </select>
+                                </div>
+                            </div>
+                            
+
+                            <div class="input-container">
+                                <label for="">Ownership</label>
+                                <select name="edit-settings-owner" id="edit-settings-owner">
+                                    <option value="" disabled selected>None</option>
+                                    <option value="1">diclick</option>
+                                    <option value="2">Client</option>
+                                    <option value="3">Client - nou</option>
+                                    <option value="4">diclick - nou</option>
+                                </select>
+
+                            </div>
+                           
+                            <div class="input-container">
+                                <label for="">ID</label>
+                                <input type="text" id="edit-settings-id" name="edit-settings-id">
+                            </div>
+                            
+                            
+                            <div class="input-container">
+                                <label for="">Comentarii</label>
+                                <textarea name="edit-setting-comm" id="edit-setting-comm"></textarea>
+                            </div>
+
+                            <button class="form-button" style="margin-left:auto;margin-right:auto;display:block" type="submit">Salveaza</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+   
+
+
+
+    <div id="modal-mediaplan" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    
+                   <div onclick="newMediaplan()" class="crm-long-btn" style="background-color:#6baa41">
+                       <i class="fas fa-plus"></i>
+                       Media plan nou
+                   </div>
+                     
+                    
+                    <i onclick='closeMediaplan()' class='fas fa-times'></i>
+                </div>
+                <div id='view-mediaplan'>
+                    
+                    
+
+                    <div>
+
+                        <table class="client-file-table">
+                            <thead>
+                                <tr>
+                                    <th>Retea</th>
+                                    <th>Tip content</th>
+                                    <th>Frecventa</th>
+                                    <th>Perioada start</th>
+                                    <th>Perioada sfarsit</th>
+                                    <th>Comentarii</th>
+                                    <th>Actiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crm-mediaplan">
+                                <tr>
+                                    <td>"+response[i].retea+"</td>
+                                    <td>"+response[i].tip+"</td>
+                                    <td></td>
+                                    <td>"+response[i].perStart+"</td>
+                                    <td>"+response[i].perSfarsit+"</td>
+                                    <td>"+comentarii+"</td>
+                                    <td>
+                                        <div class="crm-action-box-btns">
+                                            <div class='crm-btn' style='background-color:#dea336' onclick='editMediaplan(\""+response[i].id+"\",\""+response[i].unicId+"\")'>
+                                                <i class='fa-solid fa-pen-to-square'></i>
+                                            </div>
+                                            <div class='crm-btn' style='background-color:#d94e47' onclick='deleteMediaplan(\""+response[i].id+"\",\""+response[i].unicId+"\")'>
+                                                <i class='fa-solid fa-trash-can'></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-add-mediaplan" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeNewMediaplan()' class='fas fa-times'></i>
+                </div>
+                <div id='view-add-objective'>
+                    <div>
+                       <form action="" method="POST" id="crm-add-mediaplan">
+                            <!-- <input type="text" name="sm-account-clientId" id="add-sm-account-clientId" required hidden> -->
+                        
+                            <div class="input-container">
+                                <label for="">Luna de start</label>
+                                <input type="month" name="add-mediaplan-startmonth" id="add-mediaplan-startmonth">
+                            </div>
+                            
+                            <div onclick="addMediaplanNewRetea()" class="crm-long-btn" style="background-color: #6baa41;">
+                                Adauga retea
+                            </div>
+                            <div id="mediaplan-retele">
+                                <!-- <div class='input-container'><i class='fa-solid fa-trash-can' onclick='deleteMpRetea(\""+elId+"\")'></i><label
+                                        for=''>Retea</label><select name='add-mediaplan-retea[]' required>
+                                        <option value='' disabled selected>Alege retea</option>
+                                        <option value='facebook'>Facebook</option>
+                                        <option value='instagram'>Instagram</option>
+                                        <option value='pinterest'>Pinterest</option>
+                                        <option value='twitter'>Twitter</option>
+                                        <option value='linkedin'>Linkedin</option>
+                                        <option value='tiktok'>TikTok</option>
+                                        <option value='snapchat'>Snapchat</option>
+                                        <option value='youtube'>Youtube</option>
+                                        <option value='reddit'>Reddit</option>
+                                    </select></div>
+                                <div class='input-container'><label for=''>Tip content</label><select name='add-mediaplan-tip' id='add-mediaplan-tip'
+                                        style='text-transform:capitalize'>
+                                        <option value='' selected disabled>Tip content</option>
+                                    </select></div>
+                                <div class='input-container'><label for=''>Frecventa (saptamanal)</label>
+                                    <div id='week-day-picker'>
+                                        <span onclick='checkWeekDay("0","0",event)' class="week-day-btn-0">L</span>
+                                        <span onclick='checkWeekDay("1","0",event)'
+                                            class='week-day-btn-1'>M</span>
+                                        <span  onclick='checkWeekDay("2","0",event)' class=' week-day-btn-2'>M</span>
+                                        <span onclick='checkWeekDay("3","0",event)'  class='week-day-btn-3'>J</span>
+                                        <span onclick='checkWeekDay("4","0",event)' class='week-day-btn-4'>V</span>
+                                        <span onclick='checkWeekDay("5","0",event)'
+                                            class='week-day-btn-5'>S</span>
+                                        <span onclick='checkWeekDay("6","0",event)'
+                                            class='week-day-btn-6'>D</span>
+                                    </div>
+                                    <div style='display: flex;'>
+                                        <input type='text' value='[]' name='week-days-"+elId+"' class="week-days">
+                                        <input type='checkbox' class='week-day-checkbox' name='week-day-0' hidden>
+                                        <input type='checkbox'
+                                        class='week-day-checkbox' name='week-day-1' hidden>
+                                        <input type='checkbox' class='week-day-checkbox' name=' week-day-2'
+                                        hidden>
+                                        <input type='checkbox' class='week-day-checkbox' name='week-day-3' hidden>
+                                        <input type='checkbox'
+                                        class='week-day-checkbox' name='week-day-4' hidden>
+                                        <input type='checkbox' class='week-day-checkbox' name='week-day-5'
+                                        hidden>
+                                        <input type='checkbox' class='week-day-checkbox' name='week-day-6' hidden>
+                                    </div>
+                                </div>-->
+
+                            </div> 
+                           
+                            <div hidden>
+                                <div class="input-container">
+                                    <label for="">Retea</label>
+                                    <select name="add-mediaplan-retea" id="add-mediaplan-retea" required>
+                                        <option valie="" disabled selected>Retea</option>
+                                            <option value='facebook'>Facebook</option>
+                                            <option value='instagram'>Instagram</option>
+                                            
+                                            
+                                            <option value='pinterest'>Pinterest</option>
+                                            <option value='twitter'>Twitter</option>
+                                            <option value='linkedin'>Linkedin</option>
+                                            <option value='tiktok'>TikTok</option>
+                                            <option value='snapchat'>Snapchat</option>
+                                            <option value='youtube'>Youtube</option>
+                                            <option value='reddit'>Reddit</option>
+                                            
+                                    </select>
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Tip content</label>
+                                    <select name="add-mediaplan-tip" id="add-mediaplan-tip" style="text-transform:capitalize">
+                                        <option value='' selected disabled>Tip content</option>
+                                    </select>
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Frecventa (saptamanal)</label>
+    
+                                    <div id="week-day-picker">
+                                        <span onclick="checkWeekDay(event)" data-dayid="100" class="week-day-btn-0">L</span>
+                                        <span onclick="checkWeekDay(event)" data-dayid="101" class="week-day-btn-1">M</span>
+                                        <span onclick="checkWeekDay(event)" data-dayid="102" class="week-day-btn-2">M</span>
+                                        <span onclick="checkWeekDay(event)" data-dayid="103" class="week-day-btn-3">J</span>
+                                        <span onclick="checkWeekDay(event)" data-dayid="104" class="week-day-btn-4">V</span>
+                                        <span onclick="checkWeekDay(event)" data-dayid="105" class="week-day-btn-5">S</span>
+                                        <span onclick="checkWeekDay(event)" data-dayid="106" class="week-day-btn-6">D</span>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <input type="checkbox" id="week-day-100" name="week-day-0" hidden>
+                                        <input type="checkbox" id="week-day-101" name="week-day-1" hidden>
+                                        <input type="checkbox" id="week-day-102" name="week-day-2" hidden>
+                                        <input type="checkbox" id="week-day-103" name="week-day-3" hidden>
+                                        <input type="checkbox" id="week-day-104" name="week-day-4" hidden>
+                                        <input type="checkbox" id="week-day-105" name="week-day-5" hidden>
+                                        <input type="checkbox" id="week-day-106" name="week-day-6" hidden>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+
+
+                            <div class="input-container">
+                                <label for="">Comentarii</label>
+                                <textarea name="add-mediaplan-comm" id="add-mediaplan-comm"></textarea>
+                            </div>
+
+                            
+
+                            <button class="form-button" style="margin-left:auto;margin-right:auto;display:block" type="submit">Adauga</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit-mediaplan" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeEditMediaplan()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-setting'>
+                    <div>
+                       <form action="" method="POST" id="crm-edit-mediaplan">
+                            <input type="text" name="mediaplan-clientId" id="edit-mediaplan-clientId" required hidden>
+                            <input type="text" name="mediaplan-id" id="edit-mediaplan-id" required hidden>
+                            
+                            <div class="input-container">
+                                <label for="">Retea</label>
+                                <select name="edit-mediaplan-retea" id="edit-mediaplan-retea" required>
+                                    <option valie="" disabled selected>Retea</option>
+                                        <option value='facebook'>Facebook</option>
+                                        <option value='instagram'>Instagram</option>
+                                        <option value='google'>Google</option>
+                                        
+                                        <option value='pinterest'>Pinterest</option>
+                                        <option value='twitter'>Twitter</option>
+                                        <option value='linkedin'>Linkedin</option>
+                                        <option value='tiktok'>TikTok</option>
+                                        <option value='snapchat'>Snapchat</option>
+                                        <option value='youtube'>Youtube</option>
+                                        <option value='reddit'>Reddit</option>
+                                        
+                                </select>
+                            </div>
+                            
+
+
+                            <div class="input-container">
+                                <label for="">Tip content</label>
+                                <select name="edit-mediaplan-tip" id="edit-mediaplan-tip" style="text-transform:capitalize">
+                                    <option value='' selected disabled>Tip content</option>
+                                </select>
+                            </div>
+                            <div class="input-container">
+                                <label for="">Frecventa (saptamanal)</label>
+
+                                <div id="week-day-picker">
+                                    <span onclick="checkEditWeekDay(0)" id="edit-week-day-btn-0">L</span>
+                                    <span onclick="checkEditWeekDay(1)" id="edit-week-day-btn-1">M</span>
+                                    <span onclick="checkEditWeekDay(2)" id="edit-week-day-btn-2">M</span>
+                                    <span onclick="checkEditWeekDay(3)" id="edit-week-day-btn-3">J</span>
+                                    <span onclick="checkEditWeekDay(4)" id="edit-week-day-btn-4">V</span>
+                                    <span onclick="checkEditWeekDay(5)" id="edit-week-day-btn-5">S</span>
+                                    <span onclick="checkEditWeekDay(6)" id="edit-week-day-btn-6">D</span>
+                                </div>
+                                <div style="display: flex;">
+                                    <input type="checkbox" id="edit-week-day-0" name="edit-week-day-0" hidden>
+                                    <input type="checkbox" id="edit-week-day-1" name="edit-week-day-1" hidden>
+                                    <input type="checkbox" id="edit-week-day-2" name="edit-week-day-2" hidden>
+                                    <input type="checkbox" id="edit-week-day-3" name="edit-week-day-3" hidden>
+                                    <input type="checkbox" id="edit-week-day-4" name="edit-week-day-4" hidden>
+                                    <input type="checkbox" id="edit-week-day-5" name="edit-week-day-5" hidden>
+                                    <input type="checkbox" id="edit-week-day-6" name="edit-week-day-6" hidden>
+                                    
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <label for="">Perioada start</label>
+                                <input type="date" name="edit-mediaplan-perstart" id="edit-mediaplan-perstart">
+                            </div>
+                            <div class="input-container">
+                                <label for="">Perioada sfarsit</label>
+                                <input type="date" name="edit-mediaplan-persfarsit" id="edit-mediaplan-persfarsit">
+                            </div>
+
+
+                            <div class="input-container">
+                                <label for="">Comentarii</label>
+                                <textarea name="edit-mediaplan-comm" id="edit-mediaplan-comm"></textarea>
+                            </div>
+
+                            <button class="form-button" style="margin-left:auto;margin-right:auto;display:block" type="submit">Salveaza</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="modal-buget" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    
+                   <div onclick="newBuget()" class="crm-long-btn" style="background-color:#6baa41">
+                       <i class="fas fa-plus"></i>
+                       Buget nou
+                   </div>
+                     
+                    
+                    <i onclick='closeBuget()' class='fas fa-times'></i>
+                </div>
+                <div id='view-buget'>
+                    
+                    
+
+                    <div>
+
+                        <table class="client-file-table">
+                            <thead>
+                                <tr>
+                                    <th>Perioada</th>
+                                    <th>Tip</th>
+                                    <th>Buget total</th>
+                                    <th>Retea</th>
+                                    <th>Buget pe zi</th>
+                                    <th>Comentarii</th>
+                                    <th>Actiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crm-buget">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-add-buget" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeNewBuget()' class='fas fa-times'></i>
+                </div>
+                <div id='view-add-buget'>
+                    <div>
+                       <form action="" method="POST" id="crm-add-buget">
+                            <!-- <input type="text" name="sm-account-clientId" id="add-sm-account-clientId" required hidden> -->
+                        
+                            <div class="input-container">
+                                <label for="">Tip buget</label>
+                                <select name="add-buget-tip" id="add-buget-tip" required>
+                                    <option value="" disabled selected>Alege</option>
+                                    <option value="1">Split client</option>
+                                    <option value="2">Split diclick</option>
+                                </select>
+
+                            </div>
+                            <div class="input-container">
+                                <label for="">Perioada start</label>
+                                <input type="date" name="add-buget-perstart" id="add-buget-perstart">
+                            </div>
+
+                            <div class="input-container">
+                                <label for="">Buget total</label>
+                                <input type="number" name="add-buget-total" id="add-buget-total" required>
+                                
+                            </div>
+                            <div class="input-container">
+                                <label>Bugetul pe zi este <span id="add-buget-total-divizat"></span></label>
+                            </div>
+
+                            <div class="crm-long-btn" style="background-color: #6baa41;" onclick="addBugetNewRetea()">
+                                Adauga retea
+                            </div>
+
+                            <div id="add-buget-retele">
+
+                            </div>
+
+
+                            <div class="input-container">
+                                <label for="">Comentarii</label>
+                                <textarea name="add-buget-comm" id="add-buget-comm"></textarea>
+                            </div>
+
+                            
+
+                            <button class="form-button" id="add-buget-submit" style="margin-left:auto;margin-right:auto;display:block" type="submit">Adauga</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit-buget" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeEditBuget()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-setting'>
+                    <div>
+                        <form action="" method="POST" id="crm-edit-buget">
+
+                            <input type="text" name="edit-buget-id" id="edit-buget-id" readonly hidden>
+                            <div class="input-container">
+                                <label for="">Tip buget</label>
+                                <select name="edit-buget-tip" id="edit-buget-tip" required>
+                                    <option value="" disabled selected>Alege</option>
+                                    <option value="1">Split client</option>
+                                    <option value="2">Split diclick</option>
+                                </select>
+
+                            </div>
+                            <div class="input-container">
+                                <label for="">Perioada start</label>
+                                <input type="date" name="edit-buget-perstart" id="edit-buget-perstart">
+                            </div>
+                            <div class="input-container">
+                                <label for="">Perioada sfarsit</label>
+                                <input type="date" name="edit-buget-persfarsit" id="edit-buget-persfarsit">
+                            </div>
+
+
+                            <div class="input-container">
+                                <label for="">Buget total</label>
+                                <input type="number" name="edit-buget-total" id="edit-buget-total" required>
+                                
+                            </div>
+                            <div class="input-container">
+                                <label>Bugetul pe zi este <span id="edit-buget-total-divizat"></span></label>
+                            </div>
+
+                            <div class="crm-long-btn" style="background-color: #6baa41;" onclick="editBugetNewRetea()">
+                                Adauga retea
+                            </div>
+
+                            <div id="edit-buget-retele">
+
+                            </div>
+
+
+                            <div class="input-container">
+                                <label for="">Comentarii</label>
+                                <textarea name="edit-buget-comm" id="edit-buget-comm"></textarea>
+                            </div>
+
+                            
+
+                            <button class="form-button" id="edit-buget-submit" style="margin-left:auto;margin-right:auto;display:block" type="submit">Modifica</button>
+                        </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <div id="modal-creatie" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    
+                   <div onclick="newCreatie()" class="crm-long-btn" style="background-color:#6baa41">
+                       <i class="fas fa-plus"></i>
+                       Perioada noua
+                   </div>
+                     
+                    
+                    <i onclick='closeCreatie()' class='fas fa-times'></i>
+                </div>
+                <div id='view-mediaplan'>
+                    
+                    
+
+                    <div>
+
+                        <table class="client-file-table">
+                            <thead>
+                                <tr>
+                                    <th>Perioada</th>
+                                    <th>Pachet</th>
+                                    <th>Produse</th>
+                                    <th>Comentarii</th>
+                                    <th>Actiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crm-creatie">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-add-creatie" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeNewCreatie()' class='fas fa-times'></i>
+                </div>
+                <div id='view-add-objective'>
+                    <div>
+                       <form action="" method="POST" id="crm-add-creatie">
+                            <!-- <input type="text" name="sm-account-clientId" id="add-sm-account-clientId" required hidden> -->
+                        
+                           
+                            <div class="input-container">
+                                <label for="">Perioada start</label>
+                                <input type="date" name="add-creatie-perStart" id="add-creatie-perStart" required>
+                            </div>
+
+                            <div class="input-container">
+                                <label for="">Pachet</label>
+                                <select name="add-craetie-pachet" id="add-craetie-pachet" required>
+                                    <option value="" disabled selected>Alege pachetul</option>
+                                    <option value="startup">Start-up</option>
+                                    <option value="optim">Optim</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="custom">Custom</option>
+                                </select>
+                            </div>
+
+                            <div class="crm-long-btn" style="background-color: #6baa41;" onclick="addCreatieNewProdus()">
+                                Adauga produs
+                            </div>
+
+                            <div id="add-creatie-produse">
+                                <!-- <div><i onclick='deleteCreatieProdus(\""+elId+"\")' class='fa-solid fa-trash-can'></i></div>
+                                <div class='input-container'><label>Denumire produs</label><input type="text" name='add-creatie-produs[]' class='add-creatie-produs'></div><div class='input-container'><label>Cantitate</label><input type="number" name='add-creatie-cantitate[]' class='add-creatie-cantitate'></div> -->
+                            </div>
+
+                            <div class="input-container">
+                                <label for="">Comentarii</label>
+                                <textarea name="add-creatie-comm" id="add-creatie-comm"></textarea>
+                            </div>
+
+                            <button class="form-button" style="margin-left:auto;margin-right:auto;display:block" type="submit">Adauga</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit-creatie" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeEditCreatie()' class='fas fa-times'></i>
+                </div>
+                <div id='view-edit-creatie'>
+                    <div>
+                       <form action="" method="POST" id="crm-edit-creatie">
+                            <input type="text" name="creatie-clientId" id="edit-creatie-clientId" required hidden>
+                            <input type="text" name="creatie-id" id="edit-creatie-id" required hidden>
+                            
+                            <div class="input-container">
+                                <label for="">Perioada start</label>
+                                <input type="date" name="edit-creatie-perStart" id="edit-creatie-perStart" required>
+                            </div>
+
+                            <div class="input-container">
+                                <label for="">Perioada sfarsit</label>
+                                <input type="date" name="edit-creatie-perSfarsit" id="edit-creatie-perSfarsit" required>
+                            </div>
+
+                            <div class="input-container">
+                                <label for="">Pachet</label>
+                                <select name="edit-creatie-pachet" id="edit-creatie-pachet" required>
+                                    <option value="" disabled selected>Alege pachetul</option>
+                                    <option value="p1">Pachet 1</option>
+                                    <option value="p2">Pachet 2</option>
+                                    <option value="p3">Pachet 3</option>
+                                    <option value="custom">Custom</option>
+                                </select>
+                            </div>
+
+                            <div class="crm-long-btn" style="background-color: #6baa41;" onclick="editCreatieNewProdus()">
+                                Adauga produs
+                            </div>
+
+                            <div id="edit-creatie-produse">
+                                <!-- <div><i onclick='deleteCreatieProdus(\""+elId+"\")' class='fa-solid fa-trash-can'></i></div>
+                                <div class='input-container'><label>Denumire produs</label><input type="text" name='add-creatie-produs[]' class='add-creatie-produs'></div><div class='input-container'><label>Cantitate</label><input type="number" name='add-creatie-cantitate[]' class='add-creatie-cantitate'></div> -->
+                            </div>
+
+                            <div class="input-container">
+                                <label for="">Comentarii</label>
+                                <textarea name="edit-creatie-comm" id="edit-creatie-comm"></textarea>
+                            </div>
+
+                            <button class="form-button" style="margin-left:auto;margin-right:auto;display:block" type="submit">Adauga</button>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+
+    <div id="loading-screen">
+
+        <img src="/resources/img/di-logo.svg" id="di-logo-loading" alt="">
+        <span>Loading</span>
+    </div>
+
+</body>
+
+<script src="/admin/admin-js/logout.js"></script>
+<script src="/admin/admin-js/session.js"></script>
+
+<script src="/admin/admin-js/menu.js"></script>
+<script src="/admin/crm/js/client.js"></script>
+
+</html>
+
+

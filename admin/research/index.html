@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/flash.css">
+</head>
+
+<body>
+
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="page-body">
+        <div id="menu-wrap" class="menu-inactive">
+            <div id="menu-container">
+                <nav id="navigation">
+                    <ul id="navigation-ul">
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/"><i class="fa-solid fa-house-chimney"></i>&nbsp;Home</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/media-plan/"><i class="fa-solid fa-photo-film"></i>&nbsp;Media plan</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/tasks/"><i class="fa-solid fa-list-check"></i>&nbsp;Tasks</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-people-arrows-left-right"></i>&nbsp;CRM</a>
+                            
+                            <ul id="crm-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/"><i class="fa-solid fa-list-ul"></i>&nbsp;To do</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/proforme/"><i class="fa-solid fa-receipt"></i>&nbsp;Proforms</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/invoices/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;Invoices</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/xml-to-pdf/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;XML to PDF</a>
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a>
+                            
+                            <ul id="settings-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/admins/"><i class="fa-solid fa-user-gear"></i>&nbsp;Admins</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/roles"><i class="fa-solid fa-star"></i>&nbsp;Roles</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/account-settings/"><i class="fa-solid fa-sliders"></i>&nbsp;Account settings</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="page-wrap" class="page-wrap-inactive-menu">
+            <div id="page-container">
+                <div class="crm-info-box-header" style="cursor:initial !important">
+                    <div>
+                        <h1>Research</h1>
+                        <p>Se afișează elementele de la <span id="firstIndex"></span> până la <span id="lastIndex"></span> dintr-un total de <span  id="totalIndex"></span></p>
+                    </div>
+                    <div class="crm-action-box-btns">
+                        <div  onclick="addRow()" class="crm-long-btn" style="background-color: #6baa41;" title="Rand nou" id="crm-new-proforma-btn">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <div  onclick="openUploadQueue()" class="crm-long-btn" style="background-color: #6baa41;" id="crm-new-proforma-btn">
+                            <i class="fa-solid fa-file-arrow-up"></i>&nbsp;Incarca un fisier
+                        </div>
+                    </div>
+                   
+                </div>
+                
+                <div style="display:flex;align-items:center;">
+                    <i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <select id="emitor-filter" onchange="filterTable();">
+                            <option value="all" selected>Agenție</option>
+                            <option value="1" >diagency</option>
+                            <option value="2" >diclick</option>
+                        </select>
+                    </div>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <input id="client-filter" type="text" oninput="filterTable();" placeholder="Companie">
+                    </div>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <input id="number-filter" type="text" oninput="filterTable();" placeholder="Brand">
+                    </div>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <input id="date-filter" type="month" oninput="filterTable();" placeholder="Luna emitere">
+                    </div>
+                </div>
+                <div id="research-table">
+                    <table class="client-file-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Denumire promotie
+                                </th>
+                                <th>
+                                    Perioada de start
+                                </th>
+                                <th>
+                                    Perioada de sfarsit
+                                </th>
+                                <th>
+                                    Companie
+                                </th>
+                                <th>
+                                    Brand
+                                </th>
+                                <th>
+                                    Tip promoție
+                                </th>
+                                
+                                <th>    
+                                    Valoare premii
+                                </th>
+                                
+                                
+                                <th>
+                                    Comentarii
+                                </th>
+                                <th>
+                                    Acțiuni
+                                </th>
+                            </tr>
+                        </thead>
+
+                            <!-- <tr><td>"+list[i].denumirePromotie+"</td><td>"+list[i].dataStart+"</td><td>"+list[i].dataSfarsit+"</td><td>"+list[i].companie+"</td><td>"+list[i].brand+"</td><td>"+list[i].tipPromotie+"</td><td>"+list[i].valoarePremii+"</td><td>"+list[i].comentarii+"</td><td>    </td></tr> -->
+                        <tbody id="research-table-list">
+                            <tr>
+                                <td>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus fugiat enim corrupti explicabo sapiente, vitae atque facilis harum nobis, excepturi nam repudiandae expedita illo, assumenda illum quo? Ducimus, qui minus.</p>
+                                </td>
+                                <td> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></td>
+                                <td> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></td>
+                                <td> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></td>
+                                <td> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></td>
+                                <td> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></td>
+                                <td> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></td>
+                                <td> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></td>
+                                
+                                <td> 
+                                    <div>
+                                        <div class="crm-action-box-btns">
+                                            <a class="crm-btn" href="/admin/research/campaign/?id=" style="background-color:#3daad6" title="Veyi fișa de campanie">
+                                                <i class='fa-solid fa-eye'></i>
+                                            </a>
+                                            <div class="crm-btn" onclick="" style="background-color:#dea336" title="Modifica">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </div>
+                                            <div class="crm-btn" onclick="" style="background-color:#d94e47" title="Sterge">
+                                                <i class="fa-solid fa-trash-can" ></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+
+
+                    </table>
+
+                    <div id="pagination">
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    <footer style="height: 20px; background-color: #444; color:#fff;">
+        <p style='text-align: center;'>Copyright Social Marketing Platform S.R.L.</p>
+    </footer>
+    
+    
+
+
+    <div id="new-row-research-modal" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeAddRow()' class='fas fa-times'></i>
+                </div>
+                <div id='view-complete-action-content'>
+                    <div>
+                        <h1 style="text-align:center">Rand nou</h1>
+                       <form action="" method="POST" id="crm-new-row-research">
+                           
+                            <!-- <div class="form-row-wrap"> -->
+                                <div class="input-container">
+                                    <label>
+                                        Denumire promoție
+                                    </label>
+                                    <input type="text" name="denumire-promotie" id="denumire-promotie-input" required>
+                                </div>
+                                <div class="input-container">
+                                    <label>
+                                        Slogan
+                                    </label>
+                                    <input type="text" name="slogan" id="slogan-input" required>
+                                </div>
+                            <!-- </div> -->
+
+                            <div class="input-container">
+                                <label>
+                                    Categorie
+                                </label>
+                                <select type="text" name="categorie" id="categorie-input" required>
+                                    <option value="" selected disabled>Alege</option>
+                                </select>
+                            </div>
+                            <div class="input-container">
+                                <label>
+                                    Subcategorie
+                                </label>
+                                <select type="text" name="subcategorie" id="subcategorie-input" required>
+                                    <option value="" selected disabled>Alege</option>
+                                </select>
+                            </div>
+
+                            <div class="input-container">
+                                <label>
+                                    Companie
+                                </label>
+                                <input type="text" name="companie" id="companie-input" required>
+                            </div>
+                            <div class="input-container">
+                                <label>
+                                    Brand
+                                </label>
+                                <input type="text" name="brand" id="brand-input" required>
+                            </div>
+
+                            <div class="input-container">
+                                <label>
+                                    Data start
+                                </label>
+                                <input type="date" name="data-start" id="data-start-input" required>
+                            </div>
+                            <div class="input-container">
+                                <label>
+                                    Data sfarsit
+                                </label>
+                                <input type="date" name="data-sfarsit" id="data-sfarsit-input" required>
+                            </div>
+
+                            <div class="input-container">
+                                <label>
+                                    Tip promotie
+                                </label>
+                                <input type="text" name="tip-promotie-sfarsit" id="tip-promotie-input" required>
+                            </div>
+
+                            <div class="input-container">
+                                <label>
+                                    Validare
+                                </label>
+                                <input type="text" name="validare-sfarsit" id="validare-input" required>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <span>Validare</span>
+                                    <div>
+
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <div></div>
+
+                                    </div>
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style='width: max-content;margin:0 auto'>
+                                <button class="form-button" type="submit" id="submit-new-proform-btn">Genereaza</button>   
+                            </div>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <div id="new-file-research-modal" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeUploadQueue()' class='fas fa-times'></i>
+                </div>
+                <div id='view-complete-action-content'>
+                    <div>
+                        <h1 style="text-align:center">încarcă un fișier</h1>
+                       <form action="" method="POST" id="crm-new-file-research">
+                           
+                            
+                                <div class="input-container">
+                                    <label>
+                                        Denumire promoție
+                                    </label>
+                                    <input type="file" name="file-promotii" id="file-promotii-input" required>
+                                </div>
+                                <div style='width: max-content;margin:0 auto'>
+                                    <button class="form-button" type="submit" id="submit-new-proform-btn">Genereaza</button>   
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="/admin/admin-js/logout.js"></script>
+<script src="/admin/admin-js/session.js"></script>
+
+<script src="/admin/admin-js/menu.js"></script>
+
+<script src="/admin/research/research.js"></script>
+
+</html>

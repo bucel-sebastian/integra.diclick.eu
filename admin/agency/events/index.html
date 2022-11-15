@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/flash.css">
+</head>
+
+
+
+<body>
+    
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="notification-corner">
+        
+    </div>
+    <div id="page-body">
+        <div id="menu-wrap" class="menu-inactive">
+            <div id="menu-container">
+                <nav id="navigation">
+                    <ul id="navigation-ul">
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/"><i class="fa-solid fa-house-chimney"></i>&nbsp;Home</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/media-plan/"><i class="fa-solid fa-photo-film"></i>&nbsp;Media plan</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/tasks/"><i class="fa-solid fa-list-check"></i>&nbsp;Tasks</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-people-arrows-left-right"></i>&nbsp;CRM</a>
+                            
+                            <ul id="crm-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/"><i class="fa-solid fa-list-ul"></i>&nbsp;To do</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/proforme/"><i class="fa-solid fa-receipt"></i>&nbsp;Proforms</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/invoices/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;Invoices</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/xml-to-pdf/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;XML to PDF</a>
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a>
+                            
+                            <ul id="settings-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/admins/"><i class="fa-solid fa-user-gear"></i>&nbsp;Admins</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/roles"><i class="fa-solid fa-star"></i>&nbsp;Roles</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/account-settings/"><i class="fa-solid fa-sliders"></i>&nbsp;Account settings</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    <!-- <div id="cutie">
+        <div class="form-box">
+            <div class="form-container">
+                <form action=""class="form">
+                    <div class="input-container">
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="input-container">
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="input-container">
+                        <input type="text" name="" id="">
+                    </div>
+                    <button>da</button>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+        <div id="page-wrap" class="page-wrap-inactive-menu">
+            <div id="page-container">
+
+                <div class="crm-info-box-header">
+                    <h1>Evenimente</h1>
+
+                    <div class="crm-long-btn" style="background-color: #6baa41;text-decoration: none;" onclick="openNewEvent()" id="add-client-btn" href="/admin/roles/new-role/">
+                        <span>Eveniment nou&nbsp;</span><i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div style="display:flex;align-items: center;">
+                    <i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <input type="text" oninput="filterTable();" placeholder="Responsabil" id="name-filter-search">
+                    </div>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <input type="text"  id="company-filter-search" oninput="filterTable();" placeholder="Client">
+                    </div>&nbsp;&nbsp;
+                    
+                    
+                    
+                </div>
+                <table id="client-table" class="client-file-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Eveniment</th>
+                            <th>Client</th>
+                            <th>Responsabil</th>
+                            <th>Data</th>
+                            <th>Recursiv</th>
+                            <th>Actiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="client-table-body">
+                        <!-- <tr>
+                            <td>"+i+"</td>
+                            <td>"+response[i].name+"</td>
+                            <td>"+response[i].company+"</td>
+                            <td><a href='mailto: "+response[i].email+"'>"+response[i].email+"</a></td>
+                            <td><a href='tel: "+response[i].telefon+"'>"+response[i].telefon+"</a>
+                            </td>
+                            <td>
+                                <div class='crm-action-box-btns'>
+                                    <a class='crm-btn' style='background-color: #3daad6;' href='/admin/crm/clients/client/?id="+response[i].id+"' title='Fisa client'>
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                    <a class='crm-btn' style='background-color: #8a1b7a;' href='/admin/media-plan/?client="+response[i].id+"' title='Media plan'>
+                                        <i class="fa-solid fa-photo-film"></i>
+                                    </a>
+                                    <a class='crm-btn' style='background-color: #969fb9;' href='/admin/crm/proforme/?id="+response[i].id+"' title='Proforme'>
+                                        <i class="fa-solid fa-receipt"></i>
+                                    </a>
+                                    <a class='crm-btn' style='background-color: #3daad6;' href='/admin/crm/invoices/?id="+response[i].id+"' title='Facturi'>
+                                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                                    </a>
+                                    <a class='crm-btn' style='background-color: #dea336;' href='/admin/crm/clients/client/modifica/?id="response[i].id"' title='Modifica client'>
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                    <div class='crm-btn' style='background-color: #d94e47;' onclick='' title='Sterge client'>
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </div>
+                                </div>
+                                
+                            </td>
+                        </tr> -->
+                    </tbody>
+
+                </table>
+
+            </div>
+            
+
+        </div>
+
+
+        <div id="modal-new-event" class="modal">
+            <div class="form-box">
+                <div class="form-container">
+                    <div class="btns-box-rigth">
+                        <i onclick="closeNewEventModal()" class="fas fa-times"></i>
+                    </div>
+                    <form id="new-event-form" method="post" enctype="multipart/form-data">
+                        
+                        <h3>Eveniment nou</h3><br><br>
+                        
+                        <div class="input-container">
+                            <label for="">Descriere eveniment</label>
+                            <input type="text" name="event-name" id="new-event-name"                             placeholder="Descriere eveniment" title="Descrierea evenimentului" required>
+                        </div>
+
+                        <div class="input-container">
+                            <label for="">Tip eveniment</label>
+                            <select name="event-type" id="new-event-type" required>
+                                <option value="" selected disabled>Tip</option>
+                                <option value="proforma">Emitere proformă</option>
+                                <option value="contact">Contactare client</option>
+                                <option value="mediaplan">Media plan</option>
+                            </select>
+                        </div>
+
+                        <div class="input-container">
+                            <div>
+                                <input type="checkbox" style="width: max-content;"  name="event-repeat" value="repeat" id="new-event-repeat">
+                                <label for="">Recursiv</label>
+                            </div>
+                        </div>
+
+                        <div class="input-container" id="">
+                            <label for="">Descriere eveniment</label>
+                            <input type="text" name="event-name" id="new-event-name"                             placeholder="Descriere eveniment" title="Descrierea evenimentului" required>
+                        </div>
+
+                        <div class="input-container">
+                            <label for="">Descriere eveniment</label>
+                            <input type="text" name="event-name" id="new-event-name"                             placeholder="Descriere eveniment" title="Descrierea evenimentului" required>
+                        </div>
+                        
+                        <button type="submit" name="submit" class="form-button">Trimite</button>
+                        <div id="file-list"> </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+       
+
+
+
+        <div id="loading-screen">
+
+            <img src="/resources/img/di-logo.svg" id="di-logo-loading" alt="">
+            <span>Loading</span>
+        </div>
+
+
+</body>
+
+
+
+<script src="../../admin-js/logout.js"></script>
+<script src="../../admin-js/session.js"></script>
+<script src="../../admin-js/events.js"></script>
+
+<script src="../../admin-js/menu.js"></script>
+
+
+</html>

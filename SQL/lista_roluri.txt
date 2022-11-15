@@ -1,0 +1,39 @@
+-- ADMIN --
+
+edit roles
+delete roles
+add role
+edit admin accounts
+edit admin role
+delete admin accounts
+add admin account
+edit client accounts
+add client account
+delete client account
+
+
+-- MEDIA PLAN --
+
+view media plan 
+delete media plan
+add media plan
+edit media plan
+
+-- CRM --
+
+view all clients
+view client file
+view client file all data
+edit client file
+view proforma
+generate proforma
+send proforma (email)
+
+view invoice
+generate invoice
+send invoice (email)
+
+
+
+-- IMOBILIARE --
+

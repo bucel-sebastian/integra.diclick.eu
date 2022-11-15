@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 14px/1 Arial, sans-serif;
+}
+table {
+  border-collapse: collapse;
+  background: white;
+  table-layout: fixed;
+  width: 100%;
+}
+th, td {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pane {
+  background: #eee;
+}
+.pane-hScroll {
+  overflow: auto;
+  width: 400px;
+  background: green;
+}
+.pane-vScroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 200px;
+  background: red;
+}
+
+.pane--table2 {
+  width: 400px;
+  overflow-x: scroll;
+}
+.pane--table2 th, .pane--table2 td {
+  width: auto;
+  min-width: 160px;
+}
+.pane--table2 tbody {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: block;
+  height: 200px;
+}
+.pane--table2 thead {
+    display: table-row;
+}
+</style>
+
+
+<body>
+    
+    <div class="pane pane--table1">
+        <div class="pane-hScroll">
+      
+          <table>
+            <thead>
+              <th>foo</th><th>foo</th><th>foo</th><th>foo</th>
+            </thead>
+          </table>
+      
+          <div class="pane-vScroll">
+            <table>
+              <tbody>
+                <tr><td>1</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>2</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>3</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>4</td><td>foo foo foo foo foo foo foo foo foo foo foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>5</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>6</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>7</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>8</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>9</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>10</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>11</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>12</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>13</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>14</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>15</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>16</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>17</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>18</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>19</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>20</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>21</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>22</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>23</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>24</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>25</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>26</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>27</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>28</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>28</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>29</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>30</td><td>foo</td><td>foo</td><td>foo</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="pane pane--table1">
+        <div class="pane-hScroll">
+      
+          <table>
+            <thead>
+              <th>foo</th><th>foo</th><th>foo</th><th>foo</th>
+            </thead>
+          </table>
+      
+          <div class="pane-vScroll">
+            <table>
+              <tbody>
+                <tr><td>1</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>2</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>3</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>4</td><td>foo foo foo foo foo foo foo foo foo foo foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>5</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>6</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>7</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>8</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>9</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>10</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>11</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>12</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>13</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>14</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>15</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>16</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>17</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>18</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>19</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>20</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>21</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>22</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>23</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>24</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>25</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>26</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>27</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>28</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>28</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>29</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>30</td><td>foo</td><td>foo</td><td>foo</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pane pane--table1">
+        <div class="pane-hScroll">
+      
+          <table>
+            <thead>
+              <th>foo</th><th>foo</th><th>foo</th><th>foo</th>
+            </thead>
+          </table>
+      
+          <div class="pane-vScroll">
+            <table>
+              <tbody>
+                <tr><td>1</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>2</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>3</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>4</td><td>foo foo foo foo foo foo foo foo foo foo foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>5</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>6</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>7</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>8</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>9</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>10</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>11</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>12</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>13</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>14</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>15</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>16</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>17</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>18</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>19</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>20</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>21</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>22</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>23</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>24</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>25</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>26</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>27</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>28</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>28</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>29</td><td>foo</td><td>foo</td><td>foo</td></tr>
+                <tr><td>30</td><td>foo</td><td>foo</td><td>foo</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+
+</body>
+
+
+<script>
+    
+    $('.pane-hScroll').scroll(function() {
+  $('.pane-vScroll').width($('.pane-hScroll').width() + $('.pane-hScroll').scrollLeft());
+});
+
+</script>
+</html>

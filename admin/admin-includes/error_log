@@ -1,0 +1,11 @@
+[27-Sep-2022 11:02:53 Europe/Bucharest] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php:14
+Stack trace:
+#0 /home/diclicke/integra.diclick.eu/admin/admin-includes/role-check.php(3): include()
+#1 {main}
+  thrown in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php on line 14
+[31-Oct-2022 13:26:25 Europe/Bucharest] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in /home/diclicke/integra.diclick.eu/admin/admin-includes/send-schedule.php on line 17
+[31-Oct-2022 13:26:39 Europe/Bucharest] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in /home/diclicke/integra.diclick.eu/admin/admin-includes/send-schedule.php on line 17
+[31-Oct-2022 13:47:34 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/diclicke/integra.diclick.eu/admin/admin-includes/get-schedule.php on line 43
+[31-Oct-2022 13:47:34 Europe/Bucharest] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/diclicke/integra.diclick.eu/admin/admin-includes/get-schedule.php on line 44
+[04-Nov-2022 12:22:48 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/diclicke/integra.diclick.eu/admin/admin-includes/get-schedule.php on line 43
+[04-Nov-2022 12:22:48 Europe/Bucharest] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/diclicke/integra.diclick.eu/admin/admin-includes/get-schedule.php on line 44

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+<body>
+
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="page-body">
+    <div id="menu-wrap" class="menu-inactive">
+        <div id="menu-container">
+            <nav id="navigation">
+                <ul id="navigation-ul">
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="">Home</a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/accounts/">Accounts</a>
+                    </li><hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/create-account/">Create new account</a>
+                    </li><hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/clients/">Clients</a>
+                    </li><hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/media-plan/">Media plan</a>
+                    </li><hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/tasks/">Tasks</a>
+                    </li><hr>
+                    <!-- <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/promo-assets/">Promo assets</a>
+                    </li><hr> -->
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/profile/">Profile</a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/crm/">CRM</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="page-wrap" class="page-wrap-inactive-menu">
+        <div id="page-container">
+
+            <h2>Accounts</h2>
+
+            <table id="accounts-table">
+                <thead>
+                    <tr>
+                        <th class="id-col">ID</th>
+                        <th class="unicId-col">Uniq ID</th>
+                        <th class="name-col">Name</th>
+                        <th class="username-col">Username</th>
+                        <th class="password-col">Password</th>
+                        <th class="role-col">Role</th>
+                        <th class="edit-col">Edit</th>
+                        <th class="delete-col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="accounts-table-body">
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+    <div id="edit-account-modal">
+        <div id="edit-account-container">
+            <div><i class="cursor-pointer far fa-times-circle" onclick="closeEditModal()"></i></div>
+            <form action="" method="POST" enctype="multipart/form-data" id="edit-account-form">
+                <div class="edit-account-form-sec">
+                    <h4>Profile picture</h4>
+                    <img src="img/placeholder.png" id="account-profile-prev-img">
+                    <input type="file" name="account-img" id="account-client-img">
+                </div>
+                <div class="edit-account-form-sec">
+                    <h4>Personal info</h4>
+                    <div class="input-container">
+                        <label>Name</label>
+                        <input type="text" name="account-name" id="edit-account-name" placeholder="Name" required>
+                    </div>
+                    <div class="input-container">
+                        <label>Function</label>
+                        <input type="text" name="account-funct" id="edit-account-funct" placeholder="Function" required>
+                    </div>
+                    <div class="input-container">
+                        <label>Company</label>
+                        <input type="text" name="account-company" id="edit-account-company" placeholder="Company"
+                            class="readonly-input" readonly>
+                    </div>
+                </div>
+                <div class="edit-account-form-sec">
+                    <h4>Account info</h4>
+                    <div class="input-container">
+                        <label>Username</label>
+                        <input type="text" name="account-username" id="edit-account-username" class="readonly-input"
+                            placeholder="Username" readonly>
+                    </div>
+                    <div class="input-container">
+                        <label>Uniq ID</label>
+                        <input type="text" name="account-unicId" id="edit-account-unicId" placeholder="Uniq ID"
+                            class="readonly-input" readonly>
+                    </div>
+
+                    <div class="input-container">
+                        <label>Password</label>
+                        <input type="password" name="account-password" id="edit-account-password"
+                            placeholder="Password">
+                    </div>
+
+                    <div class="input-container">
+                        <label>Google Data Studio Link</label>
+                        <input type="text" name="account-gds" id="edit-account-gds"
+                            placeholder="Google Data Studio Report Link">
+                    </div>
+                    <div class="input-container">
+                        <label>Facebook Reports Link</label>
+                        <input type="text" name="account-fbds" id="edit-account-fbds"
+                            placeholder="Facebook Report Link">
+                    </div>
+
+                </div>
+                <div class="edit-account-form-sec">
+                    <h4>Contact info</h4>
+                    <div class="input-container">
+                        <label>Phone</label>
+                        <input type="text" name="account-phone" id="edit-account-phone" placeholder="Phone" required>
+                    </div>
+                    <div class="input-container">
+                        <label>Email</label>
+                        <input type="email" name="account-email" id="edit-account-email" placeholder="Email" required>
+                    </div>
+                </div>
+
+                <div>
+                    <button>EDIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="success-popup">
+        <div id="success-popup-container">
+            <div class="popup-icon green"><i class="fas fa-check"></i></div>
+            <div>
+                <div>
+                    <h4>Success!</h4>
+                </div>
+                <div>
+                    <p></p>
+                </div>
+            </div>
+            <div><i onclick="closePopup()" class="cursor-pointer fas fa-times"></i></div>
+        </div>
+
+    </div>
+
+    <div id="fail-popup">
+        <div id="fail-popup-container">
+            <div class="popup-icon red"><i class="fas fa-times"></i></div>
+            <div>
+                <div>
+                    <h4>Fail!</h4>
+                </div>
+                <div>
+                    <p id="error"></p>
+                </div>
+            </div>
+            <div><i onclick="closePopup()" class="cursor-pointer fas fa-times"></i></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+
+</script>
+
+<script src="../admin-js/logout.js"></script>
+<script src="../admin-js/session.js"></script>
+<script src="../admin-js/get-accounts.js"></script>
+
+<script src="../admin-js/menu.js"></script>
+
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/flash.css">
+</head>
+
+<body>
+
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="page-body">
+    <div id="menu-wrap" class="menu-inactive">
+        <div id="menu-container">
+            <nav id="navigation">
+                <ul id="navigation-ul">
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="">Home</a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/accounts/">Accounts</a>
+                    </li><hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/create-account/">Create new account</a>
+                    </li><hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/clients/">Clients</a>
+                    </li><hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/media-plan/">Media plan</a>
+                    </li><hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/tasks/">Tasks</a>
+                    </li><hr>
+                    <!-- <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/promo-assets/">Promo assets</a>
+                    </li><hr> -->
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/profile/">Profile</a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/admin/crm/">CRM</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="page-wrap">
+
+    </div>
+</div>
+
+
+
+
+</body>
+
+<script src="../admin-js/logout.js"></script>
+<script src="../admin-js/session.js"></script>
+
+<script src="../admin-js/menu.js"></script>
+
+
+</html>

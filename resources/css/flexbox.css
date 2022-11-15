@@ -1,0 +1,20 @@
+/* line 3, ../Websites/test-server/resources/scss/flexbox.scss */
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 8, ../Websites/test-server/resources/scss/flexbox.scss */
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 13, ../Websites/test-server/resources/scss/flexbox.scss */
+.space-between-center {
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+/*# sourceMappingURL=flexbox.css.map */

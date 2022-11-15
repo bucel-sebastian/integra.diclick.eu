@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/flash.css">
+    
+</head>
+
+<style>
+    .client-comment{
+        width: 90%;
+        background-color: #a31f22;
+        color:#fff;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px auto 5px 0;
+        font-size: 80%;
+    }
+    .admin-comment{
+        width: 90%;
+        background-color: #EEEEEE;
+        color:#000;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px 0 5px auto;
+        font-size: 80%;
+    }
+    #schedule-comments-list{
+        padding: 5px 5px;
+    }
+    #schedule-comments-list::-webkit-scrollbar-thumb{
+        background-color: #a31f22;
+
+    }
+    #schedule-comments-list::-webkit-scrollbar{
+        width: 3px;
+
+    }
+</style>
+<body >
+
+    <div id="notification-corner">
+        
+    </div>
+    
+    <div id="loading-screen">
+
+        <img src="/resources/img/di-logo.svg" id="di-logo-loading" alt="">
+        <span>Loading</span>
+    </div>
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="page-body">
+        <div id="menu-wrap" class="menu-inactive">
+            <div id="menu-container">
+                <nav id="navigation">
+                    <ul id="navigation-ul">
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/"><i class="fa-solid fa-house-chimney"></i>&nbsp;Home</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/media-plan/"><i class="fa-solid fa-photo-film"></i>&nbsp;Media plan</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/tasks/"><i class="fa-solid fa-list-check"></i>&nbsp;Tasks</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-people-arrows-left-right"></i>&nbsp;CRM</a>
+                            
+                            <ul id="crm-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/"><i class="fa-solid fa-list-ul"></i>&nbsp;To do</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/proforme/"><i class="fa-solid fa-receipt"></i>&nbsp;Proforms</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/invoices/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;Invoices</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/xml-to-pdf/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;XML to PDF</a>
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a>
+                            
+                            <ul id="settings-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/admins/"><i class="fa-solid fa-user-gear"></i>&nbsp;Admins</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/roles"><i class="fa-solid fa-star"></i>&nbsp;Roles</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/account-settings/"><i class="fa-solid fa-sliders"></i>&nbsp;Account settings</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="page-wrap" class="page-wrap-inactive-menu">
+            <div id="page-container">
+
+                <h2>Media plan</h2>
+               
+                <div id="calendar-controls">
+                    
+                    <div id="calendar-btns2" style="position: relative;min-width: 200px;min-height: 50px;">
+                        
+                            <!-- <select id="clientSelector">
+        
+                            </select> -->
+
+                            <div id="client-selector-box">
+                                <div id="client-selector" style="cursor:pointer" onclick="openChangeClient()">
+                                    Selectează un client
+                                </div>
+                                <div id="client-selector-container" style="display:none;max-height: 250px;overflow-y: auto; padding: 5px;">
+                                    <div>
+                                        <input type="text" id="search-client-input" class="search-input-text" oninput="searchClient(event)">
+                                    </div>
+                                    <div id="clients-list">
+        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <select id="platformSelector">
+                                <option value='all'>All</option>
+                                <option value='facebook'>Facebook</option>
+                                <option value='instagram'>Instagram</option>
+                                <option value='pinterest'>Pinterest</option>
+                                <option value='twitter'>Twitter</option>
+                                <option value='linkedin'>Linkedin</option>
+                                <option value='tiktok'>TikTok</option>
+                                <option value='snapchat'>Snapchat</option>
+                                <option value='youtube'>Youtube</option>
+                            </select>
+                        
+                        
+                        <div onclick="newSchedule()" id="new-schedule-button" style="max-height: 40px;">
+                            <i class="fas fa-plus"></i><span> New schedule</span>
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="calendarBtns" style="max-height:40px">
+                        
+                        <div id='calendar-left' onclick="prevMonth()">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                        <div id='calendar-center'>
+                            <span id='month'></span>
+                            <span id='year'></span>
+                        </div>
+                        <div id='calendar-right' onclick="nextMonth()">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="calendar-home-made">
+                    <div id="calendar-legend">
+                        <div class="calendar-legend-li">
+                            <div class="calendar-legend-circle normalStatus"></div>
+                            <span>Unread</span>
+                        </div>
+                        <div class="calendar-legend-li">
+                            <div class="calendar-legend-circle needChangesStatus"></div>
+                            <span>Needs changes</span>
+                        </div>
+                        <div class="calendar-legend-li">
+                            <div class="calendar-legend-circle editedStatus"></div>
+                            <span>Edited</span>
+                        </div>
+                        <div class="calendar-legend-li">
+                            <div class="calendar-legend-circle aprovedStatus"></div>
+                            <span>Aproved</span>
+                        </div>
+                        <div class="calendar-legend-li">
+                            <div class="calendar-legend-circle postedByClient"></div>
+                            <span>Posted by client</span>
+                        </div>
+                    </div>
+                    <table style="border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                                <th>Sun</th>
+                            </tr>
+                        </thead>
+                        <form id='calendar-all-form'>
+                        <tbody id="tbody">
+
+                        </tbody>
+                        </form>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-new-schedule" class="modal">
+            <div class="form-box" style="overflow:auto">
+                <div class="form-container">
+                    <div class="btns-box"><i onclick="resetNewSchedule()" class="fas fa-sync-alt"></i><i onclick='closeNewSchedule()' class='fas fa-times'></i></div>
+
+                    <div>
+                        <h1 style='text-align: center;'>New Post</h1>
+                    </div>
+                    <form action="" method="post" id="new-schedule-form" enctype="multipart/form-data">
+                        <input type="text" name='clientId' id="new-clientId" readonly hidden>
+                        <div id="new-media-plan-row">
+                            <div id='new-media-plan-left'>
+                                <input type="file" name='file' id="new-file-mp" hidden required>
+                                <div id="preview-file"></div>
+
+                                <div id='uploat-photo-btn' onclick="document.getElementById('new-file-mp').click();"><span>Choose file</span></div>
+                            </div>
+                            <div id='new-media-plan-right'>
+                                <div class="input-container">
+                                    <label>Title</label>
+                                    <input type="text" id="new-title" name="title" required>
+                                </div>
+                                
+                                
+                                
+                                <div class="input-container">
+                                    <label>Social media platform</label>
+                                    <div id="input-platforms">
+                                        
+                                        <div class="input-platform-box">
+                                            <input type="checkbox" name="platform[]" value="facebook" id="new-facebook">
+                                            <i class="fab fa-facebook-square"></i>
+                                        </div>
+                                        <div class="input-platform-box">
+                                            <input type="checkbox" name="platform[]" value="instagram" id="new-instagram">
+                                            <i class="fab fa-instagram-square"></i>
+                                        </div>
+                                        <div class="input-platform-box">
+                                            <input type="checkbox" name="platform[]" value="pinterest" id="new-pinterest">
+                                            <i class="fab fa-pinterest-square"></i>
+                                        </div>
+                                        <div class="input-platform-box">
+                                            <input type="checkbox" name="platform[]" value="twitter" id="new-twitter">
+                                            <i class="fab fa-twitter-square"></i>
+                                        </div>
+                                        <div class="input-platform-box">
+                                            <input type="checkbox" name="platform[]" value='linkedin' id="new-linkedin">
+                                            <i class="fab fa-linkedin"></i>
+                                        </div>
+                                        <div class="input-platform-box">
+                                            <input type="checkbox" name="platform[]" value='tiktok' id="new-tiktok">
+                                            <i class="fab fa-tiktok"></i>
+                                        </div>
+                                        <div class="input-platform-box">
+                                            <input type="checkbox" name="platform[]" value='snapchat' id="new-snapchat">
+                                            <i class="fab fa-snapchat-square"></i>
+                                        </div>
+                                        <div class="input-platform-box">
+                                            <input type="checkbox" name="platform[]" value='youtube' id="new-youtube">
+                                            <i class="fab fa-youtube"></i>
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="input-container">
+                                    <label>Date and Time</label>
+                                    <div class="container-flex">
+                                        <input type="date" id="new-date" name="date" required>
+                                        <input type="time" name="time" style="width: 50%;" id="new-time" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-container">
+                                    <label>Text</label>
+                                    <textarea name="text" id="new-text" required></textarea>
+                                </div>
+    
+                
+                                <button class="form-button" type='submit'>Post</button>
+    
+                            </div>
+                        </div>
+                        
+            
+                    </form>
+                </div>   
+            </div>
+        </div>
+        
+        <div id="modal-view-schedule" class="modal">
+            <div class="form-box">
+                <div class="form-container">
+                    <div class='btns-box'>
+                        <div>
+                            <i id='edit-schedule-btn' onclick='' class='fas fa-edit'></i>
+                            <i id='delete-schedule-btn' onclick='' class='fas fa-trash-alt'></i>
+                            <a href="" id="download-schedule-btn" download="mediaplan-file">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        </div>
+                        <i onclick='closeViewScheduleModal()' class='fas fa-times'></i>
+                    </div>
+                    <div id='view-schedule-content'>
+                        
+                        <div id='view-schedule-file'>
+
+                        </div>
+                        <div id='view-schedule-details'>
+                            <h1 id='view-schedule-title'></h1>
+                            <span id='view-schedule-date'></span>
+                            <p id='view-schedule-text'></p>
+                            <br>
+                            <label>Social media platforms</label>
+                            <div id='view-schedule-platforms'>
+
+                            </div>
+                        </div>
+                        <div id='view-schedule-comments' style="width: 300px;display: flex; flex-direction: column; align-items: center;"> 
+                            <div id="schedule-comments-list" style="width:100%;height: 300px;max-height: 300px;overflow-y: scroll;">
+                                <div class="admin-comment">
+                                    <h3>Nume</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis maxime, excepturi doloribus possimus ipsa, earum deleniti amet aliquid vero cumque</p>
+                                </div>
+                                <div class="admin-comment">
+                                    <h3>Nume</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis maxime, excepturi doloribus possimus ipsa, earum deleniti amet aliquid vero cumque</p>
+                                </div>
+                                <div class="admin-comment">
+                                    <h3>Nume</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis maxime, excepturi doloribus possimus ipsa, earum deleniti amet aliquid vero cumque</p>
+                                </div>
+                                <div class="client-comment">
+                                    <h3>Nume</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis maxime, excepturi doloribus possimus ipsa, earum deleniti amet aliquid vero cumque</p>
+                                </div>
+                            </div>
+                            <div>
+                                <form action="" id="add-schedule-new-comment">
+                                    <input type="text" id="comment-schedule-id" name="scheduleId" readonly hidden>
+                                    <input type="text" id="comment-schedule-client" name="scheduleClient" readonly hidden>
+
+                                    
+                                    <div class="input-container">
+                                        <textarea name="message" id="comment-schedule-message" placeholder="Comentariu"></textarea>
+                                    </div>
+
+                                    <button class="form-button" style="margin:0 0 0 auto; display:block">Trimite</button>
+
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div id='view-schedule-platforms'></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modal-edit-schedule" class="modal">
+            <div class="form-box">
+                <div class="form-container">
+                    <div class="btns-box-rigth"><i onclick='closeEditSchedule()' class='fas fa-times'></i></div>
+                <form action="" id="edit-schedule-form">
+
+                    <input type="text" name="edit-scheduleId" id="edit-scheduleId" readonly hidden>
+                    <input type="text" name="edit-clientId" id="edit-clientId" readonly hidden>
+
+                    <div id="edit-media-plan-row">
+                        <div id='edit-media-plan-left'>
+                            <input type="file" name="edit-file" id="edit-file-mp" hidden>
+                            <div id="preview-file-edit"></div>
+                            <div id='uploat-photo-btn' onclick="document.getElementById('edit-file-mp').click();"><span>Choose file</span></div>
+                        </div>
+                        <div id='edit-media-plan-right'>
+                            <div class="input-container">
+                                <input type="text" name="edit-title" id="edit-title">
+                            </div>
+                            <div class="input-container">
+                                <textarea name="edit-text" id="edit-text"></textarea>
+                            </div>
+                            <div class="input-container">        
+                                <input type="date" name="edit-date" id="edit-date">
+                            </div>
+                            <div class="input-container">        
+                                <input type="time" name="edit-time" id="edit-time">
+                            </div>
+                            
+                            <div class="input-container">    
+                                <div id="input-platforms">
+                                    <div class="input-platform-box">
+                                        <input type="checkbox" name="edit-platform[]" value="facebook" id="edit-facebook">
+                                        <i class="fab fa-facebook-square"></i>
+                                    </div>
+                                    <div class="input-platform-box">
+                                        <input type="checkbox" name="edit-platform[]" value="instagram" id="edit-instagram">
+                                        <i class="fab fa-instagram-square"></i>
+                                    </div>
+                                    <div class="input-platform-box">
+                                        <input type="checkbox" name="edit-platform[]" value="pinterest" id="edit-pinterest">
+                                        <i class="fab fa-pinterest-square"></i>
+                                    </div>
+                                    <div class="input-platform-box">
+                                        <input type="checkbox" name="edit-platform[]" value="twitter" id="edit-twitter">
+                                        <i class="fab fa-twitter-square"></i>
+                                    </div>
+                                    <div class="input-platform-box">
+                                        <input type="checkbox" name="edit-platform[]" value='linkedin' id="edit-linkedin">
+                                        <i class="fab fa-linkedin"></i>
+                                    </div>
+                                    <div class="input-platform-box">
+                                        <input type="checkbox" name="edit-platform[]" value='tiktok' id="edit-tiktok">
+                                        <i class="fab fa-tiktok"></i>
+                                    </div>
+                                    <div class="input-platform-box">
+                                        <input type="checkbox" name="edit-platform[]" value='snapchat' id="edit-snapchat">
+                                        <i class="fab fa-snapchat-square"></i>
+                                    </div>
+                                    <div class="input-platform-box">
+                                        <input type="checkbox" name="edit-platform[]" value='youtube' id="edit-youtube">
+                                        <i class="fab fa-youtube"></i>
+                                    </div>
+                        
+                                </div>
+                            </div>
+                            <button class="form-button" type="submit">Edit</button>
+                        </div>
+                    </div>
+            
+                    
+                    
+                </form>
+                </div>
+                
+            </div>
+        
+        </div>
+
+       
+    </div>
+
+
+</body>
+
+
+</script>
+
+
+<script src="/admin/admin-js/logout.js"></script>
+<script src="/admin/admin-js/session.js"></script>
+
+<script src="/resources/js/calendar.js"></script>
+<script src="/admin/admin-js/menu.js"></script>
+
+
+</html>

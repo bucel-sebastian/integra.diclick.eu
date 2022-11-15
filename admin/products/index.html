@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/flash.css">
+</head>
+
+
+
+<body>
+
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="notification-corner">
+        
+    </div>
+    <div id="page-body">
+        <div id="menu-wrap" class="menu-inactive">
+            <div id="menu-container">
+                
+            </div>
+        </div>
+
+        <div id="page-wrap" class="page-wrap-inactive-menu">
+            <div id="page-container">
+                <div class="crm-info-box-header" style="cursor: initial;">
+                    <h1>Produse</h1>
+                    <div class="crm-long-btn" style="background-color: #6baa41;text-decoration: none;" id="add-role-btn" onclick="addProduct()">
+                        <span>Produs nou&nbsp;</span><i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+
+                <table class="client-file-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Denumire</th>
+                            <th>Pret unitar</th>
+                            <th style="width:0">Actiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-table" >
+                        
+                    </tbody>
+                </table>                
+                
+
+            </div>
+        </div>
+
+        <div id="modal-add-product" class="modal">
+            <div class="form-box">
+                <div class="form-container">
+                    <div class='btns-box'>
+                        <div>
+                           
+                        </div>
+                        <i onclick='closeAddDepartment()' class='fas fa-times'></i>
+                    </div>
+                    <div id='view-complete-action-content'>
+                        <div>
+                            <h1 style="text-align:center">Adauga departament</h1>
+                           <form action="" method="POST" id="add-department-form">
+
+                                <div class="input-container">
+                                    <label for="">Nume departament</label>
+                                    <input type="text" name="nume-departament" id="nume-departament">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Tip departament</label>
+                                    <select type="text" name="tip-departament" id="tip-departament">
+                                        <option value="0">Alege departament</option>
+                                        <option value="1">Sales</option>
+                                        <option value="2">Client Service</option>
+                                        <option value="3">Performance</option>
+                                    </select>
+                                </div>
+                                
+                                
+                                <button type="submit" class="form-button">Creeaza</button>
+                                    
+                                
+                           </form> 
+                        </div>
+                
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+        <div id="loading-screen">
+
+            <img src="/resources/img/di-logo.svg" id="di-logo-loading" alt="">
+            <span>Loading</span>
+        </div>
+        
+
+
+
+</body>
+
+
+<script src="/admin/admin-js/logout.js"></script>
+<script src="/admin/admin-js/session.js"></script>
+
+<script src="/admin/departments/products.js"></script>
+<script src="/admin/admin-js/menu.js"></script>
+
+
+</html>

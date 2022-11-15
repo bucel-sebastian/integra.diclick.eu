@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div id='user-box'>
+                    <a href="/user/profile/"><div id='user-profile-img-container' ><img id='user-profile-img' src="/resources/img/placeholder.png" alt=""></div><span id="user-name"></span></a>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="page-body">
+
+    <div id="menu-wrap" class="menu-inactive">
+        <div id="menu-container">
+            <nav id="navigation">
+                <ul id="navigation-ul">
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/"><div><i class="fas fa-home"></i> Home</div></a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/profile/"><div><i class="fas fa-user-circle"></i> Profile</div></a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/reports/"><div><i class="fas fa-chart-pie"></i> Reports</div></a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/updates/"><div><i class="fas fa-file-upload"></i> Updates</div></a>
+                    </li>
+                    <hr>
+                    <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/media-plan/"><div><i class="far fa-calendar"></i> Media plan</div></a>
+                    </li>
+                    <hr>
+                    <!-- <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/tasks/"><div><i class="fas fa-tasks"></i> Tasks</div></a>
+                    </li>
+                    <hr> -->
+                    <!-- <li class="navigation-ul-li">
+                        <a class="navigation-ul-li-a" href="/user/support/"><div><i class="far fa-question-circle"></i> Support</div></a>
+                    </li> -->
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="page-wrap" class="page-wrap-inactive-menu">
+        <div id="page-container">
+
+            <div id="profile-container">
+                <div id="profile-left">
+                    <div id="profile-img-box">
+                        <img src="img/placeholder.png" id="profile-img">
+                    </div>
+
+                    <h2 id="profile-name"></h2>
+                    <p id="profile-funct"></p>
+                </div>
+                <div id="vertical-line"></div>
+                <div id="proile-right">
+                    <table>
+                        <tr class="border-bottom">
+                            <td class="col1">Company</td>
+                            <td class="col2">
+                                <p id="profile-company"></p>
+                            </td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <td class="col1">Phone</td>
+                            <td class="col2">
+                                <p id="profile-phone"></p>
+                            </td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <td class="col1">Email</td>
+                            <td class="col2">
+                                <p id="profile-email"></p>
+                            </td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <td class="col1">Username</td>
+                            <td class="col2">
+                                <p id="profile-username"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col1">UniqId</td>
+                            <td class="col2">
+                                <p id="profile-unicId"></p>
+                            </td>
+                        </tr>
+
+                    </table>
+
+
+
+
+                </div>
+            </div>
+
+            <div id="toggle-edit-profile">
+                <span onclick="toggleEditProfile()" id='edit-profile-btn'>Edit Profile</span>
+            </div>
+            <div id="edit-profile">
+
+                <div id="edit-profile-container">
+
+                    <form enctype="multipart/form-data" action="" method="POST" id="edit-profile-form">
+                        <div class='edit-profile-col'>
+                            <div class="edit-profile-form-sec">
+                                <h4>Profile picture</h4>
+                                <div id="edit-profile-prev-img-box">
+                                    <img src="img/placeholder.png" id="edit-profile-prev-img">
+                                </div>
+                                
+                                <input type="file" name="client-img" id="edit-client-img" hidden>
+                                <div id='uploat-photo-btn' onclick='openFileChoose()'>Upload photo</div>
+                            </div>
+                            <div class="edit-profile-form-sec">
+                                <h4>Personal info</h4>
+                            
+                                <div class="input-container">
+                                    <label>Name</label>
+                                    <input type="text" name="client-name" id="edit-client-name" placeholder="Name" required>
+                                </div>
+                                <div class="input-container">
+                                    <label>Function</label>
+                                    <input type="text" name="client-funct" id="edit-client-funct" placeholder="Function"
+                                        required>
+                                </div>
+                                <div class="input-container">
+                                    <label>Company</label>
+                                    <input type="text" name="client-company" id="edit-client-company" placeholder="Company"
+                                        class="readonly-input" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="vertical-line"></div>
+                        <div class='edit-profile-col'>
+                            <div class="edit-profile-form-sec">
+                                <h4>Contact info</h4>
+                                <div class="input-container">
+                                    <label>Phone</label>
+                                    <input type="text" name="client-phone" id="edit-client-phone" placeholder="Phone"
+                                        required>
+                                </div>
+                                <div class="input-container">
+                                    <label>Email</label>
+                                    <input type="email" name="client-email" id="edit-client-email" placeholder="Email"
+                                        required>
+                                </div>
+    
+                            </div>
+                            <!-- <div class="vertical-line"></div> -->
+                            <div class="edit-profile-form-sec">
+                                <h4>Account info</h4>
+                                <div class="input-container">
+                                    <label>Username</label>
+                                    <input type="text" name="client-username" id="edit-client-username"
+                                        class="readonly-input" placeholder="Username" readonly>
+                                </div>
+                                <div class="input-container">
+                                    <label>Uniq ID</label>
+                                    <input type="text" name="client-unicId" id="edit-client-unicId" placeholder="Uniq ID"
+                                        class="readonly-input" readonly>
+                                </div>
+    
+                                <div class="input-container">
+                                    <label>Password</label>
+                                    <input type="password" name="client-password" id="edit-client-password"
+                                        placeholder="Password">
+                                </div>
+    
+                                <div class="input-container">
+                                    <label>Re-enter Password</label>
+                                    <input type="password" name="client-password-re" id="edit-client-password-re"
+                                        placeholder="Re-enter Password">
+                                </div>
+    
+                            </div>
+                        </div>
+                        
+                        <div style="width: 100%;display:flex;justify-content: center;">
+                            <button class='form-button' type="submit">Edit</button>
+                        </div>
+                            
+                    
+
+                    </form>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id="success-popup">
+        <div id="success-popup-container">
+            <div class="popup-icon green"><i class="fas fa-check"></i></div>
+            <div>
+                <div>
+                    <h4>Success!</h4>
+                </div>
+                <div>
+                    <p></p>
+                </div>
+            </div>
+            <div><i onclick="closePopup()" class="fas fa-times"></i></div>
+        </div>
+
+    </div>
+
+    <div id="fail-popup">
+        <div id="fail-popup-container">
+            <div class="popup-icon red"><i class="fas fa-times"></i></div>
+            <div>
+                <div>
+                    <h4>Fail!</h4>
+                </div>
+                <div>
+                    <p id="error"></p>
+                </div>
+            </div>
+            <div><i onclick="closePopup()" class="fas fa-times"></i></div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+<script src="../user-js/logout.js"></script>
+<script src="../user-js/session.js"></script>
+<script src="../user-js/set-logo-svg.js"></script>
+<script src="../user-js/client-profile.js"></script>
+
+<script src="../user-js/popup.js"></script>
+<script src="../user-js/menu.js"></script>
+<script>
+
+    function openFileChoose(){
+        document.getElementById("edit-client-img").click();
+    }
+
+</script>
+
+</html>

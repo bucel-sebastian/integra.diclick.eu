@@ -1,0 +1,63 @@
+$green : #6baa41;
+$red : #d94e47;
+$yellow : #dea336;
+$blue : #3daad6;
+$purple : #8a1b7a;
+$gray : #969fb9;
+
+
+button{
+    outline: none;
+    border: none;
+}
+
+.blue-btn {
+    background-color: $blue;
+}
+.green-btn {
+    background-color: $green;
+}
+.red-btn {
+    background-color: $red;
+}
+.yellow-btn {
+    background-color: $yellow;
+}
+.purple-btn {
+    background-color: $purple;
+}
+.gray-btn {
+    background-color: $gray;
+}
+
+.small-rectang-btn{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    color:#fff;
+    margin:0 3px;
+    border: 1px solid #5a5a5a;
+}
+
+.long-rectang-btn{
+    font-size: 16px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    color:#fff;
+    padding: 0 10px;
+    margin:0 3px;
+    border: 1px solid #5a5a5a;
+}
+
+.small-rectang-btn:hover, .long-rectang-btn:hover{
+    filter:brightness(0.9);
+}
+

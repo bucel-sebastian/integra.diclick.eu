@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/afa5b11704.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/flash.css">
+</head>
+
+<body>
+
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="notification-corner">
+        
+    </div>
+    <div id="page-body">
+        <div id="menu-wrap" class="menu-inactive">
+            <div id="menu-container">
+                <nav id="navigation">
+                    <ul id="navigation-ul">
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/"><i class="fa-solid fa-house-chimney"></i>&nbsp;Home</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/media-plan/"><i class="fa-solid fa-photo-film"></i>&nbsp;Media plan</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/tasks/"><i class="fa-solid fa-list-check"></i>&nbsp;Tasks</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-people-arrows-left-right"></i>&nbsp;CRM</a>
+                            
+                            <ul id="crm-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/"><i class="fa-solid fa-list-ul"></i>&nbsp;To do</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/proforme/"><i class="fa-solid fa-receipt"></i>&nbsp;Proforms</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/invoices/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;Invoices</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/xml-to-pdf/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;XML to PDF</a>
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a>
+                            
+                            <ul id="settings-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/admins/"><i class="fa-solid fa-user-gear"></i>&nbsp;Admins</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/roles"><i class="fa-solid fa-star"></i>&nbsp;Roles</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/account-settings/"><i class="fa-solid fa-sliders"></i>&nbsp;Account settings</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="page-wrap" class="page-wrap-inactive-menu">
+            <div id="page-container">
+                <div  style="display: flex;justify-content: space-between;">
+                    
+                    <h1>Modifica</h1>
+
+                    <div style="width: max-content;display: flex;flex-direction: row;">
+                        <button class="crm-long-btn" style="text-decoration: none;background-color: #6baa41;outline: none;border: none;" onclick="document.getElementById('submit-form').click()">
+                            Salveaza&nbsp;<i class="fa-solid fa-floppy-disk"></i>
+                        </button>
+                        <a href="#" onclick="history.back()" class="crm-long-btn" style="text-decoration: none;background-color: #dea336;">
+                            <span>Anuleaza</span>&nbsp;<i class="fa-solid fa-xmark"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <form action="" id="edit-client-form">
+                        <div class="form-row-wrap">
+                            <div class="form-row-wrap" style="width:100%">
+                                <div class="input-container">
+                                    <label>Responsabil client service</label>
+                                    <select name="edit-client-client-service-responsabil" id="edit-client-client-service-responsabil">
+                                        <option value="" disabled selected>Client service</option>
+                                    
+                                    </select>
+                                </div>
+                                <div class="input-container">
+                                    <label>Responsabil sales</label>
+                                    <select name="edit-client-sales-responsabil" id="edit-client-sales-responsabil">
+                                        <option value="" disabled selected>Sales service</option>
+                                    
+                                    </select>
+                                </div>
+                                <div class="input-container">
+                                    <label>Responsabil performance marketing</label>
+                                    <select name="edit-client-performance-responsabil" id="edit-client-performance-responsabil">
+                                        <option value="" disabled selected>Performance marketing</option>
+                                    
+                                    </select>
+                            </div>
+                            
+                            </div>
+                            <div class="form-row-wrap" style="width:50%">
+                                <div class="form-row-wrap">
+                                    <div class="input-container">
+                                        <label>Nume client</label>
+                                        <input type="text" name="edit-client-name" id="edit-client-name" placeholder="">
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Firma</label>
+                                        <input type="text" name="edit-client-firma" id="edit-client-firma" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-row-wrap">
+                                    <div class="input-container">
+                                        <label>Cod fiscal</label>
+                                        <input type="text" name="edit-client-cod-fiscal" id="edit-client-cod-fiscal" placeholder="">
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Nr. Reg. Comert</label>
+                                        <input type="text" name="edit-client-nr-reg-com" id="edit-client-nr-reg-com" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-row-wrap">
+
+
+                                    <div class="input-container">
+                                        <label>Status</label>
+                                        <select name="edit-client-status" id="edit-client-status">
+                                            <option value="2">Prospect</option>
+                                            <option value="3">Cold lead</option>
+                                            <option value="4">Hot lead</option>
+                                            <option value="1">Client</option>
+                                            <option value="0">Closed</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Categorie</label>
+                                        <select name="edit-client-categorie" id="edit-client-categorie">
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                        
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row-wrap">
+                                    <div class="input-container">
+                                        <label>Oras facturare</label>
+                                        <input type="text" name="edit-client-oras-facturare" id="edit-client-oras-facturare" placeholder="Oras facturare">
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Judet facturare</label>
+                                        <input type="text" name="edit-client-judet-facturare" id="edit-client-judet-facturare" placeholder="Judet facturare">
+                                    </div>
+                                </div>
+                                <div class="form-row-wrap">
+
+
+                                    <div class="input-container">
+                                        <label>Tara facturare</label>
+                                        <input type="text" name="edit-client-tara-facturare" id="edit-client-tara-facturare" placeholder="Tara facturare">
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Adresa facturare</label>
+                                        <input type="text" name="edit-client-adresa-facturare" id="edit-client-adresa-facturare" placeholder="Adresa facturare">
+                                    </div>
+                                </div>
+
+                                <div class="form-row-wrap">
+
+                                    <div class="input-container">
+                                        <label>Nr. telefon</label>
+                                        <input type="text" name="edit-client-phone" id="edit-client-phone" placeholder="Nr. telefon">
+                                    </div>
+                                    <div class="input-container">
+                                        <label>Cont bancar</label>
+                                        <input type="text" name="edit-client-bank-account" id="edit-client-bank-account" placeholder="Cont bancar">
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="form-row-wrap" style="width:50%">
+                                <div>
+                                    <label>Logo</label>
+    
+                                    <input type="file" name='edit-client-logo' id="edit-client-logo" hidden accept="image/*">
+                                    <div id="preview-file" style="width:250px;height:250px; background:#fafafa;margin:10px 0;"></div>
+        
+                                    <div id='uploat-photo-btn' style="width:max-content;margin: 0 auto;" onclick="document.getElementById('edit-client-logo').click();"><span>Choose file</span></div>
+                                </div>
+                            </div>
+
+                            
+
+
+                            <button id="submit-form" style="display:none;">TRIMITE</button>
+
+                            
+                        </div>
+                        
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div id="loading-screen">
+
+            <img src="/resources/img/di-logo.svg" id="di-logo-loading" alt="">
+            <span>Loading</span>
+        </div>
+    </div>
+    <footer style="height: 20px; background-color: #444; color:#fff;">
+        <p style='text-align: center;'>Copyright Social Marketing Platform S.R.L.</p>
+    </footer>
+
+</body>
+
+<script src="/admin/admin-js/logout.js"></script>
+<script src="/admin/admin-js/session.js"></script>
+
+<script src="/admin/admin-js/menu.js"></script>
+<script src="/admin/crm/js/edit-client.js"></script>
+
+</html>

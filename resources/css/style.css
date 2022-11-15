@@ -1,0 +1,3117 @@
+/* line 1, ../Websites/test-server/resources/scss/style.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@keyframes logo-pulse {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* line 18, ../Websites/test-server/resources/scss/style.scss */
+.custom-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* line 21, ../Websites/test-server/resources/scss/style.scss */
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #a31f22;
+  border-radius: 5px;
+}
+
+/* line 27, ../Websites/test-server/resources/scss/style.scss */
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* line 31, ../Websites/test-server/resources/scss/style.scss */
+.font-awesome {
+  font-family: 'FontAwesome', 'Second Font name';
+}
+
+/* line 34, ../Websites/test-server/resources/scss/style.scss */
+#page-loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1a1a1a55;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: 0.3s ease;
+  z-index: 2000;
+  backdrop-filter: blur(1px);
+}
+
+/* line 48, ../Websites/test-server/resources/scss/style.scss */
+#login-page-wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: linear-gradient(90deg, #fff 5px, transparent 1%) center, linear-gradient(#fff 5px, transparent 1%) center, #c1c1c1;
+  background-size: 6px 6px;
+}
+
+/* line 62, ../Websites/test-server/resources/scss/style.scss */
+#login-container {
+  width: 310px;
+  height: 560px;
+  padding: 5px;
+  position: relative;
+  background-image: linear-gradient(45deg, #e5213c, #a31f22);
+  z-index: 1;
+  display: flex;
+}
+
+/* line 71, ../Websites/test-server/resources/scss/style.scss */
+#login-box {
+  content: "";
+  z-index: 2;
+  width: 100%;
+  display: block;
+  height: 100%;
+  position: relative;
+  background-color: #fff;
+}
+
+/* line 80, ../Websites/test-server/resources/scss/style.scss */
+#login-header {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+}
+
+/* line 87, ../Websites/test-server/resources/scss/style.scss */
+#login-content {
+  height: 75%;
+  overflow: hidden;
+}
+
+/* line 92, ../Websites/test-server/resources/scss/style.scss */
+#login-carousel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+/* line 99, ../Websites/test-server/resources/scss/style.scss */
+#login-section {
+  width: 100%;
+  flex-shrink: 0;
+  margin-right: 5%;
+  transition: 0.5s ease;
+}
+
+/* line 106, ../Websites/test-server/resources/scss/style.scss */
+#forgot-pass-section {
+  width: 100%;
+  flex-shrink: 0;
+  margin-right: 5%;
+}
+
+/* line 113, ../Websites/test-server/resources/scss/style.scss */
+#change-pass-section {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* line 118, ../Websites/test-server/resources/scss/style.scss */
+#form-container-forget {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* line 122, ../Websites/test-server/resources/scss/style.scss */
+.login-header {
+  text-align: center;
+  width: 100%;
+}
+
+/* line 128, ../Websites/test-server/resources/scss/style.scss */
+#login-slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+/* line 136, ../Websites/test-server/resources/scss/style.scss */
+#login-bullets {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 144, ../Websites/test-server/resources/scss/style.scss */
+.slider-bullet {
+  width: 15px;
+  height: 15px;
+  margin: 0 3px;
+  border-radius: 20px;
+  background-color: #e5213c;
+  transition: 0.5s ease;
+}
+
+/* line 152, ../Websites/test-server/resources/scss/style.scss */
+.slider-bullet:hover {
+  background-color: #4b1415;
+}
+
+/* line 155, ../Websites/test-server/resources/scss/style.scss */
+.active-bullet {
+  width: 17px;
+  height: 17px;
+  background-color: #a31f22;
+}
+
+/* line 160, ../Websites/test-server/resources/scss/style.scss */
+.slide-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+/* line 172, ../Websites/test-server/resources/scss/style.scss */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* line 183, ../Websites/test-server/resources/scss/style.scss */
+.active-slide {
+  opacity: 1;
+  transform: translate(0);
+  transition: 0.8s ease-out;
+}
+
+/* line 188, ../Websites/test-server/resources/scss/style.scss */
+.inactive-slide {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: 0.8s ease-out;
+}
+
+/* line 193, ../Websites/test-server/resources/scss/style.scss */
+.next-slide {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: 0.8s ease-out;
+}
+
+/* line 199, ../Websites/test-server/resources/scss/style.scss */
+.slide-logo {
+  width: 50%;
+  max-height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+/* line 207, ../Websites/test-server/resources/scss/style.scss */
+.slide-logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* line 212, ../Websites/test-server/resources/scss/style.scss */
+.slide-text {
+  text-align: center;
+}
+
+/* line 218, ../Websites/test-server/resources/scss/style.scss */
+.slide-button a {
+  text-decoration: none;
+}
+
+/* line 221, ../Websites/test-server/resources/scss/style.scss */
+#promoapp-button {
+  background-image: linear-gradient(135deg, #e31e26, #eb6223, #f19420, #d2c329, #c4d92d, #a9d034, #7cc240, #6bbd45, #69be59, #68c28c, #67c6b5, #66c8ce, #66c9d7, #59aacb, #4b87be, #4272b6, #3f6ab3, #3f68b2, #4357a7, #4451a3, #4751a3, #6a50a1, #834fa0, #924f9f, #974f9f, #a34a9d, #c13c98, #d73294, #e42c92, #e82a91, #e92883, #ea2461, #eb2046, #ec1e33, #ed1c28, #ed1c24);
+  z-index: 2;
+  font-weight: 500;
+}
+
+/* line 226, ../Websites/test-server/resources/scss/style.scss */
+#logo-slider {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* line 234, ../Websites/test-server/resources/scss/style.scss */
+#logo-slider img {
+  height: 65%;
+  transition: 0.3s ease;
+}
+
+/* line 307, ../Websites/test-server/resources/scss/style.scss */
+#form-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 313, ../Websites/test-server/resources/scss/style.scss */
+.container-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 318, ../Websites/test-server/resources/scss/style.scss */
+.input-container {
+  width: 250px;
+  margin: 10px 0;
+}
+
+/* line 324, ../Websites/test-server/resources/scss/style.scss */
+#change-status-task-text-container {
+  display: none;
+}
+
+/* line 327, ../Websites/test-server/resources/scss/style.scss */
+.input-container select,
+.input-container input,
+.input-container textarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #a31f22;
+  padding: 5px 10px;
+  color: #000;
+  resize: none;
+}
+
+/* line 339, ../Websites/test-server/resources/scss/style.scss */
+.input-container textarea {
+  height: 100px;
+}
+
+/* line 343, ../Websites/test-server/resources/scss/style.scss */
+.input-container input::placeholder {
+  color: #000;
+}
+
+/* line 347, ../Websites/test-server/resources/scss/style.scss */
+#input-platforms {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* line 353, ../Websites/test-server/resources/scss/style.scss */
+.input-platform-box, .input-icon-box {
+  width: 23%;
+  margin: 7px 2px;
+}
+
+/* line 357, ../Websites/test-server/resources/scss/style.scss */
+.input-platform-box input, .input-icon-box input {
+  width: auto;
+}
+
+/* line 360, ../Websites/test-server/resources/scss/style.scss */
+.input-icon-box label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+/* line 367, ../Websites/test-server/resources/scss/style.scss */
+.fa-facebook-square {
+  color: #3b5998;
+}
+
+/* line 370, ../Websites/test-server/resources/scss/style.scss */
+.fa-instagram-square {
+  color: #833AB4;
+}
+
+/* line 373, ../Websites/test-server/resources/scss/style.scss */
+.fa-pinterest-square {
+  color: #E60023;
+}
+
+/* line 376, ../Websites/test-server/resources/scss/style.scss */
+.fa-twitter-square {
+  color: #1DA1F2;
+}
+
+/* line 379, ../Websites/test-server/resources/scss/style.scss */
+.fa-linkedin {
+  color: #0077B5;
+}
+
+/* line 382, ../Websites/test-server/resources/scss/style.scss */
+.fa-tiktok {
+  color: #EE1D52;
+}
+
+/* line 385, ../Websites/test-server/resources/scss/style.scss */
+.fa-snapchat-square {
+  color: #FFFC00;
+}
+
+/* line 388, ../Websites/test-server/resources/scss/style.scss */
+.fa-youtube {
+  color: #FF0000;
+}
+
+/* line 392, ../Websites/test-server/resources/scss/style.scss */
+.btn-container {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 406, ../Websites/test-server/resources/scss/style.scss */
+#login-btn-submit, #forgot-pass-btn-submit {
+  font-size: 100%;
+  position: relative;
+  outline: none;
+  border: none;
+  border-radius: 140px;
+  padding: 10px 50px;
+  color: #fff;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #e5213c, #a31f22);
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #00000055;
+  transition: 0.3s ease;
+}
+
+/* line 420, ../Websites/test-server/resources/scss/style.scss */
+#login-btn-submit::after, #forgot-pass-btn-submit::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 20%;
+  height: 200%;
+  opacity: 0.7;
+  background: #fff;
+  transform: rotate(45deg) translate(-50px, 50px);
+  filter: blur(10px);
+  transition: 0.5s ease;
+}
+
+/* line 434, ../Websites/test-server/resources/scss/style.scss */
+#login-btn-submit:hover::after, #forgot-pass-btn-submit:hover::after {
+  transform: rotate(45deg) translate(150px, -150px);
+}
+
+/* line 438, ../Websites/test-server/resources/scss/style.scss */
+#login-btn-submit:hover, #forgot-pass-btn-submit:hover {
+  box-shadow: 0px 3px 3px 0px #00000055;
+}
+
+/* line 446, ../Websites/test-server/resources/scss/style.scss */
+#success-popup,
+#fail-popup {
+  position: absolute;
+  display: none;
+  top: 100px;
+  width: max-content;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 400px;
+  height: 100px;
+  padding: 7px;
+  opacity: 0;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+/* line 463, ../Websites/test-server/resources/scss/style.scss */
+#success-popup {
+  background-color: #03c203;
+}
+
+/* line 466, ../Websites/test-server/resources/scss/style.scss */
+#success-popup-container {
+  width: 100%;
+  height: 100%;
+  background-color: #03b303;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* line 477, ../Websites/test-server/resources/scss/style.scss */
+#fail-popup {
+  background-color: #e5213c;
+}
+
+/* line 480, ../Websites/test-server/resources/scss/style.scss */
+#fail-popup-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f00c2a;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* line 492, ../Websites/test-server/resources/scss/style.scss */
+.popup-icon {
+  font-size: 115px;
+  margin-left: -10px;
+}
+
+/* line 496, ../Websites/test-server/resources/scss/style.scss */
+.green {
+  color: #0dc50d;
+}
+
+/* line 499, ../Websites/test-server/resources/scss/style.scss */
+.red {
+  color: #aa0117;
+}
+
+/* line 504, ../Websites/test-server/resources/scss/style.scss */
+#page-body {
+  padding-top: 65px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 511, ../Websites/test-server/resources/scss/style.scss */
+#page-wrap {
+  width: 100%;
+  min-height: 100vh;
+  background-size: 6px 6px;
+  padding-top: 20px;
+  transition: 0.2s;
+  position: relative;
+}
+
+/* line 522, ../Websites/test-server/resources/scss/style.scss */
+#page-container {
+  position: relative;
+  margin: 25px;
+  padding: 25px 20px;
+  background-color: #fff;
+  border: 1px solid #e5213c55;
+  border-radius: 5px;
+  min-height: 80vh;
+}
+
+/* line 532, ../Websites/test-server/resources/scss/style.scss */
+.page-wrap-inactive-menu {
+  padding-left: 0;
+}
+
+/* line 535, ../Websites/test-server/resources/scss/style.scss */
+.page-wrap-active-menu {
+  padding-left: 250px;
+}
+
+/* line 539, ../Websites/test-server/resources/scss/style.scss */
+header {
+  position: fixed;
+  z-index: 1001;
+  background-color: #fff;
+  width: 100vw;
+  border-bottom: 1px solid #a31f2255;
+}
+
+/* line 547, ../Websites/test-server/resources/scss/style.scss */
+#header-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0 100px 0 20px;
+}
+
+/* line 556, ../Websites/test-server/resources/scss/style.scss */
+#bar1, #bar2, #bar3 {
+  width: 30px;
+  height: 4px;
+  margin: 6px 0;
+  opacity: 1;
+  background-image: linear-gradient(45deg, #e5213c, #a31f22);
+  transition: 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 566, ../Websites/test-server/resources/scss/style.scss */
+#menu-btn {
+  cursor: pointer;
+}
+
+/* line 570, ../Websites/test-server/resources/scss/style.scss */
+.menu-btn-active #bar1 {
+  transform: rotate(45deg) translate(5px, 10px);
+}
+
+/* line 573, ../Websites/test-server/resources/scss/style.scss */
+.menu-btn-active #bar2 {
+  opacity: 0;
+}
+
+/* line 576, ../Websites/test-server/resources/scss/style.scss */
+.menu-btn-active #bar3 {
+  transform: rotate(-45deg) translate(4px, -10px);
+}
+
+/* line 580, ../Websites/test-server/resources/scss/style.scss */
+#header-logo {
+  height: 65px;
+  margin-left: 50px;
+}
+
+/* line 584, ../Websites/test-server/resources/scss/style.scss */
+#logo-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 588, ../Websites/test-server/resources/scss/style.scss */
+#user-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+/* line 594, ../Websites/test-server/resources/scss/style.scss */
+#user-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 599, ../Websites/test-server/resources/scss/style.scss */
+#user-box a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
+  margin-right: 25px;
+  transition: 0.3s;
+  font-family: Arial;
+  font-size: 130%;
+  text-transform: capitalize;
+}
+
+/* line 611, ../Websites/test-server/resources/scss/style.scss */
+#user-box a:hover {
+  color: #a31f22;
+}
+
+/* line 614, ../Websites/test-server/resources/scss/style.scss */
+#user-profile-img-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-right: 5px;
+  border: 2px solid #a31f22;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 625, ../Websites/test-server/resources/scss/style.scss */
+#user-profile-img {
+  width: 100%;
+}
+
+/* line 628, ../Websites/test-server/resources/scss/style.scss */
+#menu-wrap {
+  padding-top: 20px;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  background-color: #3c3c3c;
+  transition: 0.2s;
+}
+
+/* line 639, ../Websites/test-server/resources/scss/style.scss */
+.menu-inactive {
+  margin-left: -250px;
+}
+
+/* line 643, ../Websites/test-server/resources/scss/style.scss */
+.menu-active {
+  margin-left: 0;
+}
+
+/* line 647, ../Websites/test-server/resources/scss/style.scss */
+#menu-container {
+  padding: 0 20px 0 20px;
+}
+
+/* line 650, ../Websites/test-server/resources/scss/style.scss */
+#navigation-ul hr {
+  background-color: #fff;
+  width: 100%;
+  height: 1px;
+  border: none;
+  opacity: 0.3;
+}
+
+/* line 658, ../Websites/test-server/resources/scss/style.scss */
+.navigation-ul-li {
+  list-style: none;
+  padding: 5px 5px;
+}
+
+/* line 662, ../Websites/test-server/resources/scss/style.scss */
+.navigation-ul-li-a {
+  font-size: 17px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+/* line 672, ../Websites/test-server/resources/scss/style.scss */
+.navigation-ul-li-a div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* line 678, ../Websites/test-server/resources/scss/style.scss */
+.navigation-ul-li-a i {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 683, ../Websites/test-server/resources/scss/style.scss */
+.navigation-ul-li-a:hover {
+  color: #ccc;
+}
+
+/* line 688, ../Websites/test-server/resources/scss/style.scss */
+.white-fade-lr {
+  background-image: linear-gradient(to right, #fff, transparent 10%, transparent 90%, #FFF);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* line 697, ../Websites/test-server/resources/scss/style.scss */
+.white-fade-tb {
+  background-image: linear-gradient(to top, #fff, transparent 5%, transparent 95%, #FFF);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+/* line 707, ../Websites/test-server/resources/scss/style.scss */
+#create-accounts-container {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 716, ../Websites/test-server/resources/scss/style.scss */
+#create-client-account-box {
+  transition: 0.5s ease;
+  display: block;
+  position: relative;
+  transform: translateX(0);
+  z-index: 1;
+}
+
+/* line 724, ../Websites/test-server/resources/scss/style.scss */
+#create-client-account-form {
+  width: 900px;
+  margin: 0 auto;
+}
+
+/* line 729, ../Websites/test-server/resources/scss/style.scss */
+#create-account-box {
+  transition: 0.5s ease;
+  display: block;
+  position: relative;
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+/* line 737, ../Websites/test-server/resources/scss/style.scss */
+#create-account-form {
+  width: 300px;
+}
+
+/* REPORTS PAGE - Client*/
+/* line 742, ../Websites/test-server/resources/scss/style.scss */
+#reports-container {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 1050px;
+}
+
+/* line 751, ../Websites/test-server/resources/scss/style.scss */
+#g-data-studio {
+  min-width: 100%;
+  transition: 0.5s ease-out;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 760, ../Websites/test-server/resources/scss/style.scss */
+#fb-data-studio {
+  min-width: 100%;
+  transition: 0.5s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+/* line 769, ../Websites/test-server/resources/scss/style.scss */
+.report-btn {
+  cursor: pointer;
+  position: relative;
+  z-index: 102;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 779, ../Websites/test-server/resources/scss/style.scss */
+#report-box {
+  margin-top: 50px;
+  position: relative;
+  border: 2px solid #a31f22;
+  border-radius: 0 5px 5px 5px;
+}
+
+/* line 786, ../Websites/test-server/resources/scss/style.scss */
+#reports-btn-container {
+  height: 40px;
+  position: absolute;
+  top: -40px;
+  left: -2px;
+  border: 2px solid #a31f22;
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+}
+
+/* line 799, ../Websites/test-server/resources/scss/style.scss */
+#reports-btn-active {
+  width: 202px;
+  height: 40px;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  border: 2px solid #a31f22;
+  border-radius: 5px 5px 0 0;
+  border-bottom: none;
+  background-color: #fff;
+  z-index: 101;
+  transition: 0.3s ease;
+}
+
+/* UPDATES PAGE - Client*/
+/* line 814, ../Websites/test-server/resources/scss/style.scss */
+#updates-table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 25px auto 0;
+  height: auto;
+}
+
+/* line 821, ../Websites/test-server/resources/scss/style.scss */
+.updates-row {
+  border-top: 1px solid #1a1a1a55;
+  border-bottom: 1px solid #1a1a1a55;
+}
+
+/* line 827, ../Websites/test-server/resources/scss/style.scss */
+.date-col {
+  vertical-align: top;
+  padding: 10px 20px;
+  width: 20%;
+  border: none;
+}
+
+/* line 833, ../Websites/test-server/resources/scss/style.scss */
+.desc-col {
+  width: 90%;
+  text-align: left;
+  padding: 10px 20px;
+  border: none;
+}
+
+/* line 839, ../Websites/test-server/resources/scss/style.scss */
+.desc-col p {
+  margin-bottom: 10px;
+}
+
+/* line 843, ../Websites/test-server/resources/scss/style.scss */
+.updates-download-link {
+  text-decoration: none;
+  color: #a31f22;
+  margin: 0 20px;
+}
+
+/* line 848, ../Websites/test-server/resources/scss/style.scss */
+.updates-download-link i {
+  font-size: 40px;
+}
+
+/* line 851, ../Websites/test-server/resources/scss/style.scss */
+.update-files {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* line 855, ../Websites/test-server/resources/scss/style.scss */
+.update-files div {
+  width: 10%;
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 862, ../Websites/test-server/resources/scss/style.scss */
+.update-files div span {
+  margin-top: 3px;
+  font-size: 75%;
+  word-break: break-all;
+}
+
+/* ACCOUNTS PAGE - Admin*/
+/* line 869, ../Websites/test-server/resources/scss/style.scss */
+#accounts-table, #client-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* line 873, ../Websites/test-server/resources/scss/style.scss */
+.accounts-row {
+  border-top: 1px #a31f22 solid;
+  border-bottom: 1px #a31f22 solid;
+}
+
+/* line 877, ../Websites/test-server/resources/scss/style.scss */
+.accounts-col {
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* line 884, ../Websites/test-server/resources/scss/style.scss */
+#edit-account-container {
+  width: 50%;
+  background-color: #03c203;
+  padding: 25px;
+}
+
+/* line 889, ../Websites/test-server/resources/scss/style.scss */
+#edit-account-form {
+  max-width: 600px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* line 898, ../Websites/test-server/resources/scss/style.scss */
+.edit-account-form-sec {
+  width: 50%;
+  padding: 10px 25px;
+}
+
+/* UPDATES PAGE - Admin*/
+/* line 905, ../Websites/test-server/resources/scss/style.scss */
+.inactive-modal {
+  opacity: 0;
+  display: none;
+  transition: 0.3s ease;
+}
+
+/* line 915, ../Websites/test-server/resources/scss/style.scss */
+.close-box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* line 920, ../Websites/test-server/resources/scss/style.scss */
+#new-update-form, #edit-update-form {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 928, ../Websites/test-server/resources/scss/style.scss */
+#modal-view-all-box {
+  background-color: #fff;
+  width: 60%;
+  height: 70%;
+  padding: 25px;
+}
+
+/* line 935, ../Websites/test-server/resources/scss/style.scss */
+#view-all-table-container {
+  margin-top: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  height: 95%;
+}
+
+/* line 942, ../Websites/test-server/resources/scss/style.scss */
+#view-all-table {
+  border-collapse: collapse;
+  width: 600px;
+  max-width: 600px;
+  max-height: 700px;
+}
+
+/* line 950, ../Websites/test-server/resources/scss/style.scss */
+#update-description {
+  margin: 10px 0;
+  width: 100%;
+  height: 250px;
+  resize: none;
+  padding: 5px;
+  font-size: 14px;
+  font-family: Arial;
+}
+
+/* PROFILE PAGE - Client*/
+/* line 962, ../Websites/test-server/resources/scss/style.scss */
+#profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* line 967, ../Websites/test-server/resources/scss/style.scss */
+#profile-container #vertical-line {
+  margin: 0 50px;
+  width: 2px;
+  min-height: 100%;
+  background-color: #a31f22;
+}
+
+/* line 974, ../Websites/test-server/resources/scss/style.scss */
+#profile-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 980, ../Websites/test-server/resources/scss/style.scss */
+#toggle-edit-profile {
+  width: 100%;
+}
+
+/* line 984, ../Websites/test-server/resources/scss/style.scss */
+#toggle-edit-profile span {
+  cursor: pointer;
+  text-align: center;
+  margin: 25px auto 45px;
+  position: relative;
+  display: block;
+  width: max-content;
+}
+
+/* line 993, ../Websites/test-server/resources/scss/style.scss */
+#proile-right table {
+  width: 150%;
+  border-collapse: collapse;
+}
+
+/* line 998, ../Websites/test-server/resources/scss/style.scss */
+#proile-right table td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 1003, ../Websites/test-server/resources/scss/style.scss */
+#proile-right .col1 {
+  text-align: right;
+}
+
+/* line 1006, ../Websites/test-server/resources/scss/style.scss */
+#proile-right .col2 {
+  padding-left: 15px;
+}
+
+/* line 1009, ../Websites/test-server/resources/scss/style.scss */
+#proile-right .border-bottom {
+  border-bottom: #1a1a1a55 1px solid;
+}
+
+/* line 1012, ../Websites/test-server/resources/scss/style.scss */
+#profile-img-box {
+  width: 150px;
+  height: 150px;
+  outline: 4px solid #a31f22;
+  border-radius: 150px;
+  overflow: hidden;
+}
+
+/* line 1019, ../Websites/test-server/resources/scss/style.scss */
+#profile-img {
+  max-width: 100%;
+}
+
+/* line 1023, ../Websites/test-server/resources/scss/style.scss */
+#edit-profile-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* line 1029, ../Websites/test-server/resources/scss/style.scss */
+.edit-profile-form-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+}
+
+/* line 1036, ../Websites/test-server/resources/scss/style.scss */
+.edit-profile-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+}
+
+/* line 1043, ../Websites/test-server/resources/scss/style.scss */
+#edit-profile-prev-img-box {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 10px 0;
+  border: 5px solid #a31f22;
+}
+
+/* line 1054, ../Websites/test-server/resources/scss/style.scss */
+#edit-profile-prev-img {
+  max-width: 100%;
+}
+
+/* line 1058, ../Websites/test-server/resources/scss/style.scss */
+.input-container .readonly-input {
+  background-color: #1a1a1a22;
+  cursor: default;
+}
+
+/* line 1064, ../Websites/test-server/resources/scss/style.scss */
+#edit-profile {
+  overflow: hidden;
+}
+
+/* line 1069, ../Websites/test-server/resources/scss/style.scss */
+#edit-profile-container {
+  transform: translateY(100%);
+  padding-bottom: 20px;
+  transition: 0.5s ease;
+}
+
+/* line 1074, ../Websites/test-server/resources/scss/style.scss */
+.vertical-line {
+  margin: 0;
+  width: 2px;
+  min-height: 100%;
+  background-color: #a31f22;
+}
+
+/* MEDIA PLAN */
+/* line 1095, ../Websites/test-server/resources/scss/style.scss */
+#calendar-home-made {
+  height: 100%;
+  display: block;
+}
+
+/* line 1099, ../Websites/test-server/resources/scss/style.scss */
+#calendar-home-made table {
+  width: 100%;
+}
+
+/* line 1103, ../Websites/test-server/resources/scss/style.scss */
+#calendar-home-made td {
+  border: 1px solid #000;
+  width: 100px;
+  max-width: 100px;
+  height: 20%;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+/* line 1111, ../Websites/test-server/resources/scss/style.scss */
+#calendar-home-made .cell-container:hover {
+  background-color: #ff000022;
+}
+
+/* line 1115, ../Websites/test-server/resources/scss/style.scss */
+.cell-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  transition: 0.2s ease;
+}
+
+/* line 1122, ../Websites/test-server/resources/scss/style.scss */
+.day-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 3px 10px 3px 0;
+}
+
+/* line 1127, ../Websites/test-server/resources/scss/style.scss */
+.events-container {
+  height: 300px;
+  background-color: #1a1a1a22;
+  overflow-y: auto;
+}
+
+/* line 1132, ../Websites/test-server/resources/scss/style.scss */
+.events-container::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* line 1135, ../Websites/test-server/resources/scss/style.scss */
+.events-container::-webkit-scrollbar-thumb {
+  background-color: #a31f22;
+  border-radius: 5px;
+}
+
+/* line 1139, ../Websites/test-server/resources/scss/style.scss */
+.inactive-day {
+  background-color: #1a1a1a55;
+}
+
+/* line 1143, ../Websites/test-server/resources/scss/style.scss */
+#modal-edit-schedule, #modal-deny-form {
+  z-index: 1002;
+}
+
+/* line 1147, ../Websites/test-server/resources/scss/style.scss */
+#new-media-plan-row, #edit-media-plan-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 1151, ../Websites/test-server/resources/scss/style.scss */
+#new-media-plan-right, #edit-media-plan-right {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* line 1159, ../Websites/test-server/resources/scss/style.scss */
+#new-media-plan-left, #edit-media-plan-left {
+  margin-right: 15px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+/* line 1168, ../Websites/test-server/resources/scss/style.scss */
+#new-media-plan-left #preview-file {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 400px;
+  background-color: #FAFAFA;
+  margin-bottom: 15px;
+}
+
+/* line 1179, ../Websites/test-server/resources/scss/style.scss */
+#new-schedule-box, #view-schedule-box, #edit-schedule-box, #deny-form-box {
+  background-color: #fff;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* line 1187, ../Websites/test-server/resources/scss/style.scss */
+#new-schedule-form, #edit-schedule-form, #deny-form, #new-project-form, #edit-task-form, #new-task-form, #edit-project-form, #change-status-task-form, #new-comment-form {
+  padding: 0 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 1194, ../Websites/test-server/resources/scss/style.scss */
+.scheduleBox {
+  padding: 5px 5px;
+  margin: 3px 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #a31f22;
+}
+
+/* line 1203, ../Websites/test-server/resources/scss/style.scss */
+.scheduleBox-top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 7px;
+}
+
+/* line 1211, ../Websites/test-server/resources/scss/style.scss */
+.scheduleBox-top-left {
+  width: 85%;
+  height: 120px;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* line 1218, ../Websites/test-server/resources/scss/style.scss */
+.scheduleBox-top-right {
+  width: 15%;
+  height: 120px;
+}
+
+/* line 1223, ../Websites/test-server/resources/scss/style.scss */
+.scheduleBox-top-right-platforms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  font-size: 110%;
+  color: #fff !important;
+  height: 80%;
+}
+
+/* line 1233, ../Websites/test-server/resources/scss/style.scss */
+.scheduleBox-bottom {
+  color: #fff;
+  padding-left: 3px;
+  width: 100%;
+  text-align: left;
+}
+
+/* line 1239, ../Websites/test-server/resources/scss/style.scss */
+.scheduleBox-bottom p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* line 1247, ../Websites/test-server/resources/scss/style.scss */
+.normalStatus {
+  background-color: #3daad6;
+}
+
+/* line 1250, ../Websites/test-server/resources/scss/style.scss */
+.needChangesStatus {
+  background-color: #d94e47;
+}
+
+/* line 1253, ../Websites/test-server/resources/scss/style.scss */
+.editedStatus {
+  background-color: #dea336;
+}
+
+/* line 1256, ../Websites/test-server/resources/scss/style.scss */
+.aprovedStatus {
+  background-color: #6baa41;
+}
+
+/* line 1259, ../Websites/test-server/resources/scss/style.scss */
+.postedByClient {
+  background-color: #8a1b7a;
+}
+
+/* line 1262, ../Websites/test-server/resources/scss/style.scss */
+#calendar-legend {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* line 1267, ../Websites/test-server/resources/scss/style.scss */
+.calendar-legend-li {
+  display: flex;
+  flex-direction: row;
+  margin: 0 5px;
+}
+
+/* line 1272, ../Websites/test-server/resources/scss/style.scss */
+.calendar-legend-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  margin-right: 2px;
+}
+
+/* line 1279, ../Websites/test-server/resources/scss/style.scss */
+#new-schedule-button {
+  padding: 10px 5px;
+  background-color: #a31f22;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+  transform: translateX(-255px);
+  z-index: 2;
+}
+
+/* line 1289, ../Websites/test-server/resources/scss/style.scss */
+#new-schedule-button:hover {
+  background-color: #e5213c;
+}
+
+/* line 1292, ../Websites/test-server/resources/scss/style.scss */
+#new-schedule-button-client {
+  padding: 10px 5px;
+  background-color: #a31f22;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+  z-index: 2;
+}
+
+/* line 1301, ../Websites/test-server/resources/scss/style.scss */
+#new-schedule-button-client:hover {
+  background-color: #e5213c;
+}
+
+/* line 1306, ../Websites/test-server/resources/scss/style.scss */
+#new-task-button {
+  width: max-content;
+  padding: 10px 15px;
+  background-color: #a31f22;
+  border-radius: 5px;
+  margin-left: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.6s ease-in-out 0.2s, background-color 0.2s ease;
+  transform: translateX(-600px);
+  z-index: 1;
+}
+
+/* line 1318, ../Websites/test-server/resources/scss/style.scss */
+#new-task-button-client {
+  width: max-content;
+  padding: 10px 15px;
+  background-color: #a31f22;
+  border-radius: 5px;
+  margin-left: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.2s ease;
+  transform: translateX(-250px);
+  z-index: 1;
+}
+
+/* line 1330, ../Websites/test-server/resources/scss/style.scss */
+#edit-project-button {
+  width: max-content;
+  padding: 10px 15px;
+  background-color: #a31f22;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out, background-color 0.2s ease;
+  transform: translateX(-450px);
+  z-index: 2;
+}
+
+/* line 1344, ../Websites/test-server/resources/scss/style.scss */
+#new-project-button {
+  width: max-content;
+  padding: 10px 10px;
+  background-color: #a31f22;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.2s ease 0s;
+  transform: translateX(-325px);
+  z-index: 3;
+}
+
+/* line 1355, ../Websites/test-server/resources/scss/style.scss */
+#new-project-button-client {
+  width: max-content;
+  padding: 10px 10px;
+  background-color: #a31f22;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease 0s;
+  z-index: 3;
+}
+
+/* line 1365, ../Websites/test-server/resources/scss/style.scss */
+#edit-project-button-client {
+  width: max-content;
+  padding: 10px 15px;
+  background-color: #a31f22;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out, background-color 0.2s ease;
+  transform: translateX(-250px);
+  z-index: 2;
+}
+
+/* line 1379, ../Websites/test-server/resources/scss/style.scss */
+#new-schedule-button i {
+  margin-right: 5px;
+}
+
+/* line 1383, ../Websites/test-server/resources/scss/style.scss */
+#clientSelector {
+  border-radius: 5px;
+  background-color: #fff;
+  border-color: #a31f22;
+  outline: none;
+  z-index: 5;
+  height: 40px;
+  width: 180px;
+  transition: 0.3s ease;
+}
+
+/* line 1393, ../Websites/test-server/resources/scss/style.scss */
+#platformSelector {
+  border-radius: 5px;
+  background-color: #fff;
+  border-color: #a31f22;
+  outline: none;
+  z-index: 4;
+  height: 40px;
+  width: 120px;
+  transition: 0.3s ease;
+  transform: translateX(-100%);
+}
+
+/* line 1404, ../Websites/test-server/resources/scss/style.scss */
+#platformSelector-user {
+  border-radius: 5px 0 0 5px;
+  background-color: #fff;
+  border-color: #a31f22;
+  outline: none;
+  z-index: 4;
+  height: 40px;
+  width: 120px;
+  transition: 0.3s ease;
+}
+
+/* line 1414, ../Websites/test-server/resources/scss/style.scss */
+#projectSelector {
+  border-radius: 0;
+  border-radius: 50px;
+  background-color: #fff;
+  border-color: #a31f22;
+  outline: none;
+  z-index: 4;
+  width: 180px;
+  height: 40px;
+  transform: translateX(-180px);
+  transition: 0.3s ease;
+}
+
+/* line 1426, ../Websites/test-server/resources/scss/style.scss */
+#projectSelector-client {
+  border-radius: 5px 0 0 5px;
+  background-color: #fff;
+  border-color: #a31f22;
+  outline: none;
+  z-index: 5;
+  height: 40px;
+  width: 180px;
+  transition: 0.3s ease;
+}
+
+/* line 1438, ../Websites/test-server/resources/scss/style.scss */
+#calendar-btns2 {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
+
+/* line 1443, ../Websites/test-server/resources/scss/style.scss */
+#client-calendar-btns {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
+
+/* line 1449, ../Websites/test-server/resources/scss/style.scss */
+#calendarBtns {
+  display: none;
+  flex-direction: row;
+  width: max-content;
+}
+
+/* line 1454, ../Websites/test-server/resources/scss/style.scss */
+#calendar-left {
+  padding: 10px 15px 8px;
+  background-color: #a31f22;
+  border-radius: 5px 0 0 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* line 1463, ../Websites/test-server/resources/scss/style.scss */
+#calendar-center {
+  width: 150px;
+  text-align: center;
+  padding: 10px 5px;
+  border-top: 1px solid #a31f22;
+  border-bottom: 1px solid #a31f22;
+}
+
+/* line 1471, ../Websites/test-server/resources/scss/style.scss */
+#calendar-right {
+  padding: 10px 15px 8px;
+  background-color: #a31f22;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* line 1479, ../Websites/test-server/resources/scss/style.scss */
+#calendar-right:hover,
+#calendar-left:hover,
+#new-schedule-button:hover,
+#new-project-button:hover,
+#new-project-button-client:hover,
+#new-task-button:hover,
+#new-task-button-client:hover,
+#edit-project-button:hover,
+#edit-project-button-client:hover {
+  background-color: #e5213c;
+}
+
+/* line 1491, ../Websites/test-server/resources/scss/style.scss */
+.preview-img {
+  max-width: 400px;
+  max-height: 400px;
+  margin: 20px 0;
+}
+
+/* line 1496, ../Websites/test-server/resources/scss/style.scss */
+.preview-video {
+  max-width: 400px;
+  max-height: 400px;
+  margin: 20px 0;
+}
+
+/* line 1501, ../Websites/test-server/resources/scss/style.scss */
+.edit-preview-img, .edit-preview-video {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* line 1505, ../Websites/test-server/resources/scss/style.scss */
+.btns i {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 5px;
+  color: #000;
+  transition: 0.2s ease;
+}
+
+/* line 1512, ../Websites/test-server/resources/scss/style.scss */
+.btns i:hover {
+  color: #a31f22;
+}
+
+/* line 1515, ../Websites/test-server/resources/scss/style.scss */
+.btns-box {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* line 1520, ../Websites/test-server/resources/scss/style.scss */
+.btns-box-rigth {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+/* line 1526, ../Websites/test-server/resources/scss/style.scss */
+.btns-box i, .btns-box-rigth i {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 5px;
+  color: #000;
+  transition: 0.2s ease;
+}
+
+/* line 1533, ../Websites/test-server/resources/scss/style.scss */
+.btns-box i:hover, .btns-box-rigth i:hover {
+  color: #a31f22;
+}
+
+/* line 1536, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-platforms {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* line 1543, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-file {
+  margin-right: 15px;
+}
+
+/* line 1546, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-details {
+  width: 300px;
+  height: 400px;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* line 1554, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-details label, #view-schedule-details h1 {
+  text-align: center;
+  width: 100%;
+}
+
+/* line 1558, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-details span {
+  text-align: center;
+  font-style: italic;
+  width: 100%;
+}
+
+/* line 1563, ../Websites/test-server/resources/scss/style.scss */
+#schedule-comments-list {
+  height: 100%;
+}
+
+/* line 1566, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-platforms i {
+  margin: 10px;
+  font-size: 30px;
+}
+
+/* line 1570, ../Websites/test-server/resources/scss/style.scss */
+.input-platform-box, .input-icon-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 1577, ../Websites/test-server/resources/scss/style.scss */
+.input-platform-box i {
+  font-size: 35px;
+  margin-left: 5px;
+  filter: drop-shadow(0px 0px 1px #000000);
+}
+
+/* line 1582, ../Websites/test-server/resources/scss/style.scss */
+.input-icon-box i {
+  font-size: 30px;
+}
+
+/* line 1587, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-actions {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* line 1593, ../Websites/test-server/resources/scss/style.scss */
+#aprove-btn {
+  cursor: pointer;
+  width: 30%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px 0;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  margin: 0 10px;
+  transition: 0.3s ease;
+}
+
+/* line 1608, ../Websites/test-server/resources/scss/style.scss */
+#aprove-btn:hover {
+  background-color: #2d9231;
+}
+
+/* line 1611, ../Websites/test-server/resources/scss/style.scss */
+#deny-btn {
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: #e5213c;
+  border-radius: 5px;
+  margin: 0 10px;
+  transition: 0.3s ease;
+}
+
+/* line 1625, ../Websites/test-server/resources/scss/style.scss */
+#deny-btn:hover {
+  background-color: #a31f22;
+}
+
+/* line 1629, ../Websites/test-server/resources/scss/style.scss */
+#deny-btn i, #aprove-btn i {
+  margin-left: 5px;
+}
+
+/* line 1634, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* line 1641, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-content hr {
+  width: 60%;
+  margin: 0;
+}
+
+/* line 1646, ../Websites/test-server/resources/scss/style.scss */
+#datetime-box {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 1650, ../Websites/test-server/resources/scss/style.scss */
+#datetime-box span {
+  margin: 2px 10px;
+  font-style: italic;
+  font-size: 80%;
+}
+
+/* line 1657, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-container {
+  width: 450px;
+  height: auto;
+  background-image: linear-gradient(45deg, #e5213c, #a31f22);
+  position: relative;
+  z-index: 1;
+  padding: 5px;
+  overflow: hidden;
+}
+
+/* line 1668, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-container::after {
+  content: "";
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  z-index: 2;
+  transform: skew(-45deg);
+}
+
+/* line 1679, ../Websites/test-server/resources/scss/style.scss */
+#view-schedule-content, #view-schedule-platforms, #view-schedule-actions {
+  z-index: 5;
+}
+
+/* line 1683, ../Websites/test-server/resources/scss/style.scss */
+#deny-form-box, #new-schedule-box, #edit-schedule-box {
+  background-image: linear-gradient(45deg, #e5213c, #a31f22);
+  position: relative;
+  z-index: 3;
+  padding: 5px;
+  overflow: hidden;
+}
+
+/* line 1691, ../Websites/test-server/resources/scss/style.scss */
+#deny-form-box::after, #new-schedule-box::after, #view-schedule-box::after, #edit-schedule-box::after {
+  content: "";
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  z-index: 4;
+  transform: skew(-45deg);
+}
+
+/* line 1703, ../Websites/test-server/resources/scss/style.scss */
+.btns-box-rigth, #deny-form, #new-schedule-form, #view-schedule-platforms, #view-schedule-content, #edit-schedule-form {
+  z-index: 5;
+  background: #fff;
+}
+
+/* line 1708, ../Websites/test-server/resources/scss/style.scss */
+#calendar-controls {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0 20px;
+}
+
+/* line 1716, ../Websites/test-server/resources/scss/style.scss */
+#cutie {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000055;
+  position: fixed;
+  z-index: 100;
+}
+
+/* line 1726, ../Websites/test-server/resources/scss/style.scss */
+.modal {
+  padding: 100px 0;
+  overflow: auto;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: none;
+  z-index: 1001;
+  background-color: #00000055;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  transition: 0.3s ease;
+}
+
+/* line 1743, ../Websites/test-server/resources/scss/style.scss */
+.form-box {
+  width: max-content;
+  max-width: 1150px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  padding: 5px;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #e5213c, #a31f22);
+}
+
+/* line 1765, ../Websites/test-server/resources/scss/style.scss */
+#modal-view-report .form-box {
+  width: 100%;
+}
+
+/* line 1768, ../Websites/test-server/resources/scss/style.scss */
+.form-container {
+  background: #fff;
+  padding: 10px;
+  position: relative;
+  max-width: 1150px;
+  overflow: auto;
+}
+
+/* line 1776, ../Websites/test-server/resources/scss/style.scss */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 1781, ../Websites/test-server/resources/scss/style.scss */
+form .form-button {
+  margin: 15px 0 0;
+}
+
+/* line 1784, ../Websites/test-server/resources/scss/style.scss */
+.form-button, .form-button-long {
+  position: relative;
+  outline: none;
+  border: none;
+  border-radius: 140px;
+  padding: 7px 40px;
+  color: #fff;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #e5213c, #a31f22);
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #00000055;
+  transition: 0.3s ease;
+}
+
+/* line 1797, ../Websites/test-server/resources/scss/style.scss */
+.form-button::after,
+.form-button-long::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 20%;
+  height: 200%;
+  opacity: 0.7;
+  background: #fff;
+  transform: rotate(45deg) translate(-50px, 50px);
+  filter: blur(10px);
+  transition: 0.5s ease;
+}
+
+/* line 1812, ../Websites/test-server/resources/scss/style.scss */
+.form-button-long:hover::after {
+  transform: rotate(45deg) translate(180px, -180px);
+}
+
+/* line 1816, ../Websites/test-server/resources/scss/style.scss */
+.form-button:hover::after {
+  transform: rotate(45deg) translate(100px, -100px);
+}
+
+/* line 1820, ../Websites/test-server/resources/scss/style.scss */
+.form-button-long:hover,
+.form-button:hover {
+  box-shadow: 0px 3px 3px 0px #00000055;
+}
+
+/* line 1825, ../Websites/test-server/resources/scss/style.scss */
+.switch-box-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* line 1830, ../Websites/test-server/resources/scss/style.scss */
+.switcher-container {
+  border: 2px solid #a31f22;
+  border-radius: 50px;
+  display: flex;
+  width: max-content;
+  height: max-content;
+  position: relative;
+  z-index: 2;
+  transition: 0.5s ease-in-out;
+}
+
+/* line 1840, ../Websites/test-server/resources/scss/style.scss */
+#switch1 {
+  color: #fff;
+}
+
+/* line 1843, ../Websites/test-server/resources/scss/style.scss */
+#switch1, #switch2 {
+  transition: 0.3s ease-in-out;
+}
+
+/* line 1846, ../Websites/test-server/resources/scss/style.scss */
+.switcher-button {
+  width: 130px;
+  padding: 5px 0;
+  text-align: center;
+  border-radius: 50px;
+  background: transparent;
+  z-index: 3;
+  cursor: pointer;
+}
+
+/* line 1857, ../Websites/test-server/resources/scss/style.scss */
+.switcher-active {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+  transform: translateX(0);
+  background-image: linear-gradient(45deg, #e5213c, #a31f22);
+}
+
+/* line 1872, ../Websites/test-server/resources/scss/style.scss */
+#log-out-btn, #edit-profile-btn, #uploat-photo-btn {
+  position: relative;
+  outline: none;
+  border: none;
+  border-radius: 140px;
+  padding: 7px 40px;
+  color: #fff;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #e5213c, #a31f22);
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #00000055;
+  transition: 0.3s ease;
+}
+
+/* line 1885, ../Websites/test-server/resources/scss/style.scss */
+#log-out-btn::after, #edit-profile-btn::after, #uploat-photo-btn::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 20%;
+  height: 200%;
+  opacity: 0.7;
+  background: #fff;
+  transform: rotate(45deg) translate(-50px, 50px);
+  filter: blur(10px);
+  transition: 0.5s ease;
+}
+
+/* line 1899, ../Websites/test-server/resources/scss/style.scss */
+#log-out-btn:hover::after, #edit-profile-btn:hover::after, #uploat-photo-btn:hover::after {
+  transform: rotate(45deg) translate(150px, -150px);
+}
+
+/* line 1903, ../Websites/test-server/resources/scss/style.scss */
+#log-out-btn:hover, #edit-profile-btn:hover, #uploat-photo-btn:hover {
+  box-shadow: 0px 3px 3px 0px #00000055;
+}
+
+/* line 1910, ../Websites/test-server/resources/scss/style.scss */
+.task-container, .task-container-complete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid #a31f2255;
+  border-bottom: 1px solid #a31f2255;
+  padding: 20px 10px;
+  transition: 0.3s ease;
+}
+
+/* line 1919, ../Websites/test-server/resources/scss/style.scss */
+.task-container hr, .task-container-complete hr {
+  margin: 10px 0 0 15px;
+  width: 300px;
+  border: none;
+  height: 1px;
+  background: #aaaaaa99;
+}
+
+/* line 1926, ../Websites/test-server/resources/scss/style.scss */
+.task-container-complete {
+  background-color: #1a1a1a22;
+}
+
+/* line 1929, ../Websites/test-server/resources/scss/style.scss */
+.task-overtime {
+  background-color: #ed1c2430;
+}
+
+/* line 1932, ../Websites/test-server/resources/scss/style.scss */
+.task-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+/* line 1938, ../Websites/test-server/resources/scss/style.scss */
+.task-title h3 {
+  margin-left: 15px;
+}
+
+/* line 1941, ../Websites/test-server/resources/scss/style.scss */
+.task-title i {
+  font-size: 50px;
+}
+
+/* line 1944, ../Websites/test-server/resources/scss/style.scss */
+.task-title p {
+  margin-left: 15px;
+  font-size: 85%;
+}
+
+/* line 1948, ../Websites/test-server/resources/scss/style.scss */
+.task-title .red {
+  color: #ed1c24;
+}
+
+/* line 1951, ../Websites/test-server/resources/scss/style.scss */
+.task-dates {
+  font-size: 80%;
+  font-style: italic;
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 1957, ../Websites/test-server/resources/scss/style.scss */
+.end-date {
+  margin-left: 10px;
+}
+
+/* line 1960, ../Websites/test-server/resources/scss/style.scss */
+.task-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* line 1966, ../Websites/test-server/resources/scss/style.scss */
+.task-center {
+  font-size: 100px;
+  color: #ed1c24;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+/* line 1973, ../Websites/test-server/resources/scss/style.scss */
+.task-left {
+  width: 85%;
+}
+
+/* line 1976, ../Websites/test-server/resources/scss/style.scss */
+.task-status-btns {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 1981, ../Websites/test-server/resources/scss/style.scss */
+.task-btns {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 1986, ../Websites/test-server/resources/scss/style.scss */
+.task-delete-btn, .task-edit-btn, .task-comments-btn {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: #a31f22;
+  color: #fff;
+  font-size: 90%;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+/* line 2000, ../Websites/test-server/resources/scss/style.scss */
+.task-delete-btn:hover, .task-edit-btn:hover, .task-comments-btn:hover {
+  background-color: #e5213c;
+}
+
+/* line 2004, ../Websites/test-server/resources/scss/style.scss */
+.task-uncomplete-btn, .task-complete-btn, .task-change-status-btn {
+  padding: 10px;
+  margin: 2px 3px;
+  border-radius: 5px;
+  width: max-content;
+  transition: 0.3s ease;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* line 2013, ../Websites/test-server/resources/scss/style.scss */
+.task-status-btns {
+  margin-top: 10px;
+}
+
+/* line 2016, ../Websites/test-server/resources/scss/style.scss */
+.task-change-status-btn {
+  background-color: #f19420;
+}
+
+/* line 2019, ../Websites/test-server/resources/scss/style.scss */
+.task-change-status-btn:hover {
+  background-color: #fcab49;
+}
+
+/* line 2022, ../Websites/test-server/resources/scss/style.scss */
+.task-complete-btn {
+  background-color: #2d9231;
+}
+
+/* line 2025, ../Websites/test-server/resources/scss/style.scss */
+.task-complete-btn:hover {
+  background-color: #4CAF50;
+}
+
+/* line 2028, ../Websites/test-server/resources/scss/style.scss */
+.task-uncomplete-btn {
+  background-color: #e5213c;
+}
+
+/* line 2031, ../Websites/test-server/resources/scss/style.scss */
+.task-uncomplete-btn:hover {
+  background-color: #a31f22;
+}
+
+/* line 2035, ../Websites/test-server/resources/scss/style.scss */
+.task-box {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/* line 2040, ../Websites/test-server/resources/scss/style.scss */
+.message-container-left, .message-container-right {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-content: center;
+  margin: 5px 0;
+}
+
+/* line 2047, ../Websites/test-server/resources/scss/style.scss */
+.message-container-left {
+  justify-content: flex-start;
+}
+
+/* line 2050, ../Websites/test-server/resources/scss/style.scss */
+.message-container-right {
+  justify-content: right;
+}
+
+/* line 2053, ../Websites/test-server/resources/scss/style.scss */
+.message-buble {
+  font-size: 80%;
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+/* line 2061, ../Websites/test-server/resources/scss/style.scss */
+.message-sender {
+  background-color: #eeeeee;
+}
+
+/* line 2064, ../Websites/test-server/resources/scss/style.scss */
+.message-sender h3, .message-sender h5 {
+  text-align: right;
+  width: 100%;
+}
+
+/* line 2069, ../Websites/test-server/resources/scss/style.scss */
+.message-reciver {
+  background-color: #a31f22;
+  color: #fff;
+}
+
+/* line 2073, ../Websites/test-server/resources/scss/style.scss */
+.message-reciver h3, .message-reciver h5 {
+  text-align: left;
+  width: 100%;
+}
+
+/* line 2078, ../Websites/test-server/resources/scss/style.scss */
+#notification-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* line 2083, ../Websites/test-server/resources/scss/style.scss */
+.notif-container {
+  padding: 15px 10px;
+  border-radius: 7px;
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 2090, ../Websites/test-server/resources/scss/style.scss */
+.notif-left {
+  width: 100%;
+}
+
+/* line 2093, ../Websites/test-server/resources/scss/style.scss */
+.notif-right {
+  width: max-content;
+}
+
+/* line 2097, ../Websites/test-server/resources/scss/style.scss */
+#edit-update-files {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 2105, ../Websites/test-server/resources/scss/style.scss */
+#edit-update-files div {
+  width: 20%;
+  margin: 2px;
+}
+
+/* line 2110, ../Websites/test-server/resources/scss/style.scss */
+#select-all-btn {
+  cursor: pointer;
+  width: 150px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px 0;
+  background-color: #a31f22;
+  border-radius: 5px 0 0 5px;
+  transition: 0.3s ease;
+}
+
+/* line 2124, ../Websites/test-server/resources/scss/style.scss */
+#select-all-btn:hover {
+  background-color: #e5213c;
+}
+
+/* line 2127, ../Websites/test-server/resources/scss/style.scss */
+#aprove-all-btn {
+  cursor: pointer;
+  width: 150px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px 0;
+  background-color: #4CAF50;
+  border-radius: 0 5px 5px 0;
+  transition: 0.3s ease;
+}
+
+/* line 2141, ../Websites/test-server/resources/scss/style.scss */
+#aprove-all-btn:hover {
+  background-color: #2d9231;
+}
+
+/* line 2144, ../Websites/test-server/resources/scss/style.scss */
+#calendar-all-btns {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 2148, ../Websites/test-server/resources/scss/style.scss */
+.form-row-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+/* line 2153, ../Websites/test-server/resources/scss/style.scss */
+.crm-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+  margin: 0 3px;
+  border: 1px solid #000;
+}
+
+/* line 2158, ../Websites/test-server/resources/scss/style.scss */
+.crm-long-btn {
+  font-size: 16px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0 10px;
+  margin: 0 3px;
+}
+
+/* line 2160, ../Websites/test-server/resources/scss/style.scss */
+.crm-btn i, .crm-long-btn i {
+  color: #fff;
+}
+
+/* line 2162, ../Websites/test-server/resources/scss/style.scss */
+.crm-btn i:hover, .crm-long-btn i:hover {
+  color: #fff;
+}
+
+/* line 2164, ../Websites/test-server/resources/scss/style.scss */
+.crm-btn:hover, .crm-long-btn:hover {
+  filter: brightness(0.9);
+}
+
+/* line 2170, ../Websites/test-server/resources/scss/style.scss */
+.crm-info-box {
+  margin: 0px 0;
+  border-bottom: 1px solid #f00c2a;
+  padding: 15px 0;
+}
+
+/* line 2176, ../Websites/test-server/resources/scss/style.scss */
+.crm-info-box:nth-last-child() {
+  margin: 0px 0;
+  border-top: 1px solid #f00c2a;
+  border-bottom: 1px solid #f00c2a;
+  padding: 15px 0;
+}
+
+/* line 2182, ../Websites/test-server/resources/scss/style.scss */
+.crm-info-box-header {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* line 2189, ../Websites/test-server/resources/scss/style.scss */
+.crm-email-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #00000055;
+  border-bottom: 1px solid #00000055;
+  padding: 3px 0;
+}
+
+/* line 2199, ../Websites/test-server/resources/scss/style.scss */
+.crm-website-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #00000055;
+  border-bottom: 1px solid #00000055;
+  padding: 3px 0;
+}
+
+/* line 2209, ../Websites/test-server/resources/scss/style.scss */
+.crm-person-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #00000055;
+  border-bottom: 1px solid #00000055;
+  padding: 3px 0;
+}
+
+/* line 2219, ../Websites/test-server/resources/scss/style.scss */
+.crm-client-file-person-box, .crm-client-file-website-box, .crm-client-file-email-box {
+  margin: 5px 0;
+}
+
+/* line 2222, ../Websites/test-server/resources/scss/style.scss */
+.crm-client-file-website-box a, .crm-client-file-email-box a {
+  color: #000;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+/* line 2228, ../Websites/test-server/resources/scss/style.scss */
+.crm-client-file-person-box a {
+  margin-left: 15px;
+  color: #000;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+/* line 2235, ../Websites/test-server/resources/scss/style.scss */
+.crm-client-file-person-box a:hover, .crm-client-file-website-box a:hover, .crm-client-file-email-box a:hover {
+  color: #f00c2a;
+}
+
+/* line 2239, ../Websites/test-server/resources/scss/style.scss */
+.crm-action-box-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 2246, ../Websites/test-server/resources/scss/style.scss */
+.form-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 2250, ../Websites/test-server/resources/scss/style.scss */
+.form-col {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+/* line 2255, ../Websites/test-server/resources/scss/style.scss */
+.client-file-table {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* line 2259, ../Websites/test-server/resources/scss/style.scss */
+.client-file-table, .client-file-table td, .client-file-table th, .client-file-table tr {
+  border-collapse: collapse;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+/* line 2264, ../Websites/test-server/resources/scss/style.scss */
+.client-file-table td, .client-file-table th {
+  padding: 10px 10px;
+  text-align: center;
+}
+
+/* line 2268, ../Websites/test-server/resources/scss/style.scss */
+.client-file-table th {
+  background-color: #ed4d4d95;
+  color: #fff;
+}
+
+/* line 2272, ../Websites/test-server/resources/scss/style.scss */
+.client-file-table a {
+  color: #000;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+/* line 2277, ../Websites/test-server/resources/scss/style.scss */
+.client-file-table a:hover {
+  color: #f00c2a;
+}
+
+/* line 2280, ../Websites/test-server/resources/scss/style.scss */
+.client-file-left-tr td {
+  text-align: left !important;
+}
+
+/* line 2284, ../Websites/test-server/resources/scss/style.scss */
+.crm-client-box {
+  width: 350px;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 7px;
+  margin: 10px;
+}
+
+/* line 2295, ../Websites/test-server/resources/scss/style.scss */
+.crm-client-box-left {
+  display: flex;
+  align-items: center;
+}
+
+/* line 2299, ../Websites/test-server/resources/scss/style.scss */
+#crm-clients-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* line 2305, ../Websites/test-server/resources/scss/style.scss */
+.product-button {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0 10px;
+  margin: 0 3px;
+  background-color: #969FB9;
+}
+
+/* line 2309, ../Websites/test-server/resources/scss/style.scss */
+.product-button:hover {
+  filter: brightness(0.9);
+}
+
+/* line 2312, ../Websites/test-server/resources/scss/style.scss */
+.crm-readonly-input {
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+/* line 2320, ../Websites/test-server/resources/scss/style.scss */
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 2326, ../Websites/test-server/resources/scss/style.scss */
+.product-um, .product-cant, .product-tva, .product-cant-edit, .product-price-edit, .product-um-edit, .product-val-edit, .product-tva-edit {
+  width: 50px;
+  text-align: center;
+}
+
+/* line 2330, ../Websites/test-server/resources/scss/style.scss */
+.product-price {
+  width: 70px;
+  text-align: center;
+}
+
+/* line 2334, ../Websites/test-server/resources/scss/style.scss */
+.product-name, .product-name-edit {
+  width: 100%;
+  height: 60px;
+}
+
+/* line 2338, ../Websites/test-server/resources/scss/style.scss */
+.product-val {
+  width: 60px;
+  text-align: center;
+}
+
+/* line 2344, ../Websites/test-server/resources/scss/style.scss */
+#loading-screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #00000075;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.2s ease-in;
+}
+
+/* line 2360, ../Websites/test-server/resources/scss/style.scss */
+#loading-screen span {
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* line 2365, ../Websites/test-server/resources/scss/style.scss */
+#di-logo-loading {
+  animation: logo-pulse 0.5s ease infinite alternate;
+  width: 50px;
+}
+
+/* line 2371, ../Websites/test-server/resources/scss/style.scss */
+#notification-corner {
+  position: fixed;
+  display: block;
+  height: auto;
+  width: 450px;
+  bottom: 20px;
+  right: 40px;
+  z-index: 9999;
+}
+
+/* line 2381, ../Websites/test-server/resources/scss/style.scss */
+.success-notif {
+  background-color: #19a352;
+}
+
+/* line 2384, ../Websites/test-server/resources/scss/style.scss */
+.fail-notif {
+  background-color: #d23920;
+}
+
+/* line 2387, ../Websites/test-server/resources/scss/style.scss */
+.success-notif, .fail-notif {
+  width: 100%;
+  border-radius: 5px;
+  padding: 7px 10px;
+  color: #FFF;
+  margin: 5px 0;
+  transition: 0.2s ease;
+}
+
+/* line 2396, ../Websites/test-server/resources/scss/style.scss */
+.success-notif span, .fail-notif span {
+  text-align: left;
+  font-size: 20px;
+}
+
+/* line 2401, ../Websites/test-server/resources/scss/style.scss */
+.close-popup-btn {
+  cursor: pointer;
+  color: #FFF;
+}
+
+/* line 2405, ../Websites/test-server/resources/scss/style.scss */
+.close-popup-btn i {
+  color: #FFF !important;
+}
+
+/* line 2409, ../Websites/test-server/resources/scss/style.scss */
+.role-input-container {
+  padding: 10px 5px;
+}
+
+/* line 2414, ../Websites/test-server/resources/scss/style.scss */
+#week-day-picker, .crm-mediaplan-frecventa {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* line 2420, ../Websites/test-server/resources/scss/style.scss */
+.crm-mediaplan-frecventa span {
+  cursor: initial !important;
+}
+
+/* line 2423, ../Websites/test-server/resources/scss/style.scss */
+#week-day-picker span, .crm-mediaplan-frecventa span {
+  border-radius: 100px;
+  background-color: #f3f3f3;
+  width: 25px;
+  line-height: 26px;
+  height: 25px;
+  text-align: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+/* line 2434, ../Websites/test-server/resources/scss/style.scss */
+#week-day-picker span:hover {
+  background-color: #e3e3e3;
+}
+
+/* line 2437, ../Websites/test-server/resources/scss/style.scss */
+.week-day-selected, .crm-mediaplan-frecventa-selected {
+  background-color: #ffb1b1 !important;
+}
+
+/* line 2441, ../Websites/test-server/resources/scss/style.scss */
+.add-buget-retea {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+/* line 2451, ../Websites/test-server/resources/scss/style.scss */
+#client-selector-box {
+  width: 200px;
+  border-radius: 5px;
+  background-color: #fff;
+  border-color: #a31f22;
+  outline: none;
+  z-index: 5;
+  height: 40px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* line 2463, ../Websites/test-server/resources/scss/style.scss */
+#client-selector {
+  cursor: pointer;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* line 2468, ../Websites/test-server/resources/scss/style.scss */
+.client-selector-value {
+  padding: 5px;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+/* line 2475, ../Websites/test-server/resources/scss/style.scss */
+.client-selector-value:hover {
+  color: #fff;
+  background-color: #a31f22;
+}
+
+/* line 2480, ../Websites/test-server/resources/scss/style.scss */
+.search-input-text {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+/* line 2486, ../Websites/test-server/resources/scss/style.scss */
+#client-selector-container {
+  width: 200px;
+  background-color: #fff;
+  display: none;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 5px;
+  border-radius: 0 0 5px 5px;
+  z-index: 6;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  border-bottom: 1px solid #a31f22;
+  border-right: 1px solid #a31f22;
+  border-left: 1px solid #a31f22;
+}
+
+/* line 2505, ../Websites/test-server/resources/scss/style.scss */
+.report-iframe {
+  width: 100%;
+  height: 80vh;
+}
+
+/* line 2509, ../Websites/test-server/resources/scss/style.scss */
+.report-box {
+  width: max-content;
+  min-width: 350px;
+  max-width: 350px;
+  border-radius: 10px;
+  background-color: #efefef;
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  height: max-content;
+  margin: 5px;
+}
+
+/* line 2521, ../Websites/test-server/resources/scss/style.scss */
+#view-reports-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* line 2527, ../Websites/test-server/resources/scss/style.scss */
+.new-client-email, .new-client-person {
+  border-bottom: 1px solid #1a1a1a;
+  padding: 5px 0;
+}
+
+/* line 2531, ../Websites/test-server/resources/scss/style.scss */
+.new-client-email:last-child, .new-client-person:last-child {
+  border-bottom: none;
+}
+
+/* line 2537, ../Websites/test-server/resources/scss/style.scss */
+.proforma-iframe-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+/* line 2543, ../Websites/test-server/resources/scss/style.scss */
+.proforma-iframe-box {
+  width: 560px;
+  height: 700px;
+}
+
+/* line 2547, ../Websites/test-server/resources/scss/style.scss */
+.proforma-iframe-box iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 2552, ../Websites/test-server/resources/scss/style.scss */
+#crm-client-file-contracts iframe, #crm-client-file-anexe iframe {
+  width: 100%;
+  height: 80vh;
+}
+
+/* line 2558, ../Websites/test-server/resources/scss/style.scss */
+.green-background-1 {
+  background-color: #6baa4140;
+}
+
+/* line 2561, ../Websites/test-server/resources/scss/style.scss */
+.green-background-2 {
+  background-color: #6baa4175;
+}
+
+/* line 2564, ../Websites/test-server/resources/scss/style.scss */
+.green-background-3 {
+  background-color: #6baa41c5;
+}
+
+/* line 2569, ../Websites/test-server/resources/scss/style.scss */
+.red-background {
+  background-color: #d94e4740;
+}
+
+/* line 2574, ../Websites/test-server/resources/scss/style.scss */
+.yellow-background {
+  background-color: #dea33640;
+}
+
+/* line 2578, ../Websites/test-server/resources/scss/style.scss */
+#personality-selector-box {
+  width: 250px;
+  border-radius: 5px;
+  background-color: #fff;
+  border-color: #a31f22;
+  outline: none;
+  z-index: 5;
+  height: 40px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* line 2590, ../Websites/test-server/resources/scss/style.scss */
+#personality-selector {
+  cursor: pointer;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* line 2595, ../Websites/test-server/resources/scss/style.scss */
+.personality-selector-value {
+  padding: 5px;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+/* line 2602, ../Websites/test-server/resources/scss/style.scss */
+.personality-selector-value:hover {
+  color: #fff;
+  background-color: #a31f22;
+}
+
+/* line 2607, ../Websites/test-server/resources/scss/style.scss */
+.search-input-text {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+/* line 2613, ../Websites/test-server/resources/scss/style.scss */
+#personality-selector-container {
+  width: 250px;
+  background-color: #fff;
+  display: none;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 5px;
+  border-radius: 0 0 5px 5px;
+  z-index: 6;
+  position: absolute;
+  top: 35px;
+  left: -1px;
+  border-bottom: 1px solid #a31f22;
+  border-right: 1px solid #a31f22;
+  border-left: 1px solid #a31f22;
+}
+
+/* line 2631, ../Websites/test-server/resources/scss/style.scss */
+.extend-table th {
+  background-color: #ed4d4d95;
+  color: #fff;
+}
+
+/* line 2636, ../Websites/test-server/resources/scss/style.scss */
+.extend-table tr:hover {
+  background-color: #1a1a1a10;
+}
+
+/*# sourceMappingURL=style.css.map */

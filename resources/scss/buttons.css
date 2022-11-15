@@ -1,0 +1,73 @@
+button {
+  outline: none;
+  border: none;
+}
+
+.blue-btn {
+  background-color: #3daad6;
+}
+
+.green-btn {
+  background-color: #6baa41;
+}
+
+.red-btn {
+  background-color: #d94e47;
+}
+
+.yellow-btn {
+  background-color: #dea336;
+}
+
+.purple-btn {
+  background-color: #8a1b7a;
+}
+
+.gray-btn {
+  background-color: #969fb9;
+}
+
+.small-rectang-btn {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+  margin: 0 3px;
+  border: 1px solid #5a5a5a;
+}
+
+.long-rectang-btn {
+  font-size: 16px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0 10px;
+  margin: 0 3px;
+  border: 1px solid #5a5a5a;
+}
+
+.small-rectang-btn:hover, .long-rectang-btn:hover {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+}
+/*# sourceMappingURL=buttons.css.map */

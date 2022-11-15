@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Integra</title>
+    <link rel="icon" type="image/png" href="/resources/img/icon.png">
+
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="designer" content="">
+    <meta name="publisher" content="">
+    <meta name="distribution" content="Global">
+
+    <!-- Mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS StylSheets -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/flexbox.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <link href="/resources/assets/fontawesome/css/all.css" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div id="header-wrap">
+            <div id="menu-btn-container" class="cursor-pointer">
+                <div id="menu-btn" onclick="toggleMenu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div id="header-logo">
+                <div id='logo-slider'>
+                    <img id="logo1" src="/resources/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div id="user-container">
+                <div>
+                    <div onclick="logoutFunction()" id="log-out-btn">Log-out <i class="fas fa-sign-out-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="notification-corner">
+        
+    </div>
+    <div id="page-body">
+        <div id="menu-wrap" class="menu-inactive">
+            <div id="menu-container">
+                <nav id="navigation">
+                    <ul id="navigation-ul">
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/"><i class="fa-solid fa-house-chimney"></i>&nbsp;Home</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/media-plan/"><i class="fa-solid fa-photo-film"></i>&nbsp;Media plan</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="/admin/tasks/"><i class="fa-solid fa-list-check"></i>&nbsp;Tasks</a>
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-people-arrows-left-right"></i>&nbsp;CRM</a>
+                            
+                            <ul id="crm-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/"><i class="fa-solid fa-list-ul"></i>&nbsp;To do</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/clients/"><i class="fa-solid fa-user-tie"></i>&nbsp;Clients</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/proforme/"><i class="fa-solid fa-receipt"></i>&nbsp;Proforms</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/invoices/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;Invoices</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/crm/xml-to-pdf/"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp;XML to PDF</a>
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <hr>
+                        <li class="navigation-ul-li">
+                            <a class="navigation-ul-li-a" href="#"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a>
+                            
+                            <ul id="settings-submenu">
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/admins/"><i class="fa-solid fa-user-gear"></i>&nbsp;Admins</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/roles"><i class="fa-solid fa-star"></i>&nbsp;Roles</a>
+                                </li>
+                                <li class="navigation-ul-li">
+                                    <a class="navigation-ul-li-a" href="/admin/account-settings/"><i class="fa-solid fa-sliders"></i>&nbsp;Account settings</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="page-wrap" class="page-wrap-inactive-menu">
+            <div id="page-container">
+                
+                
+                <div class="crm-info-box-header" style="cursor:initial !important">
+                    <div>
+                        <h1>Proforme</h1>
+                    </div>
+                    <div>
+                        <div onclick="newProforma()" class="crm-long-btn" style="background-color: #6baa41;" id="crm-new-proforma-btn">
+                            <i class="fa-solid fa-plus"></i>&nbsp;Proforma noua
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:flex;align-items:center;">
+                    <i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <select id="emitor-filter" onchange="filterTable();">
+                            <option value="all" selected>Emitent</option>
+                            <option value="1" >diagency</option>
+                            <option value="2" >diclick</option>
+                        </select>
+                    </div>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <select id="status-filter" onchange="filterTable();">
+                            <option value="all" selected>Status</option>
+                            <option value="1" >În așteptare</option>
+                            <option value="0" >Refuzată</option>
+                            <option value="2" >Aprobată</option>
+                            <option value="3" >Trimisă către client</option>
+                            <option value="4" >Factură generată</option>
+                        </select>
+                    </div>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <input id="client-filter" type="text" oninput="filterTable();" placeholder="Client">
+                    </div>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <input id="number-filter" type="text" oninput="filterTable();" placeholder="Nr. proforma">
+                    </div>&nbsp;&nbsp;
+                    <div class="input-container">
+                        <input id="date-filter" type="month" oninput="filterTable();" placeholder="Luna emitere">
+                    </div>
+                </div>
+
+                <div>
+                    <table  class="client-file-table">
+                        <thead>
+                            <tr>
+                                <th>Data emitere</th>
+                                <th>Emitent</th>
+                                <th>Client</th>
+                                <th>Nr. proforma</th>
+                                <th>Valoare totala</th>
+                                <th>Status</th>
+                                <th>Actiuni</th>
+                            </tr>
+                        </thead>
+                        <tbody id="proforme-table-list">
+                            <!-- <tr>
+                                <td>"+response[i].dataEmitere+"</td>
+                                <td>"+response[i].emitor+"</td>
+                                <td>"+response[i].client+"</td>
+                                <td>"+response[i].nrFactura+"</td>
+                                <td>
+
+                                    <div class='crm-action-box-btns'>
+                                        <a href='/clients-resources/"+response[i].clientId+"/proforms/"+response[i].nrFactura+".pdf' title='Vezi proforma' class='crm-btn' style='background-color:#3daad6' target='_blank'>
+                                            <i class='fa-solid fa-eye'></i>
+                                        </a>
+                                        <a href='/clients-resources/"+response[i].clientId+"/proforms/"+response[i].nrFactura+".pdf' title='Descarca proforma' class='crm-btn' download style='background-color:#6baa41'>
+                                            <i class='fa-solid fa-download'></i>
+                                        </a>
+                                        <div title='Trimite proforma' style='background-color:#dea336' class='crm-btn' onclick='openSendProformaQuick(\""+response[i].clientId+"\",\""+response[i].nrFactura+"\")'>
+                                            <i class='fa-solid fa-envelope'></i>
+                                        </div>
+                                        <div title='Genereaza factura' style='background-color:#8a1b7a' class='crm-btn' onclick='generateInvoice(\""+response[i].clientId+"\",\""+response[i].nrFactura+"\")'>
+                                            <i class='fa-solid fa-file-invoice-dollar'></i>
+                                        </div>
+                                    </div>
+
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    <footer style="height: 20px; background-color: #444; color:#fff;">
+        <p style='text-align: center;'>Copyright Social Marketing Platform S.R.L.</p>
+    </footer>
+
+    <div id="modal-new-proforma" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeNewProforma()' class='fas fa-times'></i>
+                </div>
+                <div id='view-complete-action-content'>
+                    <div>
+                        <h1 style="text-align:center">Proforma noua</h1>
+                       <form action="" method="POST" id="crm-generate-proforma">
+                            <div class='form-row-wrap'>
+                                <div class="input-container">
+                                    <label>Emitent</label>
+                                    <select name="new-proforma-emitator" id="new-proforma-emitator" required>
+                                        <option value="" selected disabled>Alege emitent</option>
+                                        <option value="1">d+i Activation</option>
+                                        <option value="2">di click</option>
+                                    </select>
+                                </div>
+                                <div class="input-container">
+                                    <label>Client</label>
+                                    <select name="new-proforma-client" id="new-proforma-client" required>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class='form-row-wrap'>
+                                <div class="input-container">
+                                    <label>Numar factura</label>
+                                    <input type="text" name='new-proforma-invoice-number' id='new-proforma-invoice-number' readonly >
+                                </div>
+                                <div class="input-container">
+                                    <label>Termen de plata</label>
+                                    <input type="date" name="new-proforma-tp" id="new-proforma-tp" required>
+                                </div>
+                            </div>
+                            <div class='form-row-wrap'>    
+                                <div class="input-container">
+                                    <label>TVA (%)</label>
+                                    
+                                    <input type="number" value="19" name='new-proforma-vat' id='new-proforma-vat' required>
+                                </div>
+                                <div class="input-container">
+                                    <label>Persoana delegată</label>
+                                    <select name="new-proforma-pers-delegata" id="new-proforma-pers-delegata">
+                                                                            
+                                    </select>
+                                </div>
+                                <!-- <div class="input-container">
+                                    <label>Moneda de facturare</label>
+                                    <select name='gen-proforma-moneda' id='gen-proforma-moneda'>
+                                        <option value="RON" selected>RON</option>
+                                        <option value="EURO">EURO</option>
+                                    </select>
+                                </div> -->
+                            </div>
+                            <div class="form-row-wrap">
+                                <div class="input-container">
+                                    <label>Moneda de facturare</label>
+                                    <select name='gen-proforma-moneda' id='gen-proforma-moneda'>
+                                        <option value="RON" selected>RON</option>
+                                        <option value="EURO-ECHIVALENT">EURO echivalent</option>
+                                        <option value="EURO">EURO</option>
+                                        <option value="HUF">HUF</option>
+                                    </select>
+                                </div>
+                                <div class="input-container" id="gen-proforma-curs-euro-container" style="display: none;">
+                                    <label>Curs RON / EURO</label>
+                                    
+                                    <input type="number" step="0.001" value="4.948" name='gen-proforma-curs-euro' id='gen-proforma-curs-euro' required>
+                                </div>
+                            </div>
+                            <div>
+                                <table class="client-file-table">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Nr. crt.</th>
+                                            <th style="width: 50%;">Denumire produs</th>
+                                            <th>UM</th>
+                                            <th>Cantitate</th>
+                                            <th>Pret unitar (fara TVA)</th>
+                                            <th>Valoare fara tva</th>
+                                            <th>TVA</th> 
+                                        </tr>
+                                    </thead>
+                                    <tbody id='products-list'>
+                                        <!-- <td>
+                                            <div onclick='removeProduct(\""+productIndex+"\")'><i class='fa-solid fa-xmark'></i></div>
+                                        </td>
+                                        <td>"+(productIndex+1)+"</td>
+                                        <td>
+                                            <input type='text' name='product-name[]' class='product-name' value="" onchange='nameChange(\""+productIndex+"\")'>
+                                        </td>
+                                        <td>
+                                            <input type='text' name='product-um[]' class='product-um' onchange='umChange(\""+productIndex+"\")'>
+                                        </td>
+                                        <td>
+                                            <input type='number' min='0' name='product-cant[]' class='product-cant' onchange='cantChange(\""+productIndex+"\")'>
+                                        </td>
+                                        <td>
+                                            <input type='text' name='product-price[]' class='product-price'  onchange='priceChange(\""+productIndex+"\")'>
+                                        </td>
+                                        <td>
+                                            <input type='text' name='product-val[]' class='product-val crm-readonly-input' readonly>
+                                        </td>
+                                        <td>
+                                            <input type='text' name='product-tva[]' class='product-tva crm-readonly-input' readonly>
+                                        </td> -->
+                                    </tbody>
+                                </table>
+                                <div class="row" style='justify-content: space-between;'>
+                                    <div>
+                                        <span>Total fara TVA</span>
+                                        <input type="text" name="total-fara-tva" id="total-fara-tva" readonly class="crm-readonly-input" required>
+                                    </div>
+                                    <div>
+                                        <span>Total TVA</span>
+                                        <input type="text" name="total-tva" id="total-tva" readonly class="crm-readonly-input" required>
+                                    </div>
+                                    <div class="row">
+                                        <div>
+                                            <span>Total de plata</span>
+                                            <input type="text" name="total-de-plata" id="total-de-plata" readonly class="crm-readonly-input" required>
+                                        </div>
+                                        <div id="total-de-plata-ron-container">
+                                            <span>Total de plata (RON)</span>
+                                            <input type="text" name="total-de-plata-ron" id="total-de-plata-ron" readonly class="crm-readonly-input" required>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div>
+                                    <div onclick="openNewProducts();" class="crm-long-btn" style="background-color:#6baa41">Adauga produs</div>
+                                    <div id="new-product-container" style="display:none;justify-content: space-around;align-items: center;margin-top:10px">
+                                        <div onclick="addProduct(1,event)" class="product-button" >Pachet START-UP</div>
+                                        <div class="product-button" onclick="addProduct(2,event)">Pachet OPTIM</div>
+                                        <div class="product-button" onclick="addProduct(3,event)">Pachet ADVANCED</div>
+                                        <div class="product-button" onclick="addProduct(0,event)">Produs personalizat</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div>
+
+                            </div>
+                        
+                            <div style='width: max-content;margin:0 auto'>
+                            <button class="form-button" type="submit" id="submit-new-proform-btn">Genereaza</button>
+                                
+                            </div>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-send-proforma" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeSendProforma()' class='fas fa-times'></i>
+                </div>
+                <div id='view-complete-action-content'>
+                    <div>
+                        <h1 style="text-align:center">Proforma generata cu succes!</h1>
+                       <form action="" method="POST" id="crm-check-send-proforma">
+                            <input type="text" name="clientId" id="send-proforma-clientId" hidden readonly required >
+                            <input type="text" name="number" id="send-proforma-number"  readonly required hidden>
+                            
+                            <div style="text-align:center">
+                                <p>Doresti sa trimiti proforma prin email?</p>
+                            </div>
+                        
+
+                            <div class='crm-action-box-btns' style='width: max-content;margin: 0 auto;'>
+                                <div class="crm-long-btn" onclick="closeSendProforma()" style="background-color:#d94e47">NU</div>
+                                <div class="crm-long-btn" style="background-color:#6baa41" onclick="openMailProforma()">DA</div>
+
+                                
+                                
+                            </div>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-send-mail-proforma" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeMailProforma()' class='fas fa-times'></i>
+                </div>
+                <div id='view-complete-action-content'>
+                    <div>
+                        <h1 style="text-align:center">Proforma generata cu succes!</h1>
+                       <form action="" method="POST" id="crm-send-proforma">
+                            <input type="text" name="clientId" id="send-mail-proforma-clientId" hidden readonly required >
+                            <input type="text" name="number" id="send-mail-proforma-number"  readonly required hidden>
+                            
+                            <div class="input-container" style="width:auto">
+                                <label>Subiect</label>
+                                <input type="text" name="proforma-mail-subject" required>
+                            </div>
+                            <div class="input-container" style="width:auto">
+                                <label>Continut</label>
+                                <textarea type="text" name="proforma-mail-body" required></textarea>
+                            </div>
+                            <div class="input-container" style="width:auto">
+                                <label>Urări</label>
+                                <input type="text" name="proforma-mail-wishes" id="proforma-mail-wishes-1" required>
+                            </div>
+
+                            <div class='crm-action-box-btns' style='width: max-content;margin: 0 auto;'>
+                                
+
+                                <button type="submit" class="form-button">Trimite</button>
+                                
+                            </div>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-generate-invoice" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeGenerateInvoice()' class='fas fa-times'></i>
+                </div>
+                <div id='view-complete-action-content'>
+                    <div>
+                        <h1 style="text-align:center">Genereaza factura</h1>
+                       <form action="" method="POST" id="crm-generate-invoice">
+                           <textarea name="invoice-products" id="invoice-products" hidden readonly></textarea>
+                           <input type="text" name="gen-invoice-proform-number" id="gen-invoice-proform-number" hidden readonly>
+                            <div class='form-row-wrap'>
+                                <div class="input-container">
+                                    <label>Emitent</label>
+                                    <select name="gen-invoice-emitator" id="gen-invoice-emitator" required disabled>
+                                        <option value="" selected disabled>Emitent</option>
+                                        <option value="1">d+i Activation</option>
+                                        <option value="2">di click</option>
+                                    </select>
+                                </div>
+                                <div class="input-container">
+                                    <label>Client</label>
+                                    <select name="gen-invoice-client" id="gen-invoice-client" required disabled>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class='form-row-wrap'>
+                                <div class="input-container">
+                                    <label>Numar factura</label>
+                                    <select name='gen-invoice-invoice-serie' id='gen-invoice-invoice-serie' required>
+                                        <option value="" disabled selected>Serie</option>
+                                    </select>
+                                    <input type="text" name='gen-invoice-invoice-number' id='gen-invoice-invoice-number' readonly required>
+                                </div>
+                                <div class="input-container">
+                                    <label>Termen de plata (zile)</label>
+                                    <input type="number" min="0" step="1" max="31" name="gen-invoice-tp" id="gen-invoice-tp" required>
+                                </div>
+                            </div>
+                            <div class='form-row-wrap'>    
+                                <div class="input-container">
+                                    <label>TVA (%)</label>
+                                    
+                                    <input type="number" value="19" name='gen-invoice-vat' id='gen-invoice-vat' required readonly>
+                                </div>
+                                <div class="input-container">
+                                    <label>Moneda de facturare</label>
+                                    <select name='gen-invoice-moneda' id='gen-invoice-moneda'>
+                                        <option value="RON" selected>RON</option>
+                                        <option value="EURO-ECHIVALENT">EURO echivalent</option>
+                                        <option value="EURO">EURO</option>
+                                        <option value="HUF">HUF</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <!-- <div class="form-row-wrap">
+                                <div class="input-container" id="gen-invoice-curs-euro-container" style="display: none;">
+                                    <label>Curs RON / EURO</label>
+                                    
+                                    <input type="number" step="0.001" value="4.948" name='gen-invoice-curs-euro' id='gen-invoice-curs-euro' required>
+                                </div>
+                            </div> -->
+                            <div>
+                                <table class="client-file-table">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Nr. crt.</th>
+                                            <th style="width: 50%;">Denumire produs</th>
+                                            <th>UM</th>
+                                            <th>Cantitate</th>
+                                            <th>Pret unitar (fara TVA)</th>
+                                            <th>Valoare fara tva</th>
+                                            <th>TVA</th> 
+                                        </tr>
+                                    </thead>
+                                    <tbody id='gen-invoice-products-list'>
+                                        
+                                    </tbody>
+                                </table>
+                                <div class="row" style='justify-content: space-between;'>
+                                    <div>
+                                        <span>Total fara TVA</span>
+                                        <input type="text" name="total-fara-tva" id="gen-invoice-total-fara-tva" readonly class="crm-readonly-input" required>
+                                    </div>
+                                    <div>
+                                        <span>Total TVA</span>
+                                        <input type="text" name="total-tva" id="gen-invoice-total-tva" readonly class="crm-readonly-input" required>
+                                    </div>
+                                
+
+
+                                    <div class="row">
+                                        <div>
+                                            <span>Total de plata</span>
+                                            <input type="text" name="total-de-plata" id="gen-invoice-total-de-plata" readonly class="crm-readonly-input" required>
+                                        </div>
+                                        <div id="total-de-plata-ron-container">
+                                            <span>Total de plata (RON)</span>
+                                            <input type="text" name="total-de-plata-ron" id="gen-invoice-total-de-plata-ron" readonly class="crm-readonly-input" required>  
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <div>
+                                <!-- <div class="input-container">
+                                    <label >Fisiere de atasat (PDF)</label>
+                                    <input type="file" name="gen-invoice-file" >
+                                </div> -->
+                            </div>
+                            <br>
+                            <div class='form-row-wrap'>
+                                <div class="input-container">
+                                    <label>Parola de securitate</label>
+                                    <input type="password" name="gen-invoice-security-code" id="gen-invoice-security-code" required>
+    
+                                </div>
+                            </div>
+                            
+                        
+
+                            <div style='width: max-content;margin:0 auto'>
+                            <button class="form-button" type="submit">Genereaza</button>
+                                
+                            </div>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-send-invoice" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeSendInvoice()' class='fas fa-times'></i>
+                </div>
+                <div id='view-complete-action-content'>
+                    <div>
+                        <h1 style="text-align:center">Factura generata cu succes!</h1>
+                       <form action="" method="POST" id="crm-check-send-proforma">
+                            <input type="text" name="clientId" id="send-invoice-clientId" hidden readonly required >
+                            <input type="text" name="number" id="send-invoice-number"  readonly required hidden>
+                            
+                            <div style="text-align:center">
+                                <p>Doresti sa trimiti factura prin email?</p>
+                            </div>
+                        
+
+                            <div class='crm-action-box-btns' style='width: max-content;margin: 0 auto;'>
+                                <div class="crm-long-btn" onclick="closeSendInvoice()" style="background-color:#d94e47">NU</div>
+                                <div class="crm-long-btn" Fstyle="background-color:#6baa41" onclick="openMailInvoice()">DA</div>
+
+                                
+                                
+                            </div>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-send-mail-invoice" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeMailInvoice()' class='fas fa-times'></i>
+                </div>
+                <div id='view-complete-action-content'>
+                    <div>
+                        <h1 style="text-align:center">Factura generata cu succes!</h1>
+                       <form action="" method="POST" id="crm-send-invoice">
+                            <input type="text" name="clientId" id="send-mail-invoice-clientId" hidden readonly required >
+                            <input type="text" name="number" id="send-mail-invoice-number"  readonly required hidden>
+                            
+                            <div class="input-container" style="width:auto">
+                                <label>Subiect</label>
+                                <input type="text" name="invoice-mail-subject" required>
+                            </div>
+                            <div class="input-container" style="width:auto">
+                                <label>Continut</label>
+                                <textarea type="text" name="invoice-mail-body" required></textarea>
+                            </div>
+                            <div class="input-container" style="width:auto">
+                                <label>Urări</label>
+                                <input type="text" name="invoice-mail-wishes" id="invoice-mail-wishes" required>
+                            </div>
+
+                            <div class='crm-action-box-btns' style='width: max-content;margin: 0 auto;'>
+                                
+
+                                <button type="submit" class="form-button">Trimite</button>
+                                
+                            </div>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modal-send-mail-proforma-quick" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeMailProformaQuick()' class='fas fa-times'></i>
+                </div>
+                <div id='view-complete-action-content'>
+                    <div>
+                        <h1 style="text-align:center">Trimite proforma</h1>
+                       <form action="" method="POST" id="crm-send-proforma-quick">
+                            <input type="text" name="clientId" id="send-mail-proforma-clientId-quick" hidden readonly required >
+                            <input type="text" name="number" id="send-mail-proforma-number-quick"  readonly required hidden>
+                            
+                            <div class="input-container" style="width:auto">
+                                <label>Subiect</label>
+                                <input type="text" name="proforma-mail-subject" required>
+                            </div>
+                            <div class="input-container" style="width:auto">
+                                <label>Continut</label>
+                                <textarea type="text" name="proforma-mail-body" required></textarea>
+                            </div>
+                            <div class="input-container" style="width:auto">
+                                <label>Urări</label>
+                                <input type="text" name="proforma-mail-wishes" id="proforma-mail-wishes-2" required>
+                            </div>
+
+                            <div class='crm-action-box-btns' style='width: max-content;margin: 0 auto;'>
+                                
+
+                                <button type="submit" class="form-button">Trimite</button>
+                                
+                            </div>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit-proforma" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeEditProforma()' class='fas fa-times'></i>
+                </div>
+                <div id='view-complete-action-content'>
+                    <div>
+                        <h1 style="text-align:center">Modifica proforma</h1>
+                       <form action="" method="POST" id="crm-generate-proforma-edit">
+                            <div class='form-row-wrap'>
+                                <div class="input-container">
+                                    <label>Emitent</label>
+                                    <select name="edit-proforma-emitator" id="edit-proforma-emitator" required>
+                                        <option value="" selected disabled>Emitent</option>
+                                        <option value="1">d+i Activation</option>
+                                        <option value="2">di click</option>
+                                    </select>
+                                </div>
+                                <div class="input-container">
+                                    <label>Client</label>
+                                    <select name="edit-proforma-client" id="edit-proforma-client" required>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class='form-row-wrap'>
+                                <div class="input-container">
+                                    <label>Numar factura</label>
+                                    <input type="text" name='edit-proforma-invoice-number' id='edit-proforma-invoice-number' readonly >
+                                </div>
+                                <div class="input-container">
+                                    <label>Termen de plata</label>
+                                    <input type="date" name="edit-proforma-tp" id="edit-proforma-tp" required>
+                                </div>
+                            </div>
+                            <div class='form-row-wrap'>    
+                                <div class="input-container">
+                                    <label>TVA (%)</label>
+                                    
+                                    <input type="number" value="19" name='edit-proforma-vat' id='edit-proforma-vat' required>
+                                </div>
+                                <div class="input-container">
+                                    <label>Persoana delegată</label>
+                                    <select name="edit-proforma-pers-delegata" id="edit-proforma-pers-delegata">
+                                                                            
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row-wrap">
+                                <div class="input-container">
+                                    <label>Moneda de facturare</label>
+                                    <select name='edit-proforma-moneda' id='edit-proforma-moneda'>
+                                        <option value="RON" selected>RON</option>
+                                        <option value="EURO-ECHIVALENT">EURO echivalent</option>
+                                        <option value="EURO">EURO</option>
+                                    </select>
+                                </div>
+                                <div class="input-container" id="edit-proforma-curs-euro-container" style="display: none;">
+                                    <label>Curs RON / EURO</label>
+                                    
+                                    <input type="number" step="0.001" value="4.948" name='edit-proforma-curs-euro' id='edit-proforma-curs-euro' required>
+                                </div>
+                            </div>
+                            <div>
+
+                                <table class="client-file-table">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Nr. crt.</th>
+                                            <th style="width: 50%;">Denumire produs</th>
+                                            <th>UM</th>
+                                            <th>Cantitate</th>
+                                            <th>Pret unitar (fara TVA)</th>
+                                            <th>Valoare fara tva</th>
+                                            <th>TVA</th> 
+                                        </tr>
+                                    </thead>
+                                    <tbody id='products-list-edit'>
+                                        <!-- <td>
+                                            <div onclick='removeProduct(\""+productIndex+"\")'><i class='fa-solid fa-xmark'></i></div>
+                                        </td>
+                                        <td>"+(productIndex+1)+"</td>
+                                        <td>
+                                            <input type='text' name='product-name[]' class='product-name' value="" onchange='nameChange(\""+productIndex+"\")'>
+                                        </td>
+                                        <td>
+                                            <input type='text' name='product-um[]' class='product-um' onchange='umChange(\""+productIndex+"\")'>
+                                        </td>
+                                        <td>
+                                            <input type='number' min='0' name='product-cant[]' class='product-cant' onchange='cantChange(\""+productIndex+"\")'>
+                                        </td>
+                                        <td>
+                                            <input type='text' name='product-price[]' class='product-price'  onchange='priceChange(\""+productIndex+"\")'>
+                                        </td>
+                                        <td>
+                                            <input type='text' name='product-val[]' class='product-val crm-readonly-input' readonly>
+                                        </td>
+                                        <td>
+                                            <input type='text' name='product-tva[]' class='product-tva crm-readonly-input' readonly>
+                                        </td> -->
+                                    </tbody>
+                                </table>
+                                <div class="row" style='justify-content: space-between;'>
+                                    <div>
+                                        <span>Total fara TVA</span>
+                                        <input type="text" name="total-fara-tva" id="total-fara-tva-edit" readonly class="crm-readonly-input" required>
+                                    </div>
+                                    <div>
+                                        <span>Total TVA</span>
+                                        <input type="text" name="total-tva" id="total-tva-edit" readonly class="crm-readonly-input" required>
+                                    </div>
+                                    <div>
+                                        <span>Total de plata</span>
+                                        <input type="text" name="total-de-plata" id="total-de-plata-edit" readonly class="crm-readonly-input" required>
+
+                                        <div class="row">
+                                            <div>
+                                                <span>Total de plata</span>
+                                                <input type="text" name="total-de-plata" id="total-de-plata-edit" readonly class="crm-readonly-input" required>
+                                            </div>
+                                            <div id="total-de-plata-ron-container">
+                                                <span>Total de plata (RON)</span>
+                                                <input type="text" name="total-de-plata-ron" id="total-de-plata-ron-edit" readonly class="crm-readonly-input" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div onclick="openNewProductsEdit();" class="crm-long-btn" style="background-color:#6baa41">Adauga produs</div>
+                                    <div id="new-product-container-edit" style="display:none;justify-content: space-around;align-items: center;margin-top:10px">
+                                        <div onclick="addProductEdit(1,event)" class="product-button" >Pachet START-UP</div>
+                                        <div class="product-button" onclick="addProductEdit(2,event)">Pachet OPTIM</div>
+                                        <div class="product-button" onclick="addProductEdit(3,event)">Pachet ADVANCED</div>
+                                        <div class="product-button" onclick="addProductEdit(0,event)">Produs personalizat</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div>
+
+                            </div>
+                        
+
+                            <div style='width: max-content;margin:0 auto'>
+                            <button class="form-button" type="submit" id="submit-edit-proform-btn">Modifica</button>
+                                
+                            </div>
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="modal-aprove-proforma" class="modal">
+        <div class="form-box">
+            <div class="form-container">
+                <div class='btns-box'>
+                    <div>
+                       
+                    </div>
+                    <i onclick='closeAproveProforma()' class='fas fa-times'></i>
+                </div>
+                <div id='view-complete-action-content'>
+                    <div>
+                        <h1 style="text-align:center">Verifica proforma</h1>
+                        <p style="text-align:center">inainte de a o aproba</p>
+                       <form action="" method="POST" id="crm-aprove-proforma-form">
+                            <input type="text" name="clientId" id="aprove-proforma-clientId" hidden readonly required >
+                            <input type="text" name="number" id="aprove-proforma-number"  readonly required hidden>
+                            <br>
+                            <div style="display: flex;flex-direction:row;justify-content:flex-end; align-content:center; margin-bottom:5px">
+                                <button class="long-rectang-btn gray-btn" type="button" onclick="setContract()">Contract</button>
+                                <button class="long-rectang-btn gray-btn" type="button" onclick="setAnexa()">Anexa</button>
+                            </div>
+                            <div class="proforma-iframe-container">
+                                <div class="proforma-iframe-box">
+                                    <iframe id="proforma-iframe-view" src="" frameborder="0"></iframe>
+                                </div>
+                                <div class="proforma-iframe-box">
+                                    <iframe id="contract-iframe-view" src="" frameborder="0"></iframe>
+                                    <iframe id="anexa-iframe-view" src="" frameborder="0" style="display:none"></iframe>
+                                </div>
+                            </div>
+                            <br>
+                            <div style="display: flex;width: 100%;justify-content: center;align-items: center;align-content: center;">
+                                <button type="button" onclick="denyProforma()" class="long-rectang-btn red-btn">Refuză</button>
+                                <button type="submit" class="long-rectang-btn green-btn">Aprobă</button>
+                            </div>
+                            
+
+                       </form> 
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div id="loading-screen">
+
+        <img src="/resources/img/di-logo.svg" id="di-logo-loading" alt="">
+        <span>Loading</span>
+    </div>
+
+</body>
+
+<script src="/admin/admin-js/logout.js"></script>
+<script src="/admin/admin-js/session.js"></script>
+
+<script src="/admin/admin-js/menu.js"></script>
+<script src="/admin/crm/js/proforme.js"></script>
+
+</html>

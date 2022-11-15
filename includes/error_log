@@ -1,0 +1,14 @@
+[27-Sep-2022 10:41:36 Europe/Bucharest] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php on line 14
+[27-Sep-2022 10:41:38 Europe/Bucharest] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php on line 14
+[27-Sep-2022 10:43:14 Europe/Bucharest] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php on line 14
+[27-Sep-2022 10:43:25 Europe/Bucharest] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php on line 14
+[27-Sep-2022 11:02:57 Europe/Bucharest] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php:14
+Stack trace:
+#0 /home/diclicke/integra.diclick.eu/includes/login.php(3): include()
+#1 {main}
+  thrown in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php on line 14
+[27-Sep-2022 11:02:59 Europe/Bucharest] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php:14
+Stack trace:
+#0 /home/diclicke/integra.diclick.eu/includes/login.php(3): include()
+#1 {main}
+  thrown in /home/diclicke/integra.diclick.eu/includes/dbh.inc.php on line 14
